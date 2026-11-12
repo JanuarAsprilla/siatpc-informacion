@@ -1,0 +1,377 @@
+[
+ {
+  "slug": "iiap",
+  "nombre": "Instituto de Investigaciones Ambientales del Pacífico",
+  "sigla": "IIAP",
+  "tipo": "Instituto de investigación",
+  "logo": "/img/entidades/iiap.webp",
+  "acerca": "El Instituto de Investigaciones Ambientales del Pacífico - IIAP- tiene como misión desarrollar investigación dirigida a la producción de información y conocimiento del Chocó Biogeográfico que al tiempo que fundamente la toma de decisiones y las políticas públicas nacionales, regionales y locales en materia ambiental y de desarrollo sostenible, promueva el progreso colectivo de los habitantes de la región y consolide la identidad cultural de sus pueblos negros e indígenas, como condiciones necesarias para lograr una paz territorial duradera.",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Quibdó - Colombia",
+    "href": null
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://iiap.org.co/",
+    "href": "https://iiap.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "minambiente",
+  "nombre": "Ministerio de Ambiente y Desarrollo Sostenible",
+  "sigla": "MADS",
+  "tipo": "Ministerio",
+  "logo": "/img/entidades/minambiente.webp",
+  "acerca": "El Ministerio de Ambiente y Desarrollo Sostenible es el rector de la gestión del ambiente y de los recursos naturales renovables, encargado de orientar y regular el ordenamiento ambiental del territorio y de definir las políticas y regulaciones...",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Bogotá - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Calle 37 No. 8-40",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "3323400",
+    "href": "tel: 3323400"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "servicioalciudadano@minambiente.gov.co",
+    "href": "mailto: servicioalciudadano@minambiente.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://www.minambiente.gov.co/index.php",
+    "href": "https://www.minambiente.gov.co/index.php"
+   }
+  ]
+ },
+ {
+  "slug": "ideam",
+  "nombre": "Instituto de Hidrología, Meteorología y Estudios Ambientales",
+  "sigla": "IDEAM",
+  "tipo": "Instituto de investigación",
+  "logo": "/img/entidades/ideam.webp",
+  "acerca": "Es una institución pública de apoyo técnico y científico al Sistema Nacional Ambiental, que genera conocimiento, produce información confiable, consistente y oportuna, sobre el estado y las dinámicas de los recursos naturales y del medio ambiente.",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Bogotá - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Calle 25 D No. 96 B - 70",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "571 3527160",
+    "href": "tel: 571 3527160"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "atencionalciudadano@ideam.gov.co",
+    "href": "mailto: atencionalciudadano@ideam.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "http://www.ideam.gov.co/",
+    "href": "http://www.ideam.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "humboldt",
+  "nombre": "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
+  "sigla": "Humboldt",
+  "tipo": "Instituto de investigación",
+  "logo": "/img/entidades/humboldt.svg",
+  "acerca": "",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Bogotá - Colombia",
+    "href": null
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://www.humboldt.org.co/",
+    "href": "https://www.humboldt.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "invemar",
+  "nombre": "Instituto de Investigaciones Marinas y Costeras",
+  "sigla": "Invemar",
+  "tipo": "Instituto de investigación",
+  "logo": "/img/entidades/invemar.webp",
+  "acerca": "",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Santa Marta - Colombia",
+    "href": null
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://www.invemar.org.co/",
+    "href": "https://www.invemar.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "sinchi",
+  "nombre": "Instituto Amazónico de Investigaciones Científicas",
+  "sigla": "Sinchi",
+  "tipo": "Instituto de investigación",
+  "logo": "/img/entidades/sinchi.webp",
+  "acerca": "El Objeto del SINCHI es la realización, coordinación y divulgación de estudios e investigaciones científicas de alto nivel relacionados con la realidad biológica, social y ecológica de la región amazónica",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Leticia - Amazona",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "AV VÁSQUEZ COBO CALLES 15 Y 16",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "5925481",
+    "href": "tel: 5925481"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "sinchi@sinchi.org.co",
+    "href": "mailto: sinchi@sinchi.org.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://www.sinchi.org.co/",
+    "href": "https://www.sinchi.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "anla",
+  "nombre": "Autoridad Nacional de Licencias Ambientales",
+  "sigla": "ANLA",
+  "tipo": "Autoridad ambiental",
+  "logo": null,
+  "acerca": "Para la Autoridad Nacional de Licencias Ambientales ANLA, es fundamental basar su desarrollo en un marco ético en valores que permitan a los funcionarios y colaboradores un desempeño integral que garanticen la calidad en la prestación de sus servicios.",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Bogotá - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Calle 37 No. 8-40",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "2540100",
+    "href": "tel: 2540100"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "licencias@anla.gov.co",
+    "href": "mailto: licencias@anla.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "http://www.anla.gov.co/",
+    "href": "http://www.anla.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "codechoco",
+  "nombre": "Corporación Autónoma Regional para el Desarrollo Sostenible del Chocó",
+  "sigla": "Codechocó",
+  "tipo": "Corporación autónoma regional",
+  "logo": null,
+  "acerca": "CODECHOCÓ máxima autoridad ambiental y desarrolla las políticas, planes, programas y proyectos sobre el medio ambiente y los Recursos Naturales Renovables, en el Departamento del Chocó.",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Quibdó - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Cra 1 N° 22 – 96",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "6711510",
+    "href": "tel: 6711510"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "contacto@codechoco.gov.co",
+    "href": "mailto: contacto@codechoco.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://codechoco.gov.co/",
+    "href": "https://codechoco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "cvc",
+  "nombre": "Corporación Autónoma Regional del Valle del Cauca",
+  "sigla": "CVC",
+  "tipo": "Corporación autónoma regional",
+  "logo": null,
+  "acerca": "La Corporación tiene por objeto propender por el desarrollo sostenible y la protección del medio ambiente en su jurisdicción...",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Cali - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Carrera 56 # 11 - 36",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "6206600",
+    "href": "tel: 6206600"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "atencionalusuario@cvc.gov.co",
+    "href": "mailto: atencionalusuario@cvc.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://www.cvc.gov.co/",
+    "href": "https://www.cvc.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "carder",
+  "nombre": "Corporación Autónoma Regional de Risaralda",
+  "sigla": "CARDER",
+  "tipo": "Corporación autónoma regional",
+  "logo": null,
+  "acerca": "Tiene por objeto la ejecución de las políticas, planes, programas y proyectos sobre medio ambiente y recursos naturales renovables...",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Pereira - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "AV de Las Américas # 46-40",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "3116511",
+    "href": "tel: 3116511"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "carder@carder.gov.co",
+    "href": "mailto: carder@carder.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://www.carder.gov.co/",
+    "href": "https://www.carder.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "crc",
+  "nombre": "Corporación Autónoma Regional del Cauca",
+  "sigla": "CRC",
+  "tipo": "Corporación autónoma regional",
+  "logo": null,
+  "acerca": "La CRC tiene por objeto la ejecución de las políticas, planes, programas y proyectos sobre el medio ambiente y recursos naturales, así como dar cumplida y oportuna aplicación a las disposiciones legales...",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Popayan - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Carrera 7 # 1N-28",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "8333232",
+    "href": "tel: 8333232"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "crc@crc.gov.co",
+    "href": "mailto: crc@crc.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "https://crc.gov.co/",
+    "href": "https://crc.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "corponarino",
+  "nombre": "Corporación Autónoma Regional de Nariño",
+  "sigla": "Corponariño",
+  "tipo": "Corporación autónoma regional",
+  "logo": null,
+  "acerca": "Tiene por objeto la ejecución de las políticas, planes, programas y proyectos sobre medio ambiente y recursos naturales renovables, así como dar cumplida y oportuna aplicación a las disposiciones legales vigentes...",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Pasto - Colombia",
+    "href": null
+   },
+   {
+    "k": "Dirección",
+    "v": "Calle 25 7 Este – 84",
+    "href": null
+   },
+   {
+    "k": "Teléfono",
+    "v": "7309282",
+    "href": "tel: 7309282"
+   },
+   {
+    "k": "Correo electrónico",
+    "v": "quejasreclamos@corponarino.gov.co",
+    "href": "mailto: quejasreclamos@corponarino.gov.co"
+   },
+   {
+    "k": "Página WEB",
+    "v": "http://corponarino.gov.co",
+    "href": "http://corponarino.gov.co"
+   }
+  ]
+ }
+]

@@ -1,0 +1,18 @@
+{
+  "name": "siatpc-informacion",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Módulo de información del SIAT PC: inicio, entidades, documentos y noticias.",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "preparar-datos": "node scripts/preparar-datos.mjs",
+    "test": "node --test scripts/"
+  },
+  "dependencies": {
+    "astro": "^7.4.11"
+  }
+}
