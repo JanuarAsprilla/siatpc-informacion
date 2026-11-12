@@ -9,7 +9,6 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "preparar-datos": "node scripts/preparar-datos.mjs",
     "test": "node --test src/lib/format.test.mjs"
   },
   "dependencies": {

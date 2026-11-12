@@ -33,10 +33,10 @@ const clase = variante === 'grande' ? 'nota-grande' : variante === 'fila' ? 'not
     {variante === 'normal' && (
       <>
         <a class="nota__img" href={href} tabindex="-1" aria-hidden="true">
-          {n.portada ? <img src={`/${n.portada}`} alt="" width="1200" height="800" loading="lazy" /> : <div style="aspect-ratio:4/3"></div>}
+          {n.portada ? <img src={`/${n.portada}`} alt="" width="1200" height="800" loading="lazy" /> : <div class="nota__sin"><i class="bi bi-newspaper" aria-hidden="true"></i><span>{n.fuente?.nombre ?? 'Sin imagen'}</span></div>}
         </a>
         <div class="tarjeta__cuerpo">
-          <p class="fecha">{fechaLarga(n.fecha)}</p>
+          <p class="fecha">{fechaLarga(n.fecha) || 'Fecha por confirmar'}</p>
           <h3><a href={href}>{titulo}</a></h3>
           {n.tematicas[0] && <span class="chip chip--verde">{n.tematicas[0]}</span>}
         </div>

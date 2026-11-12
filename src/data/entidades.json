@@ -1,377 +1,83 @@
 [
- {
-  "slug": "iiap",
-  "nombre": "Instituto de Investigaciones Ambientales del Pacífico",
-  "sigla": "IIAP",
-  "tipo": "Instituto de investigación",
-  "logo": "/img/entidades/iiap.webp",
-  "acerca": "El Instituto de Investigaciones Ambientales del Pacífico - IIAP- tiene como misión desarrollar investigación dirigida a la producción de información y conocimiento del Chocó Biogeográfico que al tiempo que fundamente la toma de decisiones y las políticas públicas nacionales, regionales y locales en materia ambiental y de desarrollo sostenible, promueva el progreso colectivo de los habitantes de la región y consolide la identidad cultural de sus pueblos negros e indígenas, como condiciones necesarias para lograr una paz territorial duradera.",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Quibdó - Colombia",
-    "href": null
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://iiap.org.co/",
-    "href": "https://iiap.org.co/"
-   }
-  ]
- },
- {
-  "slug": "minambiente",
-  "nombre": "Ministerio de Ambiente y Desarrollo Sostenible",
-  "sigla": "MADS",
-  "tipo": "Ministerio",
-  "logo": "/img/entidades/minambiente.webp",
-  "acerca": "El Ministerio de Ambiente y Desarrollo Sostenible es el rector de la gestión del ambiente y de los recursos naturales renovables, encargado de orientar y regular el ordenamiento ambiental del territorio y de definir las políticas y regulaciones...",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Bogotá - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Calle 37 No. 8-40",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "3323400",
-    "href": "tel: 3323400"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "servicioalciudadano@minambiente.gov.co",
-    "href": "mailto: servicioalciudadano@minambiente.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://www.minambiente.gov.co/index.php",
-    "href": "https://www.minambiente.gov.co/index.php"
-   }
-  ]
- },
- {
-  "slug": "ideam",
-  "nombre": "Instituto de Hidrología, Meteorología y Estudios Ambientales",
-  "sigla": "IDEAM",
-  "tipo": "Instituto de investigación",
-  "logo": "/img/entidades/ideam.webp",
-  "acerca": "Es una institución pública de apoyo técnico y científico al Sistema Nacional Ambiental, que genera conocimiento, produce información confiable, consistente y oportuna, sobre el estado y las dinámicas de los recursos naturales y del medio ambiente.",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Bogotá - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Calle 25 D No. 96 B - 70",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "571 3527160",
-    "href": "tel: 571 3527160"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "atencionalciudadano@ideam.gov.co",
-    "href": "mailto: atencionalciudadano@ideam.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "http://www.ideam.gov.co/",
-    "href": "http://www.ideam.gov.co/"
-   }
-  ]
- },
- {
-  "slug": "humboldt",
-  "nombre": "Instituto de Investigación de Recursos Biológicos Alexander von Humboldt",
-  "sigla": "Humboldt",
-  "tipo": "Instituto de investigación",
-  "logo": "/img/entidades/humboldt.svg",
-  "acerca": "Instituto de investigación del Sistema Nacional Ambiental dedicado a la investigación científica sobre la biodiversidad continental de Colombia.",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Bogotá - Colombia",
-    "href": null
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://www.humboldt.org.co/",
-    "href": "https://www.humboldt.org.co/"
-   }
-  ]
- },
- {
-  "slug": "invemar",
-  "nombre": "Instituto de Investigaciones Marinas y Costeras",
-  "sigla": "Invemar",
-  "tipo": "Instituto de investigación",
-  "logo": "/img/entidades/invemar.webp",
-  "acerca": "Instituto de investigación del Sistema Nacional Ambiental dedicado a los ecosistemas y recursos marinos y costeros de Colombia.",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Santa Marta - Colombia",
-    "href": null
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://www.invemar.org.co/",
-    "href": "https://www.invemar.org.co/"
-   }
-  ]
- },
- {
-  "slug": "sinchi",
-  "nombre": "Instituto Amazónico de Investigaciones Científicas",
-  "sigla": "Sinchi",
-  "tipo": "Instituto de investigación",
-  "logo": "/img/entidades/sinchi.webp",
-  "acerca": "El Objeto del SINCHI es la realización, coordinación y divulgación de estudios e investigaciones científicas de alto nivel relacionados con la realidad biológica, social y ecológica de la región amazónica",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Leticia - Amazona",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "AV VÁSQUEZ COBO CALLES 15 Y 16",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "5925481",
-    "href": "tel: 5925481"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "sinchi@sinchi.org.co",
-    "href": "mailto: sinchi@sinchi.org.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://www.sinchi.org.co/",
-    "href": "https://www.sinchi.org.co/"
-   }
-  ]
- },
- {
-  "slug": "anla",
-  "nombre": "Autoridad Nacional de Licencias Ambientales",
-  "sigla": "ANLA",
-  "tipo": "Autoridad ambiental",
-  "logo": null,
-  "acerca": "Para la Autoridad Nacional de Licencias Ambientales ANLA, es fundamental basar su desarrollo en un marco ético en valores que permitan a los funcionarios y colaboradores un desempeño integral que garanticen la calidad en la prestación de sus servicios.",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Bogotá - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Calle 37 No. 8-40",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "2540100",
-    "href": "tel: 2540100"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "licencias@anla.gov.co",
-    "href": "mailto: licencias@anla.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "http://www.anla.gov.co/",
-    "href": "http://www.anla.gov.co/"
-   }
-  ]
- },
- {
-  "slug": "codechoco",
-  "nombre": "Corporación Autónoma Regional para el Desarrollo Sostenible del Chocó",
-  "sigla": "Codechocó",
-  "tipo": "Corporación autónoma regional",
-  "logo": null,
-  "acerca": "CODECHOCÓ máxima autoridad ambiental y desarrolla las políticas, planes, programas y proyectos sobre el medio ambiente y los Recursos Naturales Renovables, en el Departamento del Chocó.",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Quibdó - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Cra 1 N° 22 – 96",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "6711510",
-    "href": "tel: 6711510"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "contacto@codechoco.gov.co",
-    "href": "mailto: contacto@codechoco.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://codechoco.gov.co/",
-    "href": "https://codechoco.gov.co/"
-   }
-  ]
- },
- {
-  "slug": "cvc",
-  "nombre": "Corporación Autónoma Regional del Valle del Cauca",
-  "sigla": "CVC",
-  "tipo": "Corporación autónoma regional",
-  "logo": null,
-  "acerca": "La Corporación tiene por objeto propender por el desarrollo sostenible y la protección del medio ambiente en su jurisdicción...",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Cali - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Carrera 56 # 11 - 36",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "6206600",
-    "href": "tel: 6206600"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "atencionalusuario@cvc.gov.co",
-    "href": "mailto: atencionalusuario@cvc.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://www.cvc.gov.co/",
-    "href": "https://www.cvc.gov.co/"
-   }
-  ]
- },
- {
-  "slug": "carder",
-  "nombre": "Corporación Autónoma Regional de Risaralda",
-  "sigla": "CARDER",
-  "tipo": "Corporación autónoma regional",
-  "logo": null,
-  "acerca": "Tiene por objeto la ejecución de las políticas, planes, programas y proyectos sobre medio ambiente y recursos naturales renovables...",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Pereira - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "AV de Las Américas # 46-40",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "3116511",
-    "href": "tel: 3116511"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "carder@carder.gov.co",
-    "href": "mailto: carder@carder.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://www.carder.gov.co/",
-    "href": "https://www.carder.gov.co/"
-   }
-  ]
- },
- {
-  "slug": "crc",
-  "nombre": "Corporación Autónoma Regional del Cauca",
-  "sigla": "CRC",
-  "tipo": "Corporación autónoma regional",
-  "logo": null,
-  "acerca": "La CRC tiene por objeto la ejecución de las políticas, planes, programas y proyectos sobre el medio ambiente y recursos naturales, así como dar cumplida y oportuna aplicación a las disposiciones legales...",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Popayan - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Carrera 7 # 1N-28",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "8333232",
-    "href": "tel: 8333232"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "crc@crc.gov.co",
-    "href": "mailto: crc@crc.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "https://crc.gov.co/",
-    "href": "https://crc.gov.co/"
-   }
-  ]
- },
- {
-  "slug": "corponarino",
-  "nombre": "Corporación Autónoma Regional de Nariño",
-  "sigla": "Corponariño",
-  "tipo": "Corporación autónoma regional",
-  "logo": null,
-  "acerca": "Tiene por objeto la ejecución de las políticas, planes, programas y proyectos sobre medio ambiente y recursos naturales renovables, así como dar cumplida y oportuna aplicación a las disposiciones legales vigentes...",
-  "datos": [
-   {
-    "k": "Ciudad",
-    "v": "Pasto - Colombia",
-    "href": null
-   },
-   {
-    "k": "Dirección",
-    "v": "Calle 25 7 Este – 84",
-    "href": null
-   },
-   {
-    "k": "Teléfono",
-    "v": "7309282",
-    "href": "tel: 7309282"
-   },
-   {
-    "k": "Correo electrónico",
-    "v": "quejasreclamos@corponarino.gov.co",
-    "href": "mailto: quejasreclamos@corponarino.gov.co"
-   },
-   {
-    "k": "Página WEB",
-    "v": "http://corponarino.gov.co",
-    "href": "http://corponarino.gov.co"
-   }
-  ]
- }
+ { "slug": "fedepesca", "nombre": "Federación de Trabajadores de la Pesca Artesanal", "sigla": "FEDEPESCA", "tipo": "Organización pesquera comunitaria", "relacion": "Miembro", "logo": "/img/entidades/fedepesca.webp",
+   "acerca": "Federación de segundo nivel creada en 2010. A diciembre de 2016 reunía 28 asociaciones de pescadores artesanales y es el pilar y razón de ser del GIC-PA. Junto con el Consejo Comunitario Los Delfines presentó la acción popular que terminó en el fallo del Consejo de Estado sobre la pesca industrial.",
+   "datos": [{ "k": "Sitio web", "v": "https://fedepesca.org/", "href": "https://fedepesca.org/" }] },
+ { "slug": "aunap", "nombre": "Autoridad Nacional de Acuicultura y Pesca", "sigla": "AUNAP", "tipo": "Autoridad pesquera", "relacion": "Miembro", "logo": "/img/entidades/aunap.webp",
+   "acerca": "Autoridad pesquera del país. En la lista de socios del GIC-PA de 2016 figura el INPA de Bahía Solano, hoy AUNAP, como socio fundador activo. En 2025 la AUNAP trabaja con FEDEPESCA y participa activamente en el GICPA.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.aunap.gov.co/", "href": "https://www.aunap.gov.co/" }] },
+ { "slug": "parques-nacionales", "nombre": "Parques Nacionales Naturales de Colombia (PNN Utría y Dirección Territorial Pacífico)", "sigla": "PNN", "tipo": "Autoridad ambiental", "relacion": "Miembro", "logo": "/img/entidades/parques.webp",
+   "acerca": "El GIC-PA se creó en 1998 en el Parque Nacional Natural Utría. En la lista de socios de 2016 figuran PNN Utría, como socio fundador activo, y la Dirección Territorial Pacífico.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.parquesnacionales.gov.co/", "href": "https://www.parquesnacionales.gov.co/" }] },
+ { "slug": "dimar", "nombre": "Capitanía de Puerto de Bahía Solano (Dirección General Marítima)", "sigla": "DIMAR", "tipo": "Autoridad marítima", "relacion": "Miembro", "logo": "/img/entidades/dimar.webp",
+   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.dimar.mil.co/", "href": "https://www.dimar.mil.co/" }] },
+ { "slug": "codechoco", "nombre": "Corporación Autónoma Regional para el Desarrollo Sostenible del Chocó", "sigla": "Codechocó", "tipo": "Autoridad ambiental", "relacion": "Miembro", "logo": null,
+   "acerca": "Autoridad ambiental regional del Chocó. Figura como socia activa en la lista de 2016. En 2014 expidió el Acuerdo 011, que declaró el Distrito Regional de Manejo Integrado Golfo de Tribugá-Cabo Corrientes (60.138,6 hectáreas).",
+   "datos": [{ "k": "Sitio web", "v": "https://codechoco.gov.co/", "href": "https://codechoco.gov.co/" }] },
+ { "slug": "minagricultura", "nombre": "Ministerio de Agricultura y Desarrollo Rural (Dirección de Pesca)", "sigla": "MinAgricultura", "tipo": "Entidad pública nacional", "relacion": "Miembro", "logo": null,
+   "acerca": "Su Dirección de Pesca figura como socia activa en 2016. Según la Fundación ACUA (2023), el GIC-PA actúa como Nodo Norte de Pesca ante el ministerio.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.minagricultura.gov.co/", "href": "https://www.minagricultura.gov.co/" }] },
+ { "slug": "gobernacion-choco", "nombre": "Secretaría de Agricultura Departamental del Chocó", "sigla": "Gobernación del Chocó", "tipo": "Entidad territorial", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.choco.gov.co/", "href": "https://www.choco.gov.co/" }] },
+ { "slug": "alcaldias", "nombre": "Alcaldías de los municipios de la costa chocoana", "sigla": "Alcaldías", "tipo": "Entidad territorial", "relacion": "Miembro", "logo": null,
+   "acerca": "Figuran como socias activas las alcaldías de Juradó, Bahía Solano, Nuquí, Bajo Baudó y Litoral del San Juan, los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
+   "datos": [] },
+ { "slug": "consejos-comunitarios", "nombre": "Consejos comunitarios de la costa chocoana", "sigla": "Consejos comunitarios", "tipo": "Comunidades étnico-territoriales", "relacion": "Miembro", "logo": null,
+   "acerca": "Figuran como miembros activos los consejos comunitarios Mayor Los Delfines, General Los Riscales, Mayor de Cupica y Mayor de Juradó, y los de Pizarro y Litoral del San Juan. Los Delfines, junto con FEDEPESCA, presentó la acción popular sobre la pesca industrial.",
+   "datos": [] },
+ { "slug": "fuerza-naval", "nombre": "Guardacostas y Armada Nacional", "sigla": "Armada", "tipo": "Fuerza pública", "relacion": "Miembro", "logo": null,
+   "acerca": "Figuran como socias activas en la lista de socios del GIC-PA de 2016. La Armada Nacional hace parte del núcleo de la mesa coordinadora.",
+   "datos": [] },
+ { "slug": "banco-agrario", "nombre": "Banco Agrario de Colombia", "sigla": "Banco Agrario", "tipo": "Entidad financiera pública", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.bancoagrario.gov.co/", "href": "https://www.bancoagrario.gov.co/" }] },
+ { "slug": "sena", "nombre": "Servicio Nacional de Aprendizaje, seccional Chocó", "sigla": "SENA", "tipo": "Entidad pública de formación", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.sena.edu.co/", "href": "https://www.sena.edu.co/" }] },
+ { "slug": "iiap", "nombre": "Instituto de Investigaciones Ambientales del Pacífico", "sigla": "IIAP", "tipo": "Instituto de investigación", "relacion": "Miembro", "logo": "/img/entidades/iiap.webp",
+   "acerca": "Instituto de investigación del Sistema Nacional Ambiental con sede en Quibdó. Figura como socio activo en la lista de 2016 y participó en la XVII Asamblea del GICPA, en octubre de 2026.",
+   "datos": [{ "k": "Ciudad", "v": "Quibdó - Colombia", "href": null }, { "k": "Sitio web", "v": "https://iiap.org.co/", "href": "https://iiap.org.co/" }] },
+ { "slug": "invemar", "nombre": "Instituto de Investigaciones Marinas y Costeras «José Benito Vives de Andréis»", "sigla": "INVEMAR", "tipo": "Instituto de investigación", "relacion": "Miembro", "logo": "/img/entidades/invemar.webp",
+   "acerca": "Instituto de investigación marina y costera. Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.invemar.org.co/", "href": "https://www.invemar.org.co/" }] },
+ { "slug": "utch", "nombre": "Universidad Tecnológica del Chocó", "sigla": "UTCH", "tipo": "Academia", "relacion": "Miembro", "logo": "/img/entidades/utch.webp", "fondoLogo": "oscuro",
+   "acerca": "Figura como socia activa en la lista de 2016. En octubre de 2026 reseñó su participación en la XVII Asamblea del GICPA, en Ciudad Mutis, y ofrece acompañamiento organizativo, contable y jurídico a los pescadores.",
+   "datos": [{ "k": "Sitio web", "v": "https://utch.edu.co/", "href": "https://utch.edu.co/" }] },
+ { "slug": "acua", "nombre": "Fundación ACUA (Activos Culturales Afro)", "sigla": "ACUA", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": "/img/entidades/acua.webp", "fondoLogo": "oscuro",
+   "acerca": "Figura como socia activa en la lista de 2016 y fue socia de PROCASUR en el caso de estudio del GIC-PA. Reseñó la XIV Asamblea (2023) y describe al Nodo Norte de Pesca como «la mayor alianza de instituciones públicas y privadas para la gobernanza de la pesca artesanal en el Pacífico chocoano».",
+   "datos": [{ "k": "Sitio web", "v": "https://programaacua.org/", "href": "https://programaacua.org/" }] },
+ { "slug": "marviva", "nombre": "Fundación MarViva", "sigla": "MarViva", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socia activa en la lista de 2016. Con el GIC-PA publicó en 2016 la historia de la alianza y, en 2024, con SIEMBRA, el estudio sobre los 25 años de la Zona Exclusiva de Pesca Artesanal.",
+   "datos": [{ "k": "Sitio web", "v": "https://marviva.net/", "href": "https://marviva.net/" }] },
+ { "slug": "natura", "nombre": "Fundación Natura", "sigla": "Natura", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
+   "acerca": "Participó en la creación del GIC-PA en 1998. En la lista de socios de 2016 figura como socia fundadora inactiva.",
+   "datos": [] },
+ { "slug": "tierra-digna", "nombre": "Tierra Digna", "sigla": "Tierra Digna", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": "/img/entidades/tierradigna.webp",
+   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://tierradigna.org/", "href": "https://tierradigna.org/" }] },
+ { "slug": "conservacion-internacional", "nombre": "Conservación Internacional Colombia", "sigla": "CI", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.conservation.org.co/", "href": "https://www.conservation.org.co/" }] },
+ { "slug": "wwf", "nombre": "WWF Colombia", "sigla": "WWF", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.wwf.org.co/", "href": "https://www.wwf.org.co/" }] },
+ { "slug": "patrimonio-natural", "nombre": "Fondo Patrimonio Natural", "sigla": "Patrimonio Natural", "tipo": "Fondo ambiental", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+   "datos": [] },
+ { "slug": "eduardono", "nombre": "Fundación Eduardoño", "sigla": "Eduardoño", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
+   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+   "datos": [] },
+ { "slug": "siembra", "nombre": "SIEMBRA, Centro Sociojurídico para la Defensa Territorial", "sigla": "SIEMBRA", "tipo": "Organización no gubernamental", "relacion": "Relacionada", "logo": "/img/entidades/siembra.webp",
+   "acerca": "Acompaña a FEDEPESCA y al Consejo Comunitario Los Delfines «como parte del GICPA». Es coautora, con MarViva, del estudio sobre los 25 años de la Zona Exclusiva de Pesca Artesanal (2024).",
+   "datos": [{ "k": "Sitio web", "v": "https://www.centrosiembra.org/", "href": "https://www.centrosiembra.org/" }] },
+ { "slug": "procasur", "nombre": "PROCASUR", "sigla": "PROCASUR", "tipo": "Organización de desarrollo rural", "relacion": "Relacionada", "logo": "/img/entidades/procasur.webp",
+   "acerca": "Sistematizó en 2016 el caso del GIC-PA y el de FEDEPESCA, con FIDA y ACUA como socios del caso.",
+   "datos": [{ "k": "Sitio web", "v": "https://procasur.org/", "href": "https://procasur.org/" }] },
+ { "slug": "consejo-estado", "nombre": "Consejo de Estado", "sigla": "Consejo de Estado", "tipo": "Rama judicial", "relacion": "Relacionada", "logo": null,
+   "acerca": "Su Sección Primera falló la acción popular presentada por FEDEPESCA y el Consejo Comunitario Los Delfines: ordenó un plan para controlar la pesca industrial y verificar el tamaño de la Zona Exclusiva de Pesca Artesanal.",
+   "datos": [{ "k": "Sitio web", "v": "https://www.consejodeestado.gov.co/", "href": "https://www.consejodeestado.gov.co/" }] },
+ { "slug": "ica", "nombre": "Instituto Colombiano Agropecuario", "sigla": "ICA", "tipo": "Entidad pública nacional", "relacion": "Relacionada", "logo": null,
+   "acerca": "Expidió en 2008 la Resolución 002650, que creó la Zona Exclusiva de Pesca Artesanal como piloto de un año.",
+   "datos": [] }
 ]

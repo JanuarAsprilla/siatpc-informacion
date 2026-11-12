@@ -5,13 +5,14 @@ import Toolbar from '../../components/Toolbar.astro';
 import EntityCard from '../../components/EntityCard.astro';
 import { cuenta, documentosDe, entidades } from '../../lib/datos';
 
-const tipos = [...new Set(entidades.map((e) => e.tipo))].map((t) => ({ value: t, label: t, count: cuenta(entidades, (e) => e.tipo === t) }));
+const relaciones = ['Miembro', 'Relacionada'].map((r) => ({ value: r, label: r === 'Miembro' ? 'Miembros del GIC-PA' : 'Entidades relacionadas', count: cuenta(entidades, (e) => e.relacion === r) }));
+const tipos =[...new Set(entidades.map((e) => e.tipo))].map((t) => ({ value: t, label: t, count: cuenta(entidades, (e) => e.tipo === t) }));
 ---
-<Base title="Entidades" description="Entidades que hacen parte del Sistema de Información Ambiental Territorial del Pacífico." active="entidades">
-  <PageHead titulo="Entidades" lead="Las instituciones que producen y comparten información ambiental. Entre a una para conocerla y ver sus documentos." migas={[{ t: 'Entidades' }]} />
+<Base title="Entidades" description="Entidades que integran el GIC-PA y las relacionadas con él." active="entidades">
+  <PageHead titulo="Entidades" lead="Las entidades que integran el GIC-PA y las relacionadas con él. Entre a una para conocerla y ver sus documentos." migas={[{ t: 'Entidades' }]} />
   <section class="seccion" style="padding-top:2rem">
-    <div class="mod" data-lista data-pagina="24" data-cols="3" data-sustantivo="entidades">
-      <Toolbar buscaLabel="Buscar una entidad" buscaPlaceholder="Nombre o sigla" selectores={[{ key: 'tipo', label: 'Tipo de entidad', todas: 'Todos los tipos', opciones: tipos }]} />
+    <div class="mod" data-lista data-pagina="30" data-cols="3" data-sustantivo="entidades">
+      <Toolbar buscaLabel="Buscar una entidad" buscaPlaceholder="Nombre o sigla" selectores={[{ key: 'relacion', label: 'Relación con el GIC-PA', todas: 'Todas', opciones: relaciones }, { key: 'tipo', label: 'Tipo de entidad', todas: 'Todos los tipos', opciones: tipos }]} />
       <div data-inicio></div>
       <p class="estado" data-estado role="status" aria-live="polite"><span data-resumen></span><button type="button" class="limpiar" data-limpiar hidden>Limpiar filtros</button></p>
       <ul class="rejilla" data-grid data-cols="3">

@@ -11,6 +11,9 @@ test('resumir corta en palabra completa', () => assert.equal(resumir('uno dos tr
 test('resumir no toca textos cortos', () => assert.equal(resumir('hola', 10), 'hola'));
 test('lenguajeClaro conserva siglas y propios', () => assert.equal(lenguajeClaro('PROYECTO DEL IIAP EN QUIBDO'), 'Proyecto del IIAP en Quibdó'));
 test('lenguajeClaro no cambia texto ya normal', () => assert.equal(lenguajeClaro('Texto Normal'), 'Texto Normal'));
+test('fechaLarga acepta solo año', () => assert.equal(fechaLarga('2016'), '2016'));
+test('fechaLarga acepta año y mes', () => assert.equal(fechaLarga('2016-12'), 'diciembre de 2016'));
+test('fechaCorta acepta fechas parciales', () => { assert.equal(fechaCorta('2016'), '2016'); assert.equal(fechaCorta('2016-12'), 'dic 2016'); });
 test('fechaCorta abrevia el mes', () => assert.equal(fechaCorta('2026-07-16'), '16 jul 2026'));
 test('lenguajeClaro pasa a Nombre Propio un tramo corto en mayúsculas', () =>
   assert.equal(lenguajeClaro('El IIAP y STOCKHOLM ENVIRONMENT INSTITUTE - SEI, fortalecen alianza'), 'El IIAP y Stockholm Environment Institute - SEI, fortalecen alianza'));

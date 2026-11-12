@@ -27,12 +27,15 @@ npm run build      # genera dist/
 
 ## Contenido
 
-`src/data/*.json` se genera con `npm run preparar-datos -- <ruta-al-rediseño-del-IIAP>` desde el rediseño del IIAP. Hoy:
+Todo el contenido sale de fuentes públicas verificadas y cada dato lleva su enlace. Lo que no se pudo confirmar se marca «por confirmar»; nada se inventa.
 
-- **Entidades:** 12 (IIAP, Minambiente, IDEAM, Humboldt, Invemar, Sinchi, ANLA y cinco corporaciones autónomas). Las descripciones de Humboldt e Invemar son de una línea y están por validar con cada entidad; las demás vienen del sitio del IIAP.
-- **Documentos y noticias:** solo existen los del IIAP. Las demás entidades aparecen con 0 documentos hasta que entreguen los suyos.
+- **Nombre:** las fuentes formales (MarViva 2016, PROCASUR) escriben **GIC-PA**; AUNAP y la UTCH, **GICPA**. No se encontró ninguna fuente con «GIC-PAC».
+- **Entidades** (`src/data/entidades.json`): las que figuran en la lista de socios de la publicación de MarViva de 2016 (parcial: la lista superaba los 80 miembros) más entidades relacionadas (PROCASUR, SIEMBRA, Consejo de Estado, ICA). Los logos son los oficiales de cada entidad y solo se incluyen los que se pudieron descargar y verificar; el resto usa monograma.
+- **Documentos** (`documentos.json`) y **noticias** (`noticias.json`): publicaciones, casos de estudio, un fallo y una resolución, y notas de AUNAP, UTCH, ACUA, Panorama y el Consejo de Estado, cada una con enlace a su fuente. Las fechas pueden ser parciales (`2016`, `2016-12`).
+- **Imágenes:** `public/img/entidades` (logos) y `public/img/gicpa` (fotos de las noticias, de cada medio).
+- **Pendiente por confirmar:** logos de MarViva, WWF, Codechocó, SENA, alcaldías y consejos comunitarios; la lista de miembros posterior a 2016; las 28 asociaciones de FEDEPESCA; derechos de uso de los logos con cada entidad.
 
-Para sumar contenido de otra entidad, agregue su `slug` en `entidad` dentro de `documentos.json` o `noticias.json`.
+Para agregar contenido, edite esos JSON (el campo `entidad` es el `slug` de una entidad).
 
 ## Publicación
 

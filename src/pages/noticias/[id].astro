@@ -30,7 +30,7 @@ const redes = [
 ---
 <Base title={titulo} description={primero && primero.t === 'p' ? resumir(primero.x, 157) : undefined} active="noticias">
   <div class="progreso" aria-hidden="true"><span></span></div>
-  <PageHead titulo={titulo} lead={`${fechaLarga(n.fecha)}${n.autor ? ` · ${n.autor}` : ''} · ${minutos} min de lectura`} ancho migas={[{ t: 'Noticias', href: '/noticias/' }, { t: 'Noticia' }]} />
+  <PageHead titulo={titulo} lead={`${fechaLarga(n.fecha) || 'Fecha por confirmar'}${n.autor ? ` · ${n.autor}` : ''} · ${minutos} min de lectura`} ancho migas={[{ t: 'Noticias', href: '/noticias/' }, { t: 'Noticia' }]} />
   <article class="mod articulo">
     <div class="articulo__cuerpo">
     {imagenes.length > 0 && (
@@ -66,6 +66,12 @@ const redes = [
     <aside class="articulo__lado" aria-label="Datos de la noticia">
     {n.tematicas.length > 0 && (
       <div class="lado__bloque"><h2>Temáticas</h2><ul class="lado__chips">{n.tematicas.map((t) => <li><a class="chip chip--verde" href={`/noticias/?tema=${encodeURIComponent(t)}`}>{t}</a></li>)}</ul></div>
+    )}
+    {n.fuente && (
+      <div class="lado__bloque">
+        <h2>Fuente</h2>
+        <a class="boton boton--borde boton--sm" href={n.fuente.url} target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Leer la nota original en {n.fuente.nombre}<span class="sr-only"> (se abre en una pestaña nueva)</span></a>
+      </div>
     )}
     <div class="compartir" data-compartir data-titulo={titulo}>
       <h2>Compartir esta noticia</h2>

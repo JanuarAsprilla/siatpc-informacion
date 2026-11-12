@@ -264,3 +264,8 @@ a:hover { opacity: 1; }
 /* El submenú oculto de la cabecera del SIAT PC sobresale a la derecha en pantallas medianas; se recorta sin tocar la cabecera. */
 html { overflow-x: hidden; }
 .compartir h2 { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }
+
+/* Noticia sin foto: bloque tipográfico con el nombre de la fuente */
+.nota__sin { display: grid; place-items: center; align-content: center; gap: 0.5rem; aspect-ratio: 4 / 3; background: var(--banda); color: var(--suave); text-align: center; padding: 1rem; }
+.nota__sin i { font-size: 2rem; color: var(--verde); }
+.nota__sin span { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); }

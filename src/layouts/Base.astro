@@ -13,7 +13,7 @@ interface Props {
   description?: string;
   active?: 'inicio' | 'entidades' | 'documentos' | 'noticias';
 }
-const { title, description = 'Entidades, documentos y noticias del Sistema de Información Ambiental Territorial del Pacífico.', active } = Astro.props;
+const { title, description = 'Entidades, documentos y noticias del Grupo Interinstitucional y Comunitario para la Pesca Artesanal (GIC-PA).', active } = Astro.props;
 const completo = title === MODULO.nombre ? `${nombreCompleto()} · SIAT PC` : `${title} · ${MODULO.nombre} · SIAT PC`;
 ---
 <!doctype html>

@@ -17,7 +17,7 @@ const nNoticias = noticias.filter((n) => n.entidad === e.slug).length;
 const hrefDocs = `/documentos/?entidad=${e.slug}`;
 ---
 <Base title={e.nombre} description={`${e.nombre} (${e.sigla}): información y documentos.`} active="entidades">
-  <PageHead titulo={e.nombre} lead={e.tipo} ancho migas={[{ t: 'Entidades', href: '/entidades/' }, { t: e.sigla }]} />
+  <PageHead titulo={e.nombre} lead={`${e.relacion === 'Miembro' ? 'Miembro del GIC-PA' : 'Entidad relacionada con el GIC-PA'} · ${e.tipo}`} ancho migas={[{ t: 'Entidades', href: '/entidades/' }, { t: e.sigla }]} />
   <section class="seccion">
     <div class="mod detalle">
       <div class="detalle__texto">
@@ -35,7 +35,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
         {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href="/noticias/">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
       </div>
       <aside class="ficha" aria-label={`Datos de ${e.sigla}`}>
-        {e.logo && <div class="ficha__logo"><img src={e.logo} alt={`Logo de ${e.sigla}`} /></div>}
+        {e.logo && <div class:list={['ficha__logo', { 'ficha__logo--oscuro': e.fondoLogo === 'oscuro' }]}><img src={e.logo} alt={`Logo de ${e.sigla}`} /></div>}
         {e.datos.length > 0 && (
           <dl>
             {e.datos.map((d) => (
@@ -68,7 +68,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
   {parecidas.length > 0 && (
     <section class="seccion seccion--banda">
       <div class="mod">
-        <div class="seccion__cab"><h2>Otras entidades: {e.tipo.toLowerCase()}</h2></div>
+        <div class="seccion__cab"><h2>Otras entidades del mismo tipo</h2></div>
         <ul class="rejilla" data-cols="3">{parecidas.map((o) => <EntityCard e={o} docs={documentosDe(o.slug).length} />)}</ul>
       </div>
     </section>

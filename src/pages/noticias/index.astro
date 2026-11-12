@@ -10,8 +10,8 @@ const [reciente] = noticias;
 const resumen = resumir(reciente.bloques.find((b) => b.t === 'p')?.x ?? '', 230);
 const temas = TEMATICAS.map((t) => ({ value: t, label: t, count: cuenta(noticias, (n) => n.tematicas.includes(t)) }));
 ---
-<Base title="Noticias" description="Lo que está pasando en el territorio y en las entidades." active="noticias">
-  <PageHead titulo="Noticias" lead="Lo que está pasando en el territorio y en las entidades." migas={[{ t: 'Noticias' }]} />
+<Base title="Noticias" description="Noticias sobre el GIC-PA y la pesca artesanal del Pacífico norte chocoano." active="noticias">
+  <PageHead titulo="Noticias" lead="Lo que se publica sobre el GIC-PA y la pesca artesanal del Pacífico norte chocoano." migas={[{ t: 'Noticias' }]} />
   <section class="seccion" style="padding-top:2.5rem">
     <div class="mod" data-lista data-pagina="12" data-cols="3" data-sustantivo="noticias">
       <article class="destacada">

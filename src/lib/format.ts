@@ -1,8 +1,11 @@
 const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
+/** Fecha en palabras. Acepta fechas completas (AAAA-MM-DD) y parciales (AAAA-MM o AAAA) cuando la fuente no da el día. */
 export function fechaLarga(iso: string | null): string {
   if (!iso) return '';
   const [y, m, d] = iso.split('-').map(Number);
+  if (!m) return String(y);
+  if (!d) return `${MESES[m - 1]} de ${y}`;
   return `${d} de ${MESES[m - 1]} de ${y}`;
 }
 
@@ -31,6 +34,8 @@ const MESES_CORTOS = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 's
 export function fechaCorta(iso: string | null): string {
   if (!iso) return '';
   const [y, m, d] = iso.split('-').map(Number);
+  if (!m) return String(y);
+  if (!d) return `${MESES_CORTOS[m - 1]} ${y}`;
   return `${d} ${MESES_CORTOS[m - 1]} ${y}`;
 }
 

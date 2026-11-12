@@ -6,9 +6,9 @@ import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
 import { MODULO } from '../lib/modulo';
 
 const secciones = [
-  { t: 'Entidades', d: 'Quiénes hacen parte del Sistema y qué hace cada una.', href: '/entidades/', n: `${entidades.length} entidades` },
-  { t: 'Documentos', d: 'Normas, planes e informes de todas las entidades, en un solo lugar.', href: '/documentos/', n: `${documentos.length} documentos` },
-  { t: 'Noticias', d: 'Lo que pasa en el territorio y en las entidades.', href: '/noticias/', n: `${noticias.length} noticias` },
+  { t: 'Entidades', d: 'Las entidades que integran el GIC-PA y las relacionadas con él.', href: '/entidades/', n: `${entidades.length} entidades` },
+  { t: 'Documentos', d: 'Publicaciones, casos de estudio, fallos y normas sobre el GIC-PA.', href: '/documentos/', n: `${documentos.length} documentos` },
+  { t: 'Noticias', d: 'Lo que se publica sobre el GIC-PA y la pesca artesanal del Pacífico norte chocoano.', href: '/noticias/', n: `${noticias.length} noticias` },
 ];
 const [destacada, ...resto] = noticias;
 const lado = resto.slice(0, 2);
@@ -21,7 +21,7 @@ const recientes = documentos.slice(0, 5);
     <div class="mod">
       <div>
         <h1>{MODULO.nombre}</h1>
-        <p>Todo lo que las entidades publican, en un solo lugar: conozca las entidades, lea sus documentos y siga las noticias del territorio.</p>
+        <p>{MODULO.nombreLargo}: conozca las entidades que lo integran, lea sus documentos y siga sus noticias.</p>
         {MODULO.sufijo && <p class="aviso-prueba"><i class="bi bi-info-circle" aria-hidden="true"></i> Versión de {MODULO.sufijo}: todavía no está integrada al SIAT PC.</p>}
         <form class="busca-grande" action="/documentos/" method="get" role="search">
           <label class="sr-only" for="h-q">Buscar documentos</label>
@@ -42,6 +42,24 @@ const recientes = documentos.slice(0, 5);
           <li><a href={s.href}><span class="indice__titulo">{s.t}</span><span class="indice__desc">{s.d}</span><span class="indice__fin"><span>{s.n}</span><i class="bi bi-arrow-right" aria-hidden="true"></i></span></a></li>
         ))}
       </ul>
+    </div>
+  </section>
+
+  <section class="seccion que-es" aria-labelledby="t-que-es">
+    <div class="mod">
+      <div class="que-es__grid">
+        <div>
+          <h2 id="t-que-es">Qué es el GIC-PA</h2>
+          <p class="que-es__cita">«Ordenar la actividad pesquera artesanal de la costa chocoana, como una estrategia para la recuperación del recurso pesquero y el fortalecimiento de la actividad pesquera artesanal de la región.»</p>
+          <p class="que-es__fuente">Objetivo con el que se creó, según la publicación de <a href="https://marviva.net/wp-content/uploads/2021/11/publicacion_gicpa_final_8-02-17-1.pdf" target="_blank" rel="noopener noreferrer">MarViva y el GIC-PA (2016)</a>.</p>
+        </div>
+        <dl class="que-es__datos">
+          <div><dt>Origen</dt><dd>Se creó en 1998 en el Parque Nacional Natural Utría, por iniciativa de pescadores artesanales de Juradó, Bahía Solano y Nuquí.</dd></div>
+          <div><dt>Territorio</dt><dd>Cinco municipios costeros del Pacífico chocoano: Litoral del San Juan, Pizarro, Nuquí, Bahía Solano y Juradó.</dd></div>
+          <div><dt>Quiénes lo integran</dt><dd>Autoridades, sector productivo (pescadores, comercializadores y asociaciones) y entidades de apoyo (universidades, institutos y ONG). En 2016 la lista de miembros superaba los 80.</dd></div>
+          <div><dt>Logros documentados</dt><dd>La Zona Exclusiva de Pesca Artesanal (ZEPA) y el Distrito Regional de Manejo Integrado Golfo de Tribugá-Cabo Corrientes.</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
@@ -75,7 +93,7 @@ const recientes = documentos.slice(0, 5);
         <a class="enlace-flecha" href="/entidades/">Ver todas las entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <ul class="muro">
-        {conLogo.map((e) => <li><a href={`/entidades/${e.slug}/`}><img src={e.logo!} alt="" loading="lazy" />{e.sigla}</a></li>)}
+        {conLogo.map((e) => <li><a href={`/entidades/${e.slug}/`} class={e.fondoLogo === 'oscuro' ? 'muro__oscuro' : undefined}><img src={e.logo!} alt="" loading="lazy" />{e.sigla}</a></li>)}
       </ul>
     </div>
   </section>
