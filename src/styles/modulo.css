@@ -196,6 +196,26 @@ a:hover { opacity: 1; }
 .ficha dd { margin: 0.1rem 0 0; overflow-wrap: anywhere; }
 .ficha dd a { color: var(--verde-oscuro); }
 
+/* Detalle de noticia: columna de lectura y columna lateral con datos y compartir */
+.progreso { position: fixed; z-index: 950; left: 0; right: 0; top: 78px; height: 3px; background: transparent; pointer-events: none; }
+.progreso span { display: block; height: 100%; background: var(--ambar); transform-origin: left; transform: scaleX(0); }
+@supports (animation-timeline: scroll()) { .progreso span { animation: avance linear both; animation-timeline: scroll(root block); } }
+@keyframes avance { to { transform: scaleX(1); } }
+.articulo { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 1200px) { .articulo { grid-template-columns: minmax(0, 1fr) 260px; column-gap: 3rem; align-items: start; } }
+.articulo__cuerpo { display: grid; gap: 2.5rem; min-width: 0; }
+.articulo__lado { display: grid; gap: 2rem; align-content: start; }
+@media (min-width: 1200px) { .articulo__lado { position: sticky; top: 108px; } }
+.lado__bloque h2 { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin: 0 0 0.7rem; color: var(--ink); text-align: left; }
+.lado__chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.lado__chips .chip { text-decoration: none; }
+.miniaturas { list-style: none; margin: -1.2rem 0 0; padding: 0; display: flex; gap: 0.6rem; overflow-x: auto; scrollbar-width: thin; }
+.miniaturas button { display: block; padding: 0; border: 2px solid transparent; border-radius: 10px; overflow: hidden; background: none; cursor: pointer; opacity: 0.6; transition: opacity 160ms var(--ease), border-color 160ms var(--ease), transform 160ms var(--ease); margin: 0; width: auto; height: auto; }
+.miniaturas button:hover, .miniaturas button[aria-current='true'] { opacity: 1; }
+.miniaturas button[aria-current='true'] { border-color: var(--ink); }
+.miniaturas button:active { transform: scale(0.96); }
+.miniaturas img { width: 96px; height: 68px; object-fit: cover; display: block; }
+.prosa > p:first-child::first-letter { font-size: 3.4em; line-height: 0.9; float: left; padding: 0.08em 0.1em 0 0; font-weight: 600; color: var(--ink); }
 /* Detalle de noticia */
 .articulo { display: grid; gap: 2.5rem; padding: 2.5rem 1.5rem 4rem; }
 .carrusel { position: relative; border-radius: 22px; overflow: hidden; background: var(--ink); box-shadow: var(--sombra-alta); }
@@ -234,3 +254,4 @@ a:hover { opacity: 1; }
 
 /* El submenú oculto de la cabecera del SIAT PC sobresale a la derecha en pantallas medianas; se recorta sin tocar la cabecera. */
 html { overflow-x: hidden; }
+.compartir h2 { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; }

@@ -19,6 +19,8 @@ const relacionadas = noticias
   .sort((a, b) => b.comunes - a.comunes || (b.o.fecha ?? '').localeCompare(a.o.fecha ?? ''))
   .slice(0, 3)
   .map((x) => x.o);
+const palabras = n.bloques.reduce((t, b) => t + (b.t === 'p' || b.t === 'h' ? b.x.split(/\s+/).length : b.t === 'ul' ? b.items.join(' ').split(/\s+/).length : 0), 0);
+const minutos = Math.max(1, Math.round(palabras / 200));
 const redes = [
   { red: 'facebook', icono: 'bi-facebook', t: 'Facebook' },
   { red: 'x', icono: 'bi-twitter-x', t: 'X' },
@@ -27,9 +29,12 @@ const redes = [
 ];
 ---
 <Base title={titulo} description={primero && primero.t === 'p' ? resumir(primero.x, 157) : undefined} active="noticias">
-  <PageHead titulo={titulo} lead={`${fechaLarga(n.fecha)}${n.autor ? ` · ${n.autor}` : ''}`} ancho migas={[{ t: 'Noticias', href: '/noticias/' }, { t: 'Noticia' }]} />
+  <div class="progreso" aria-hidden="true"><span></span></div>
+  <PageHead titulo={titulo} lead={`${fechaLarga(n.fecha)}${n.autor ? ` · ${n.autor}` : ''} · ${minutos} min de lectura`} ancho migas={[{ t: 'Noticias', href: '/noticias/' }, { t: 'Noticia' }]} />
   <article class="mod articulo">
+    <div class="articulo__cuerpo">
     {imagenes.length > 0 && (
+      <>
       <div class="carrusel" data-carrusel role="region" aria-roledescription="carrusel" aria-label="Imágenes de la noticia">
         <div class="carrusel__pista" tabindex="0">
           {imagenes.map((src, i) => <figure><img src={`/${src}`} alt={`Imagen ${i + 1} de ${imagenes.length}: ${titulo}`} loading={i === 0 ? 'eager' : 'lazy'} /></figure>)}
@@ -42,6 +47,12 @@ const redes = [
           </>
         )}
       </div>
+      {imagenes.length > 1 && (
+        <ol class="miniaturas" aria-label="Imágenes de la noticia">
+          {imagenes.map((src, i) => <li><button type="button" data-ir={i} aria-label={`Ver imagen ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}><img src={`/${src}`} alt="" width="160" height="110" loading="lazy" /></button></li>)}
+        </ol>
+      )}
+      </>
     )}
     <div class="prosa">
       {texto.map((b) => {
@@ -51,6 +62,11 @@ const redes = [
         return null;
       })}
     </div>
+    </div>
+    <aside class="articulo__lado" aria-label="Datos de la noticia">
+    {n.tematicas.length > 0 && (
+      <div class="lado__bloque"><h2>Temáticas</h2><ul class="lado__chips">{n.tematicas.map((t) => <li><a class="chip chip--verde" href={`/noticias/?tema=${encodeURIComponent(t)}`}>{t}</a></li>)}</ul></div>
+    )}
     <div class="compartir" data-compartir data-titulo={titulo}>
       <h2>Compartir esta noticia</h2>
       <ul>
@@ -61,6 +77,7 @@ const redes = [
       </ul>
       <p role="status" aria-live="polite" data-aviso></p>
     </div>
+    </aside>
   </article>
   {relacionadas.length > 0 && (
     <section class="seccion seccion--banda" aria-labelledby="t-rel">

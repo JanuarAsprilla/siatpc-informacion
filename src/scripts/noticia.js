@@ -8,7 +8,13 @@ if (carrusel) {
   const ir = (i) => pista.scrollTo({ left: Math.max(0, Math.min(total - 1, i)) * pista.clientWidth, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   carrusel.querySelector('[data-prev]')?.addEventListener('click', () => ir(actual() - 1));
   carrusel.querySelector('[data-next]')?.addEventListener('click', () => ir(actual() + 1));
-  pista.addEventListener('scroll', () => { if (cuenta) cuenta.textContent = `${actual() + 1} / ${total}`; }, { passive: true });
+  const minis = [...document.querySelectorAll('.miniaturas [data-ir]')];
+  for (const b of minis) b.addEventListener('click', () => ir(Number(b.dataset.ir)));
+  pista.addEventListener('scroll', () => {
+    const i = actual();
+    if (cuenta) cuenta.textContent = `${i + 1} / ${total}`;
+    minis.forEach((b, k) => (k === i ? b.setAttribute('aria-current', 'true') : b.removeAttribute('aria-current')));
+  }, { passive: true });
 }
 
 const REDES = {
