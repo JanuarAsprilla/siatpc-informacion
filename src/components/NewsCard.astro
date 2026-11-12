@@ -2,19 +2,45 @@
 import type { Noticia } from '../lib/datos';
 import { fechaLarga, lenguajeClaro, normalizar } from '../lib/format';
 
-interface Props { n: Noticia; destacada?: boolean }
-const { n, destacada = false } = Astro.props;
+interface Props { n: Noticia; destacada?: boolean; variante?: 'normal' | 'grande' | 'fila' }
+const { n, destacada = false, variante = 'normal' } = Astro.props;
 const titulo = lenguajeClaro(n.titulo);
+const href = `/noticias/${n.id}/`;
+const clase = variante === 'grande' ? 'nota-grande' : variante === 'fila' ? 'nota-fila' : 'tarjeta';
 ---
 <li data-item data-q={normalizar(n.titulo)} data-tema={n.tematicas.join('|')} data-destacada={destacada ? '' : undefined}>
-  <article class="tarjeta">
-    <a class="nota__img" href={`/noticias/${n.id}/`} tabindex="-1" aria-hidden="true">
-      {n.portada ? <img src={`/${n.portada}`} alt="" width="1200" height="800" loading="lazy" /> : <div style="aspect-ratio:4/3"></div>}
-    </a>
-    <div class="tarjeta__cuerpo">
-      <p class="fecha">{fechaLarga(n.fecha)}</p>
-      <h3><a href={`/noticias/${n.id}/`}>{titulo}</a></h3>
-      {n.tematicas[0] && <span class="chip chip--verde">{n.tematicas[0]}</span>}
-    </div>
+  <article class={clase}>
+    {variante === 'grande' && (
+      <>
+        {n.portada && <img src={`/${n.portada}`} alt="" width="1200" height="800" fetchpriority="high" />}
+        <div class="nota-grande__texto">
+          <p class="fecha">{fechaLarga(n.fecha)}</p>
+          <h3><a href={href}>{titulo}</a></h3>
+          {n.tematicas[0] && <span class="chip">{n.tematicas[0]}</span>}
+        </div>
+      </>
+    )}
+    {variante === 'fila' && (
+      <>
+        {n.portada && <img src={`/${n.portada}`} alt="" width="300" height="240" loading="lazy" />}
+        <div>
+          <p class="fecha">{fechaLarga(n.fecha)}</p>
+          <h3><a href={href}>{titulo}</a></h3>
+          {n.tematicas[0] && <span class="chip chip--verde">{n.tematicas[0]}</span>}
+        </div>
+      </>
+    )}
+    {variante === 'normal' && (
+      <>
+        <a class="nota__img" href={href} tabindex="-1" aria-hidden="true">
+          {n.portada ? <img src={`/${n.portada}`} alt="" width="1200" height="800" loading="lazy" /> : <div style="aspect-ratio:4/3"></div>}
+        </a>
+        <div class="tarjeta__cuerpo">
+          <p class="fecha">{fechaLarga(n.fecha)}</p>
+          <h3><a href={href}>{titulo}</a></h3>
+          {n.tematicas[0] && <span class="chip chip--verde">{n.tematicas[0]}</span>}
+        </div>
+      </>
+    )}
   </article>
 </li>

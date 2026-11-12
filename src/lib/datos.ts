@@ -16,6 +16,13 @@ export const TEMATICAS = tematicasJson as string[];
 /** Noticias de la más nueva a la más antigua. */
 export const noticias = [...(noticiasJson as Noticia[])].sort((a, b) => (b.fecha ?? '').localeCompare(a.fecha ?? ''));
 
+/** Color de cada tipo de documento, tomado de la paleta del logo del SIAT PC. */
+const COLOR_CATEGORIA: Record<string, string> = {
+  Informes: '#0b8fd6', Planes: '#04a549', Presupuestos: '#f7ac1d', 'Políticas': '#ed6e0c',
+  Manuales: '#084898', Normatividad: '#cb291c', Programas: '#bad156', Proyectos: '#7e3123', 'Tablas de retención': '#6b5b58',
+};
+export const colorCategoria = (categoria: string): string => COLOR_CATEGORIA[categoria] ?? '#6b5b58';
+
 export const entidadPorSlug = (slug: string) => entidades.find((e) => e.slug === slug);
 export const documentosDe = (slug: string) => documentos.filter((d) => d.entidad === slug);
 export const noticiaPorId = (id: string) => noticias.find((n) => n.id === id);

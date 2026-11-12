@@ -1,29 +1,30 @@
 ---
 import type { Documento, Entidad } from '../lib/datos';
-import { fechaLarga, lenguajeClaro, normalizar, peso, resumir } from '../lib/format';
+import { colorCategoria } from '../lib/datos';
+import { fechaLarga, limpiarDescripcion, lenguajeClaro, normalizar, peso, repiteTitulo } from '../lib/format';
 
 interface Props { d: Documento; e: Entidad }
 const { d, e } = Astro.props;
 const titulo = lenguajeClaro(d.titulo);
-const desc = d.desc ? resumir(d.desc, 170) : `${d.categoria} publicado por ${e.sigla}.`;
+const limpia = limpiarDescripcion(d.desc);
+const desc = repiteTitulo(titulo, limpia) ? '' : limpia;
 const [principal, ...otros] = d.archivos;
 const buscable = normalizar(`${d.titulo} ${d.desc} ${d.categoria} ${e.nombre} ${e.sigla}`);
-const etiquetaTipo = (t: string) => t.toUpperCase();
 ---
 <li data-item data-q={buscable} data-entidad={d.entidad} data-categoria={d.categoria}>
   <article class="tarjeta">
     <div class="tarjeta__cuerpo">
       <div class="doc__fila">
-        <a class="chip" href={`/entidades/${e.slug}/`}>{e.logo && <img src={e.logo} alt="" loading="lazy" />}{e.sigla}</a>
-        <span class="chip chip--ambar">{d.categoria}</span>
+        <span class="chip" style={`--c:${colorCategoria(d.categoria)}`}>{d.categoria}</span>
+        {d.fecha && <time class="doc__fecha" datetime={d.fecha}>{fechaLarga(d.fecha)}</time>}
       </div>
-      {d.fecha && <time class="doc__fecha" datetime={d.fecha}>{fechaLarga(d.fecha)}</time>}
       <h2>{principal ? <a href={principal.url} target="_blank" rel="noopener noreferrer">{titulo}<span class="sr-only"> (se abre en una pestaña nueva)</span></a> : titulo}</h2>
-      <p class="recorte">{desc}</p>
+      {desc && <p class="recorte">{desc}</p>}
       <div class="doc__acciones">
+        <a class="doc__entidad" href={`/entidades/${e.slug}/`}>{e.sigla}</a>
         {principal && (
           <a class="boton boton--verde boton--sm" href={principal.url} target="_blank" rel="noopener noreferrer">
-            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Abrir {etiquetaTipo(principal.tipo)}{principal.bytes ? ` · ${peso(principal.bytes)}` : ''}
+            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> {principal.tipo.toUpperCase()}{principal.bytes ? ` · ${peso(principal.bytes)}` : ''}
           </a>
         )}
         {otros.length > 0 && (

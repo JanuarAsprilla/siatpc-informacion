@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { fechaLarga, lenguajeClaro, normalizar, peso, resumir } from './format.ts';
+import { fechaCorta, fechaLarga, lenguajeClaro, limpiarDescripcion, normalizar, peso, repiteTitulo, resumir } from './format.ts';
 
 test('fechaLarga escribe la fecha en español', () => assert.equal(fechaLarga('2026-09-26'), '26 de septiembre de 2026'));
 test('fechaLarga devuelve vacío sin fecha', () => assert.equal(fechaLarga(null), ''));
@@ -11,3 +11,15 @@ test('resumir corta en palabra completa', () => assert.equal(resumir('uno dos tr
 test('resumir no toca textos cortos', () => assert.equal(resumir('hola', 10), 'hola'));
 test('lenguajeClaro conserva siglas y propios', () => assert.equal(lenguajeClaro('PROYECTO DEL IIAP EN QUIBDO'), 'Proyecto del IIAP en Quibdó'));
 test('lenguajeClaro no cambia texto ya normal', () => assert.equal(lenguajeClaro('Texto Normal'), 'Texto Normal'));
+test('fechaCorta abrevia el mes', () => assert.equal(fechaCorta('2026-07-16'), '16 jul 2026'));
+test('lenguajeClaro pasa a Nombre Propio un tramo corto en mayúsculas', () =>
+  assert.equal(lenguajeClaro('El IIAP y STOCKHOLM ENVIRONMENT INSTITUTE - SEI, fortalecen alianza'), 'El IIAP y Stockholm Environment Institute - SEI, fortalecen alianza'));
+test('lenguajeClaro pasa a oración un tramo largo en mayúsculas', () =>
+  assert.equal(lenguajeClaro('023 DE 2025, UN PROYECTO QUE CIERRA CAPACIDADES Y UN COMPROMISO TERRITORIAL'), '023 de 2025, un proyecto que cierra capacidades y un compromiso territorial'));
+test('lenguajeClaro conserva POA', () => assert.equal(lenguajeClaro('PLAN OPERATIVO ANUAL (POA) DEL INSTITUTO'), 'Plan operativo anual (POA) del instituto'));
+test('limpiarDescripcion quita el arranque repetido', () =>
+  assert.equal(limpiarDescripcion('Documento que contiene el primer informe de control interno'), 'El primer informe de control interno'));
+test('limpiarDescripcion baja las mayúsculas sostenidas', () =>
+  assert.equal(limpiarDescripcion('RESUMEN DE LA EJECUCIÓN PRESUPUESTAL DEL IIAP'), 'Resumen de la ejecución presupuestal del IIAP'));
+test('repiteTitulo detecta una descripción que solo repite el título', () => assert.equal(repiteTitulo('Informe de gestión 2025', 'Informe de gestión 2025.'), true));
+test('repiteTitulo deja pasar una descripción con contenido', () => assert.equal(repiteTitulo('Informe de gestión 2025', 'Da cuenta de las actividades de investigación realizadas durante el año por el Instituto.'), false));

@@ -1,64 +1,44 @@
 ---
 import Base from '../layouts/Base.astro';
 import NewsCard from '../components/NewsCard.astro';
-import DocCard from '../components/DocCard.astro';
+import DocRow from '../components/DocRow.astro';
 import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
 
-const accesos = [
-  { t: 'Entidades', d: 'Quiénes hacen parte y qué hace cada una.', href: '/entidades/', n: entidades.length, icono: 'bi-buildings', c: 'var(--verde)' },
-  { t: 'Documentos', d: 'Normas, planes e informes de todas las entidades.', href: '/documentos/', n: documentos.length, icono: 'bi-file-earmark-text', c: 'var(--azul)' },
-  { t: 'Noticias', d: 'Lo que pasa en el territorio y en las entidades.', href: '/noticias/', n: noticias.length, icono: 'bi-newspaper', c: 'var(--naranja)' },
+const secciones = [
+  { t: 'Entidades', d: 'Quiénes hacen parte del Sistema y qué hace cada una.', href: '/entidades/', n: `${entidades.length} entidades` },
+  { t: 'Documentos', d: 'Normas, planes e informes de todas las entidades, en un solo lugar.', href: '/documentos/', n: `${documentos.length} documentos` },
+  { t: 'Noticias', d: 'Lo que pasa en el territorio y en las entidades.', href: '/noticias/', n: `${noticias.length} noticias` },
 ];
-const recientesNoticias = noticias.slice(0, 3);
-const recientesDocs = documentos.slice(0, 3);
+const [destacada, ...resto] = noticias;
+const lado = resto.slice(0, 2);
+const fotos = noticias.filter((n) => n.portada).slice(0, 3);
+const conLogo = entidades.filter((e) => e.logo);
+const recientes = documentos.slice(0, 5);
 ---
 <Base title="SIAT PC · Centro de información" active="inicio">
-  <section class="hero">
+  <section class="portada">
     <div class="mod">
-      <span class="hero__etiqueta"><i class="bi bi-compass" aria-hidden="true"></i> Sistema de Información Ambiental Territorial del Pacífico</span>
-      <h1>Todo lo que las entidades publican, en un solo lugar.</h1>
-      <p>Consulte las entidades del Sistema, lea sus documentos y siga las noticias del territorio sin salir del SIAT PC.</p>
-      <form class="hero__busca" action="/documentos/" method="get" role="search">
-        <label class="sr-only" for="h-q">Buscar documentos</label>
-        <input id="h-q" type="search" name="q" placeholder="Buscar un documento: plan, informe, norma…" autocomplete="off" />
-        <button class="boton boton--verde" type="submit"><i class="bi bi-search" aria-hidden="true"></i> Buscar</button>
-      </form>
-    </div>
-  </section>
-
-  <section class="accesos" aria-label="Secciones del centro de información">
-    <div class="mod">
-      <ul>
-        {accesos.map((a) => (
-          <li>
-            <a class="acceso" href={a.href} style={`--c:${a.c}`}>
-              <i class={`bi ${a.icono}`} aria-hidden="true"></i>
-              <strong>{a.t}</strong>
-              <span>{a.d}</span>
-              <b>{a.n}</b>
-            </a>
-          </li>
-        ))}
-        <li>
-          <a class="acceso" href="https://siatpc.co/" style="--c: var(--marino)">
-            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-            <strong>SIAT PC</strong>
-            <span>Volver al sitio principal del sistema.</span>
-            <b aria-hidden="true">→</b>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="seccion">
-    <div class="mod">
-      <div class="seccion__cab">
-        <h2>Últimas noticias</h2>
-        <a class="enlace-flecha" href="/noticias/">Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      <div>
+        <h1>Todo lo que las entidades publican, en un solo lugar.</h1>
+        <p>Conozca las entidades del Sistema, lea sus documentos y siga las noticias del territorio sin salir del SIAT PC.</p>
+        <form class="busca-grande" action="/documentos/" method="get" role="search">
+          <label class="sr-only" for="h-q">Buscar documentos</label>
+          <input id="h-q" type="search" name="q" placeholder="Buscar un documento: plan, informe, norma…" autocomplete="off" />
+          <button class="boton boton--verde" type="submit"><i class="bi bi-search" aria-hidden="true"></i> Buscar</button>
+        </form>
       </div>
-      <ul class="rejilla" data-cols="3">
-        {recientesNoticias.map((n) => <NewsCard n={n} />)}
+      <div class="collage" aria-hidden="true">
+        {fotos.map((n, i) => <figure class={`c${i + 1}`}><img src={`/${n.portada}`} alt="" width="800" height="800" fetchpriority={i === 0 ? 'high' : undefined} /></figure>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" aria-label="Secciones del centro de información">
+    <div class="mod">
+      <ul class="indice">
+        {secciones.map((s) => (
+          <li><a href={s.href}><span class="indice__titulo">{s.t}</span><span class="indice__desc">{s.d}</span><span class="indice__fin"><span>{s.n}</span><i class="bi bi-arrow-right" aria-hidden="true"></i></span></a></li>
+        ))}
       </ul>
     </div>
   </section>
@@ -66,14 +46,13 @@ const recientesDocs = documentos.slice(0, 3);
   <section class="seccion seccion--banda">
     <div class="mod">
       <div class="seccion__cab">
-        <h2>Entidades</h2>
-        <a class="enlace-flecha" href="/entidades/">Ver todas las entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <h2>Últimas noticias</h2>
+        <a class="enlace-flecha" href="/noticias/">Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
-      <ul class="logos">
-        {entidades.filter((e) => e.logo).map((e) => (
-          <li><a href={`/entidades/${e.slug}/`}><img src={e.logo!} alt="" loading="lazy" />{e.sigla}</a></li>
-        ))}
-      </ul>
+      <div class="mosaico">
+        <ul><NewsCard n={destacada} variante="grande" /></ul>
+        <ul class="mosaico__lado">{lado.map((n) => <NewsCard n={n} variante="fila" />)}</ul>
+      </div>
     </div>
   </section>
 
@@ -83,8 +62,18 @@ const recientesDocs = documentos.slice(0, 3);
         <h2>Documentos recientes</h2>
         <a class="enlace-flecha" href="/documentos/">Ver todos los documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
-      <ul class="rejilla" data-cols="3">
-        {recientesDocs.map((d) => <DocCard d={d} e={entidadPorSlug(d.entidad)!} />)}
+      <ul class="filas">{recientes.map((d) => <DocRow d={d} e={entidadPorSlug(d.entidad)!} />)}</ul>
+    </div>
+  </section>
+
+  <section class="seccion seccion--banda">
+    <div class="mod">
+      <div class="seccion__cab">
+        <h2>Entidades</h2>
+        <a class="enlace-flecha" href="/entidades/">Ver todas las entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <ul class="muro">
+        {conLogo.map((e) => <li><a href={`/entidades/${e.slug}/`}><img src={e.logo!} alt="" loading="lazy" />{e.sigla}</a></li>)}
       </ul>
     </div>
   </section>

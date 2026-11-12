@@ -1,0 +1,17 @@
+---
+import type { Documento, Entidad } from '../lib/datos';
+import { colorCategoria } from '../lib/datos';
+import { fechaCorta, lenguajeClaro, peso } from '../lib/format';
+
+interface Props { d: Documento; e: Entidad }
+const { d, e } = Astro.props;
+const [principal] = d.archivos;
+---
+<li class="fila">
+  <a class="fila__enlace" href={principal?.url ?? `/documentos/?entidad=${e.slug}`} target="_blank" rel="noopener noreferrer">
+    <span class="fila__meta" style={`--c:${colorCategoria(d.categoria)}`}><span class="punto" aria-hidden="true"></span>{d.categoria}</span>
+    <span class="fila__titulo">{lenguajeClaro(d.titulo)}<span class="sr-only"> (se abre en una pestaña nueva)</span></span>
+    <span class="fila__quien">{e.sigla}{d.fecha ? ` · ${fechaCorta(d.fecha)}` : ''}</span>
+    <span class="fila__archivo">{principal ? `${principal.tipo.toUpperCase()}${principal.bytes ? ` · ${peso(principal.bytes)}` : ''}` : ''}<i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+  </a>
+</li>
