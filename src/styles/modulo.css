@@ -30,36 +30,26 @@ a:hover { opacity: 1; }
 .mod { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-/* Barra lateral del módulo: queda fija a la izquierda, debajo de la cabecera del SIAT PC */
-.marco { display: grid; grid-template-columns: 264px minmax(0, 1fr); align-items: stretch; }
-.marco > main { min-width: 0; }
-.lateral { background: #fff; border-right: 1px solid var(--linea); }
-.lateral__interno { position: sticky; top: 78px; display: flex; flex-direction: column; gap: 1.4rem; min-height: calc(100vh - 78px); padding: 1.6rem 1.1rem 1.6rem 1.4rem; }
-.lateral__nombre { display: flex; flex-direction: column; gap: 0.15rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--linea); color: var(--ink); text-decoration: none; }
-.lateral__nombre small { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--suave); font-weight: 700; }
-.lateral__nombre strong { font-family: var(--serif); font-size: 1.55rem; line-height: 1.08; font-weight: 600; letter-spacing: -0.01em; }
-.lateral ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.25rem; }
-.lateral li a { display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 0.9rem; border-radius: 12px; color: var(--ink); font-weight: 600; text-decoration: none; transition: background-color 0.2s, color 0.2s; }
-.lateral li a i { font-size: 1.15rem; color: var(--verde); transition: color 0.2s; }
-.lateral li a span { flex: 1; }
-.lateral li a em { font-style: normal; font-size: 0.82rem; font-weight: 700; color: var(--suave); font-variant-numeric: tabular-nums; }
-.lateral li a:hover { background: var(--banda); }
-.lateral li a[aria-current='page'] { background: var(--ink); color: #fff; }
-.lateral li a[aria-current='page'] i { color: var(--ambar); }
-.lateral li a[aria-current='page'] em { color: #e6d3c7; }
-.lateral__volver { margin-top: auto; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.7rem 0.9rem; border-radius: 12px; border: 1.5px solid var(--linea); color: var(--ink); font-size: 0.92rem; font-weight: 600; text-decoration: none; transition: background-color 0.2s, border-color 0.2s; }
-.lateral__volver:hover { background: var(--banda); border-color: #cfc4b6; }
+/* Riel flotante del módulo: una tarjeta que flota a la izquierda, debajo de la cabecera del SIAT PC.
+   No ocupa una columna: el contenido reserva su propio margen para no quedar debajo. */
+.riel { position: fixed; z-index: 900; left: 16px; top: 104px; width: 100px; max-height: calc(100vh - 124px); overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding: 8px; background: #fff; border: 1px solid var(--linea); border-radius: 22px; box-shadow: var(--sombra-alta); }
+.riel ul { list-style: none; margin: 0; padding: 6px 0 0; border-top: 1px solid var(--linea); display: grid; gap: 4px; }
+.riel a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; min-height: 60px; padding: 8px 2px; border-radius: 14px; color: var(--ink); font-size: 0.75rem; font-weight: 600; line-height: 1.15; text-align: center; text-decoration: none; transition-property: background-color, color, transform; transition-duration: 160ms; transition-timing-function: var(--ease); }
+.riel a i { font-size: 1.35rem; color: var(--verde); }
+.riel a:hover { background: var(--banda); }
+.riel a:active { transform: scale(0.96); }
+.riel a[aria-current='page'] { background: var(--ink); color: #fff; }
+.riel a[aria-current='page'] i { color: var(--ambar); }
+.riel__marca { background: #e4f3e9; }
+.riel__marca i { color: var(--verde-oscuro); }
+@media (min-width: 992px) and (max-width: 1499px) { main .mod { padding-left: 136px; } }
 @media (max-width: 991px) {
-  .marco { display: block; }
-  .lateral { border-right: 0; border-bottom: 1px solid var(--linea); }
-  .lateral__interno { position: static; min-height: 0; flex-direction: row; align-items: center; gap: 1rem; padding: 0.4rem 1rem; overflow-x: auto; scrollbar-width: none; }
-  .lateral__interno::-webkit-scrollbar { display: none; }
-  .lateral__nombre { padding: 0; border: 0; flex: none; }
-  .lateral__nombre strong { font-size: 1.15rem; }
-  .lateral nav { flex: none; }
-  .lateral ul { display: flex; gap: 0.25rem; }
-  .lateral li a { padding: 0.6rem 0.8rem; white-space: nowrap; }
-  .lateral li a em, .lateral__volver { display: none; }
+  .riel { left: 50%; right: auto; top: auto; bottom: max(12px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); width: min(92vw, 440px); max-height: none; flex-direction: row; align-items: stretch; gap: 4px; padding: 6px; border-radius: 20px; overflow: visible; }
+  .riel ul { display: flex; flex: 1; gap: 4px; padding: 0 0 0 6px; border-top: 0; border-left: 1px solid var(--linea); }
+  .riel ul li { flex: 1; }
+  .riel a { min-height: 56px; }
+  .riel__marca { flex: 0 0 76px; }
+  main { padding-bottom: 96px; }
 }
 
 /* Encabezado de cada página */
@@ -235,9 +225,12 @@ a:hover { opacity: 1; }
 }
 
 /* Respuesta al presionar y estados vacíos */
-.boton, .cols button, .carrusel__btn, .lateral li a, .lateral__volver { transition-property: transform, background-color, color, border-color, box-shadow; transition-duration: 160ms; transition-timing-function: var(--ease); }
-.boton:active, .cols button:active, .lateral li a:active, .lateral__volver:active { transform: scale(0.97); }
+.boton, .cols button, .carrusel__btn { transition-property: transform, background-color, color, border-color, box-shadow; transition-duration: 160ms; transition-timing-function: var(--ease); }
+.boton:active, .cols button:active { transform: scale(0.97); }
 .carrusel__btn:active { transform: translateY(-50%) scale(0.94); }
 .vacio { max-width: 52ch; margin: 1rem auto; padding: 3rem 1.5rem; border: 1.5px dashed #cfc4b6; border-radius: var(--radio); line-height: 1.6; }
 .vacio .boton { margin-top: 1rem; }
 .limpiar { min-height: 44px; padding: 0 0.25rem; }
+
+/* El submenú oculto de la cabecera del SIAT PC sobresale a la derecha en pantallas medianas; se recorta sin tocar la cabecera. */
+html { overflow-x: hidden; }

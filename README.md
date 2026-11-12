@@ -1,4 +1,4 @@
-# Centro de información · SIAT PC
+# Módulo de biodiversidad (prueba) · SIAT PC
 
 Módulo del Sistema de Información Ambiental Territorial del Pacífico (SIAT PC) con cuatro secciones:
 

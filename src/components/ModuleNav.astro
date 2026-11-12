@@ -1,31 +1,27 @@
 ---
-import { documentos, entidades, noticias } from '../lib/datos';
+import { MODULO, nombreCompleto } from '../lib/modulo';
 
 interface Props { active?: 'inicio' | 'entidades' | 'documentos' | 'noticias' }
 const { active } = Astro.props;
 const secciones = [
-  { id: 'inicio', t: 'Inicio', href: '/', icono: 'bi-house-door', n: null },
-  { id: 'entidades', t: 'Entidades', href: '/entidades/', icono: 'bi-buildings', n: entidades.length },
-  { id: 'documentos', t: 'Documentos', href: '/documentos/', icono: 'bi-file-earmark-text', n: documentos.length },
-  { id: 'noticias', t: 'Noticias', href: '/noticias/', icono: 'bi-newspaper', n: noticias.length },
+  { id: 'entidades', t: 'Entidades', href: '/entidades/', icono: 'bi-buildings' },
+  { id: 'documentos', t: 'Documentos', href: '/documentos/', icono: 'bi-file-earmark-text' },
+  { id: 'noticias', t: 'Noticias', href: '/noticias/', icono: 'bi-newspaper' },
 ] as const;
 ---
-<aside class="lateral">
-  <div class="lateral__interno">
-    <a class="lateral__nombre" href="/"><small>SIAT PC</small><strong>Centro de información</strong></a>
-    <nav aria-label="Secciones del centro de información">
-      <ul>
-        {secciones.map((s) => (
-          <li>
-            <a href={s.href} aria-current={active === s.id ? 'page' : undefined}>
-              <i class={`bi ${s.icono}`} aria-hidden="true"></i>
-              <span>{s.t}</span>
-              {s.n !== null && <em>{s.n}</em>}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-    <a class="lateral__volver" href="https://siatpc.co/"><i class="bi bi-arrow-left" aria-hidden="true"></i> Volver al SIAT PC</a>
-  </div>
-</aside>
+<nav class="riel" aria-label={`Secciones del ${MODULO.nombre}`}>
+  <a class="riel__marca" href="/" title={`Ir al inicio del ${nombreCompleto()}`} aria-label={`Ir al inicio del ${nombreCompleto()}`} aria-current={active === 'inicio' ? 'page' : undefined}>
+    <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
+    <span>Módulo</span>
+  </a>
+  <ul>
+    {secciones.map((s) => (
+      <li>
+        <a href={s.href} aria-current={active === s.id ? 'page' : undefined}>
+          <i class={`bi ${s.icono}`} aria-hidden="true"></i>
+          <span>{s.t}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

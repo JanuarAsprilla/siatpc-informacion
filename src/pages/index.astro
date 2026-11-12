@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import NewsCard from '../components/NewsCard.astro';
 import DocRow from '../components/DocRow.astro';
 import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
+import { MODULO } from '../lib/modulo';
 
 const secciones = [
   { t: 'Entidades', d: 'Quiénes hacen parte del Sistema y qué hace cada una.', href: '/entidades/', n: `${entidades.length} entidades` },
@@ -15,12 +16,13 @@ const fotos = noticias.filter((n) => n.portada).slice(0, 3);
 const conLogo = entidades.filter((e) => e.logo);
 const recientes = documentos.slice(0, 5);
 ---
-<Base title="SIAT PC · Centro de información" active="inicio">
+<Base title={MODULO.nombre} active="inicio">
   <section class="portada">
     <div class="mod">
       <div>
-        <h1>Todo lo que las entidades publican, en un solo lugar.</h1>
-        <p>Conozca las entidades del Sistema, lea sus documentos y siga las noticias del territorio sin salir del SIAT PC.</p>
+        <h1>{MODULO.nombre}</h1>
+        <p>Todo lo que las entidades publican, en un solo lugar: conozca las entidades, lea sus documentos y siga las noticias del territorio.</p>
+        {MODULO.sufijo && <p class="aviso-prueba"><i class="bi bi-info-circle" aria-hidden="true"></i> Versión de {MODULO.sufijo}: todavía no está integrada al SIAT PC.</p>}
         <form class="busca-grande" action="/documentos/" method="get" role="search">
           <label class="sr-only" for="h-q">Buscar documentos</label>
           <input id="h-q" type="search" name="q" placeholder="Buscar un documento: plan, informe, norma…" autocomplete="off" />
