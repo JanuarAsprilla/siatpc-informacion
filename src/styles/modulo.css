@@ -185,7 +185,6 @@ a:hover { opacity: 1; }
 @media (max-width: 991px) { .accesos ul { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .accesos ul { grid-template-columns: 1fr; } }
 .acceso { display: flex; flex-direction: column; gap: 0.5rem; height: 100%; padding: 1.4rem; background: #fff; border: 1px solid var(--linea); border-radius: var(--radio); box-shadow: var(--sombra-alta); text-decoration: none; color: var(--ink); overflow: hidden; position: relative; transition: transform 0.3s var(--ease); }
-.acceso::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 5px; background: var(--c); }
 .acceso:hover { transform: translateY(-5px); }
 .acceso i { font-size: 1.8rem; color: var(--c); }
 .acceso strong { font-size: 1.25rem; }
