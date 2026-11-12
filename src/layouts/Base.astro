@@ -29,8 +29,10 @@ const completo = title.startsWith('SIAT') ? title : `${title} · Centro de infor
   <body>
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <SiatHeader />
-    <ModuleNav active={active} />
-    <main id="contenido"><slot /></main>
+    <div class="marco">
+      <ModuleNav active={active} />
+      <main id="contenido"><slot /></main>
+    </div>
     <SiatFooter />
   </body>
 </html>
