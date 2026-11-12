@@ -1,83 +1,469 @@
 [
- { "slug": "fedepesca", "nombre": "Federación de Trabajadores de la Pesca Artesanal", "sigla": "FEDEPESCA", "tipo": "Organización pesquera comunitaria", "relacion": "Miembro", "logo": "/img/entidades/fedepesca.webp",
-   "acerca": "Federación de segundo nivel creada en 2010. A diciembre de 2016 reunía 28 asociaciones de pescadores artesanales y es el pilar y razón de ser del GIC-PA. Junto con el Consejo Comunitario Los Delfines presentó la acción popular que terminó en el fallo del Consejo de Estado sobre la pesca industrial.",
-   "datos": [{ "k": "Sitio web", "v": "https://fedepesca.org/", "href": "https://fedepesca.org/" }] },
- { "slug": "aunap", "nombre": "Autoridad Nacional de Acuicultura y Pesca", "sigla": "AUNAP", "tipo": "Autoridad pesquera", "relacion": "Miembro", "logo": "/img/entidades/aunap.webp",
-   "acerca": "Autoridad pesquera del país. En la lista de socios del GIC-PA de 2016 figura el INPA de Bahía Solano, hoy AUNAP, como socio fundador activo. En 2025 la AUNAP trabaja con FEDEPESCA y participa activamente en el GICPA.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.aunap.gov.co/", "href": "https://www.aunap.gov.co/" }] },
- { "slug": "parques-nacionales", "nombre": "Parques Nacionales Naturales de Colombia (PNN Utría y Dirección Territorial Pacífico)", "sigla": "PNN", "tipo": "Autoridad ambiental", "relacion": "Miembro", "logo": "/img/entidades/parques.webp",
-   "acerca": "El GIC-PA se creó en 1998 en el Parque Nacional Natural Utría. En la lista de socios de 2016 figuran PNN Utría, como socio fundador activo, y la Dirección Territorial Pacífico.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.parquesnacionales.gov.co/", "href": "https://www.parquesnacionales.gov.co/" }] },
- { "slug": "dimar", "nombre": "Capitanía de Puerto de Bahía Solano (Dirección General Marítima)", "sigla": "DIMAR", "tipo": "Autoridad marítima", "relacion": "Miembro", "logo": "/img/entidades/dimar.webp",
-   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.dimar.mil.co/", "href": "https://www.dimar.mil.co/" }] },
- { "slug": "codechoco", "nombre": "Corporación Autónoma Regional para el Desarrollo Sostenible del Chocó", "sigla": "Codechocó", "tipo": "Autoridad ambiental", "relacion": "Miembro", "logo": null,
-   "acerca": "Autoridad ambiental regional del Chocó. Figura como socia activa en la lista de 2016. En 2014 expidió el Acuerdo 011, que declaró el Distrito Regional de Manejo Integrado Golfo de Tribugá-Cabo Corrientes (60.138,6 hectáreas).",
-   "datos": [{ "k": "Sitio web", "v": "https://codechoco.gov.co/", "href": "https://codechoco.gov.co/" }] },
- { "slug": "minagricultura", "nombre": "Ministerio de Agricultura y Desarrollo Rural (Dirección de Pesca)", "sigla": "MinAgricultura", "tipo": "Entidad pública nacional", "relacion": "Miembro", "logo": null,
-   "acerca": "Su Dirección de Pesca figura como socia activa en 2016. Según la Fundación ACUA (2023), el GIC-PA actúa como Nodo Norte de Pesca ante el ministerio.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.minagricultura.gov.co/", "href": "https://www.minagricultura.gov.co/" }] },
- { "slug": "gobernacion-choco", "nombre": "Secretaría de Agricultura Departamental del Chocó", "sigla": "Gobernación del Chocó", "tipo": "Entidad territorial", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.choco.gov.co/", "href": "https://www.choco.gov.co/" }] },
- { "slug": "alcaldias", "nombre": "Alcaldías de los municipios de la costa chocoana", "sigla": "Alcaldías", "tipo": "Entidad territorial", "relacion": "Miembro", "logo": null,
-   "acerca": "Figuran como socias activas las alcaldías de Juradó, Bahía Solano, Nuquí, Bajo Baudó y Litoral del San Juan, los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
-   "datos": [] },
- { "slug": "consejos-comunitarios", "nombre": "Consejos comunitarios de la costa chocoana", "sigla": "Consejos comunitarios", "tipo": "Comunidades étnico-territoriales", "relacion": "Miembro", "logo": null,
-   "acerca": "Figuran como miembros activos los consejos comunitarios Mayor Los Delfines, General Los Riscales, Mayor de Cupica y Mayor de Juradó, y los de Pizarro y Litoral del San Juan. Los Delfines, junto con FEDEPESCA, presentó la acción popular sobre la pesca industrial.",
-   "datos": [] },
- { "slug": "fuerza-naval", "nombre": "Guardacostas y Armada Nacional", "sigla": "Armada", "tipo": "Fuerza pública", "relacion": "Miembro", "logo": null,
-   "acerca": "Figuran como socias activas en la lista de socios del GIC-PA de 2016. La Armada Nacional hace parte del núcleo de la mesa coordinadora.",
-   "datos": [] },
- { "slug": "banco-agrario", "nombre": "Banco Agrario de Colombia", "sigla": "Banco Agrario", "tipo": "Entidad financiera pública", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.bancoagrario.gov.co/", "href": "https://www.bancoagrario.gov.co/" }] },
- { "slug": "sena", "nombre": "Servicio Nacional de Aprendizaje, seccional Chocó", "sigla": "SENA", "tipo": "Entidad pública de formación", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.sena.edu.co/", "href": "https://www.sena.edu.co/" }] },
- { "slug": "iiap", "nombre": "Instituto de Investigaciones Ambientales del Pacífico", "sigla": "IIAP", "tipo": "Instituto de investigación", "relacion": "Miembro", "logo": "/img/entidades/iiap.webp",
-   "acerca": "Instituto de investigación del Sistema Nacional Ambiental con sede en Quibdó. Figura como socio activo en la lista de 2016 y participó en la XVII Asamblea del GICPA, en octubre de 2026.",
-   "datos": [{ "k": "Ciudad", "v": "Quibdó - Colombia", "href": null }, { "k": "Sitio web", "v": "https://iiap.org.co/", "href": "https://iiap.org.co/" }] },
- { "slug": "invemar", "nombre": "Instituto de Investigaciones Marinas y Costeras «José Benito Vives de Andréis»", "sigla": "INVEMAR", "tipo": "Instituto de investigación", "relacion": "Miembro", "logo": "/img/entidades/invemar.webp",
-   "acerca": "Instituto de investigación marina y costera. Figura como socio activo en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.invemar.org.co/", "href": "https://www.invemar.org.co/" }] },
- { "slug": "utch", "nombre": "Universidad Tecnológica del Chocó", "sigla": "UTCH", "tipo": "Academia", "relacion": "Miembro", "logo": "/img/entidades/utch.webp", "fondoLogo": "oscuro",
-   "acerca": "Figura como socia activa en la lista de 2016. En octubre de 2026 reseñó su participación en la XVII Asamblea del GICPA, en Ciudad Mutis, y ofrece acompañamiento organizativo, contable y jurídico a los pescadores.",
-   "datos": [{ "k": "Sitio web", "v": "https://utch.edu.co/", "href": "https://utch.edu.co/" }] },
- { "slug": "acua", "nombre": "Fundación ACUA (Activos Culturales Afro)", "sigla": "ACUA", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": "/img/entidades/acua.webp", "fondoLogo": "oscuro",
-   "acerca": "Figura como socia activa en la lista de 2016 y fue socia de PROCASUR en el caso de estudio del GIC-PA. Reseñó la XIV Asamblea (2023) y describe al Nodo Norte de Pesca como «la mayor alianza de instituciones públicas y privadas para la gobernanza de la pesca artesanal en el Pacífico chocoano».",
-   "datos": [{ "k": "Sitio web", "v": "https://programaacua.org/", "href": "https://programaacua.org/" }] },
- { "slug": "marviva", "nombre": "Fundación MarViva", "sigla": "MarViva", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socia activa en la lista de 2016. Con el GIC-PA publicó en 2016 la historia de la alianza y, en 2024, con SIEMBRA, el estudio sobre los 25 años de la Zona Exclusiva de Pesca Artesanal.",
-   "datos": [{ "k": "Sitio web", "v": "https://marviva.net/", "href": "https://marviva.net/" }] },
- { "slug": "natura", "nombre": "Fundación Natura", "sigla": "Natura", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
-   "acerca": "Participó en la creación del GIC-PA en 1998. En la lista de socios de 2016 figura como socia fundadora inactiva.",
-   "datos": [] },
- { "slug": "tierra-digna", "nombre": "Tierra Digna", "sigla": "Tierra Digna", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": "/img/entidades/tierradigna.webp",
-   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://tierradigna.org/", "href": "https://tierradigna.org/" }] },
- { "slug": "conservacion-internacional", "nombre": "Conservación Internacional Colombia", "sigla": "CI", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.conservation.org.co/", "href": "https://www.conservation.org.co/" }] },
- { "slug": "wwf", "nombre": "WWF Colombia", "sigla": "WWF", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.wwf.org.co/", "href": "https://www.wwf.org.co/" }] },
- { "slug": "patrimonio-natural", "nombre": "Fondo Patrimonio Natural", "sigla": "Patrimonio Natural", "tipo": "Fondo ambiental", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
-   "datos": [] },
- { "slug": "eduardono", "nombre": "Fundación Eduardoño", "sigla": "Eduardoño", "tipo": "Organización no gubernamental", "relacion": "Miembro", "logo": null,
-   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
-   "datos": [] },
- { "slug": "siembra", "nombre": "SIEMBRA, Centro Sociojurídico para la Defensa Territorial", "sigla": "SIEMBRA", "tipo": "Organización no gubernamental", "relacion": "Relacionada", "logo": "/img/entidades/siembra.webp",
-   "acerca": "Acompaña a FEDEPESCA y al Consejo Comunitario Los Delfines «como parte del GICPA». Es coautora, con MarViva, del estudio sobre los 25 años de la Zona Exclusiva de Pesca Artesanal (2024).",
-   "datos": [{ "k": "Sitio web", "v": "https://www.centrosiembra.org/", "href": "https://www.centrosiembra.org/" }] },
- { "slug": "procasur", "nombre": "PROCASUR", "sigla": "PROCASUR", "tipo": "Organización de desarrollo rural", "relacion": "Relacionada", "logo": "/img/entidades/procasur.webp",
-   "acerca": "Sistematizó en 2016 el caso del GIC-PA y el de FEDEPESCA, con FIDA y ACUA como socios del caso.",
-   "datos": [{ "k": "Sitio web", "v": "https://procasur.org/", "href": "https://procasur.org/" }] },
- { "slug": "consejo-estado", "nombre": "Consejo de Estado", "sigla": "Consejo de Estado", "tipo": "Rama judicial", "relacion": "Relacionada", "logo": null,
-   "acerca": "Su Sección Primera falló la acción popular presentada por FEDEPESCA y el Consejo Comunitario Los Delfines: ordenó un plan para controlar la pesca industrial y verificar el tamaño de la Zona Exclusiva de Pesca Artesanal.",
-   "datos": [{ "k": "Sitio web", "v": "https://www.consejodeestado.gov.co/", "href": "https://www.consejodeestado.gov.co/" }] },
- { "slug": "ica", "nombre": "Instituto Colombiano Agropecuario", "sigla": "ICA", "tipo": "Entidad pública nacional", "relacion": "Relacionada", "logo": null,
-   "acerca": "Expidió en 2008 la Resolución 002650, que creó la Zona Exclusiva de Pesca Artesanal como piloto de un año.",
-   "datos": [] }
+ {
+  "slug": "fedepesca",
+  "nombre": "Federación de Trabajadores de la Pesca Artesanal",
+  "sigla": "FEDEPESCA",
+  "tipo": "Organización pesquera comunitaria",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/fedepesca.webp",
+  "acerca": "Federación de segundo nivel creada en 2010. A diciembre de 2016 reunía 28 asociaciones de pescadores artesanales y es el pilar y razón de ser del GIC-PA. Junto con el Consejo Comunitario Los Delfines presentó la acción popular que terminó en el fallo del Consejo de Estado sobre la pesca industrial.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://fedepesca.org/",
+    "href": "https://fedepesca.org/"
+   }
+  ]
+ },
+ {
+  "slug": "aunap",
+  "nombre": "Autoridad Nacional de Acuicultura y Pesca",
+  "sigla": "AUNAP",
+  "tipo": "Autoridad pesquera",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/aunap.webp",
+  "acerca": "Autoridad pesquera del país. En la lista de socios del GIC-PA de 2016 figura el INPA de Bahía Solano, hoy AUNAP, como socio fundador activo. En 2025 la AUNAP trabaja con FEDEPESCA y participa activamente en el GICPA.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.aunap.gov.co/",
+    "href": "https://www.aunap.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "parques-nacionales",
+  "nombre": "Parques Nacionales Naturales de Colombia (PNN Utría y Dirección Territorial Pacífico)",
+  "sigla": "PNN",
+  "tipo": "Autoridad ambiental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/parques.webp",
+  "acerca": "El GIC-PA se creó en 1998 en el Parque Nacional Natural Utría. En la lista de socios de 2016 figuran PNN Utría, como socio fundador activo, y la Dirección Territorial Pacífico.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.parquesnacionales.gov.co/",
+    "href": "https://www.parquesnacionales.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "dimar",
+  "nombre": "Capitanía de Puerto de Bahía Solano (Dirección General Marítima)",
+  "sigla": "DIMAR",
+  "tipo": "Autoridad marítima",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/dimar.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.dimar.mil.co/",
+    "href": "https://www.dimar.mil.co/"
+   }
+  ]
+ },
+ {
+  "slug": "codechoco",
+  "nombre": "Corporación Autónoma Regional para el Desarrollo Sostenible del Chocó",
+  "sigla": "Codechocó",
+  "tipo": "Autoridad ambiental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/codechoco.webp",
+  "acerca": "Autoridad ambiental regional del Chocó. Figura como socia activa en la lista de 2016. En 2014 expidió el Acuerdo 011, que declaró el Distrito Regional de Manejo Integrado Golfo de Tribugá-Cabo Corrientes (60.138,6 hectáreas).",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://codechoco.gov.co/",
+    "href": "https://codechoco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "minagricultura",
+  "nombre": "Ministerio de Agricultura y Desarrollo Rural (Dirección de Pesca)",
+  "sigla": "MinAgricultura",
+  "tipo": "Entidad pública nacional",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/minagricultura.webp",
+  "acerca": "Su Dirección de Pesca figura como socia activa en 2016. Según la Fundación ACUA (2023), el GIC-PA actúa como Nodo Norte de Pesca ante el ministerio.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.minagricultura.gov.co/",
+    "href": "https://www.minagricultura.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "gobernacion-choco",
+  "nombre": "Secretaría de Agricultura Departamental del Chocó",
+  "sigla": "Gobernación del Chocó",
+  "tipo": "Entidad territorial",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/gobernacion.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.choco.gov.co/",
+    "href": "https://www.choco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "alcaldia-jurado",
+  "nombre": "Alcaldía de Juradó",
+  "sigla": "Juradó",
+  "tipo": "Entidad territorial",
+  "relacion": "Miembro",
+  "logo": null,
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016. Juradó es uno de los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.jurado-choco.gov.co/",
+    "href": "https://www.jurado-choco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "alcaldia-bahia-solano",
+  "nombre": "Alcaldía de Bahía Solano",
+  "sigla": "Bahía Solano",
+  "tipo": "Entidad territorial",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/alcaldia-bahia-solano.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016. Bahía Solano es uno de los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.bahiasolano-choco.gov.co/",
+    "href": "https://www.bahiasolano-choco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "alcaldia-nuqui",
+  "nombre": "Alcaldía de Nuquí",
+  "sigla": "Nuquí",
+  "tipo": "Entidad territorial",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/alcaldia-nuqui.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016. Nuquí es uno de los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.nuqui-choco.gov.co/",
+    "href": "https://www.nuqui-choco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "alcaldia-bajo-baudo",
+  "nombre": "Alcaldía de Bajo Baudó",
+  "sigla": "Bajo Baudó",
+  "tipo": "Entidad territorial",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/alcaldia-bajo-baudo.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016. Bajo Baudó es uno de los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.bajobaudo-choco.gov.co/",
+    "href": "https://www.bajobaudo-choco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "alcaldia-litoral-del-san-juan",
+  "nombre": "Alcaldía de Litoral del San Juan",
+  "sigla": "Litoral del San Juan",
+  "tipo": "Entidad territorial",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/litoral.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016. Litoral del San Juan es uno de los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.litoraldelsanjuan-choco.gov.co/",
+    "href": "https://www.litoraldelsanjuan-choco.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "consejos-comunitarios",
+  "nombre": "Consejos comunitarios de la costa chocoana",
+  "sigla": "Consejos comunitarios",
+  "tipo": "Comunidades étnico-territoriales",
+  "relacion": "Miembro",
+  "logo": null,
+  "acerca": "Figuran como miembros activos los consejos comunitarios Mayor Los Delfines, General Los Riscales, Mayor de Cupica y Mayor de Juradó, y los de Pizarro y Litoral del San Juan. Los Delfines, junto con FEDEPESCA, presentó la acción popular sobre la pesca industrial.",
+  "datos": []
+ },
+ {
+  "slug": "fuerza-naval",
+  "nombre": "Guardacostas y Armada Nacional",
+  "sigla": "Armada",
+  "tipo": "Fuerza pública",
+  "relacion": "Miembro",
+  "logo": null,
+  "acerca": "Figuran como socias activas en la lista de socios del GIC-PA de 2016. La Armada Nacional hace parte del núcleo de la mesa coordinadora.",
+  "datos": []
+ },
+ {
+  "slug": "banco-agrario",
+  "nombre": "Banco Agrario de Colombia",
+  "sigla": "Banco Agrario",
+  "tipo": "Entidad financiera pública",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/banco-agrario.svg",
+  "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.bancoagrario.gov.co/",
+    "href": "https://www.bancoagrario.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "sena",
+  "nombre": "Servicio Nacional de Aprendizaje, seccional Chocó",
+  "sigla": "SENA",
+  "tipo": "Entidad pública de formación",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/sena.webp",
+  "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.sena.edu.co/",
+    "href": "https://www.sena.edu.co/"
+   }
+  ]
+ },
+ {
+  "slug": "iiap",
+  "nombre": "Instituto de Investigaciones Ambientales del Pacífico",
+  "sigla": "IIAP",
+  "tipo": "Instituto de investigación",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/iiap.webp",
+  "acerca": "Instituto de investigación del Sistema Nacional Ambiental con sede en Quibdó. Figura como socio activo en la lista de 2016 y participó en la XVII Asamblea del GICPA, en octubre de 2026.",
+  "datos": [
+   {
+    "k": "Ciudad",
+    "v": "Quibdó - Colombia",
+    "href": null
+   },
+   {
+    "k": "Sitio web",
+    "v": "https://iiap.org.co/",
+    "href": "https://iiap.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "invemar",
+  "nombre": "Instituto de Investigaciones Marinas y Costeras «José Benito Vives de Andréis»",
+  "sigla": "INVEMAR",
+  "tipo": "Instituto de investigación",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/invemar.webp",
+  "acerca": "Instituto de investigación marina y costera. Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.invemar.org.co/",
+    "href": "https://www.invemar.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "utch",
+  "nombre": "Universidad Tecnológica del Chocó",
+  "sigla": "UTCH",
+  "tipo": "Academia",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/utch.webp",
+  "logoBlanco": true,
+  "acerca": "Figura como socia activa en la lista de 2016. En octubre de 2026 reseñó su participación en la XVII Asamblea del GICPA, en Ciudad Mutis, y ofrece acompañamiento organizativo, contable y jurídico a los pescadores.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://utch.edu.co/",
+    "href": "https://utch.edu.co/"
+   }
+  ]
+ },
+ {
+  "slug": "acua",
+  "nombre": "Fundación ACUA (Activos Culturales Afro)",
+  "sigla": "ACUA",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/acua.webp",
+  "logoBlanco": true,
+  "acerca": "Figura como socia activa en la lista de 2016 y fue socia de PROCASUR en el caso de estudio del GIC-PA. Reseñó la XIV Asamblea (2023) y describe al Nodo Norte de Pesca como «la mayor alianza de instituciones públicas y privadas para la gobernanza de la pesca artesanal en el Pacífico chocoano».",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://programaacua.org/",
+    "href": "https://programaacua.org/"
+   }
+  ]
+ },
+ {
+  "slug": "marviva",
+  "nombre": "Fundación MarViva",
+  "sigla": "MarViva",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/marviva.webp",
+  "acerca": "Figura como socia activa en la lista de 2016. Con el GIC-PA publicó en 2016 la historia de la alianza y, en 2024, con SIEMBRA, el estudio sobre los 25 años de la Zona Exclusiva de Pesca Artesanal.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://marviva.net/",
+    "href": "https://marviva.net/"
+   }
+  ]
+ },
+ {
+  "slug": "natura",
+  "nombre": "Fundación Natura",
+  "sigla": "Natura",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/natura.webp",
+  "acerca": "Participó en la creación del GIC-PA en 1998. En la lista de socios de 2016 figura como socia fundadora inactiva.",
+  "datos": []
+ },
+ {
+  "slug": "tierra-digna",
+  "nombre": "Tierra Digna",
+  "sigla": "Tierra Digna",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/tierradigna.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://tierradigna.org/",
+    "href": "https://tierradigna.org/"
+   }
+  ]
+ },
+ {
+  "slug": "conservacion-internacional",
+  "nombre": "Conservación Internacional Colombia",
+  "sigla": "CI",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/ci.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.conservation.org.co/",
+    "href": "https://www.conservation.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "wwf",
+  "nombre": "WWF Colombia",
+  "sigla": "WWF",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/wwf.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.wwf.org.co/",
+    "href": "https://www.wwf.org.co/"
+   }
+  ]
+ },
+ {
+  "slug": "patrimonio-natural",
+  "nombre": "Fondo Patrimonio Natural",
+  "sigla": "Patrimonio Natural",
+  "tipo": "Fondo ambiental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/patrimonio.webp",
+  "acerca": "Figura como socio activo en la lista de socios del GIC-PA de 2016.",
+  "datos": []
+ },
+ {
+  "slug": "eduardono",
+  "nombre": "Fundación Eduardoño",
+  "sigla": "Eduardoño",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Miembro",
+  "logo": "/img/entidades/eduardono.webp",
+  "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016.",
+  "datos": []
+ },
+ {
+  "slug": "siembra",
+  "nombre": "SIEMBRA, Centro Sociojurídico para la Defensa Territorial",
+  "sigla": "SIEMBRA",
+  "tipo": "Organización no gubernamental",
+  "relacion": "Relacionada",
+  "logo": "/img/entidades/siembra.webp",
+  "acerca": "Acompaña a FEDEPESCA y al Consejo Comunitario Los Delfines «como parte del GICPA». Es coautora, con MarViva, del estudio sobre los 25 años de la Zona Exclusiva de Pesca Artesanal (2024).",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.centrosiembra.org/",
+    "href": "https://www.centrosiembra.org/"
+   }
+  ]
+ },
+ {
+  "slug": "procasur",
+  "nombre": "PROCASUR",
+  "sigla": "PROCASUR",
+  "tipo": "Organización de desarrollo rural",
+  "relacion": "Relacionada",
+  "logo": "/img/entidades/procasur.webp",
+  "acerca": "Sistematizó en 2016 el caso del GIC-PA y el de FEDEPESCA, con FIDA y ACUA como socios del caso.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://procasur.org/",
+    "href": "https://procasur.org/"
+   }
+  ]
+ },
+ {
+  "slug": "consejo-estado",
+  "nombre": "Consejo de Estado",
+  "sigla": "Consejo de Estado",
+  "tipo": "Rama judicial",
+  "relacion": "Relacionada",
+  "logo": "/img/entidades/consejo-estado.webp",
+  "acerca": "Su Sección Primera falló la acción popular presentada por FEDEPESCA y el Consejo Comunitario Los Delfines: ordenó un plan para controlar la pesca industrial y verificar el tamaño de la Zona Exclusiva de Pesca Artesanal.",
+  "datos": [
+   {
+    "k": "Sitio web",
+    "v": "https://www.consejodeestado.gov.co/",
+    "href": "https://www.consejodeestado.gov.co/"
+   }
+  ]
+ },
+ {
+  "slug": "ica",
+  "nombre": "Instituto Colombiano Agropecuario",
+  "sigla": "ICA",
+  "tipo": "Entidad pública nacional",
+  "relacion": "Relacionada",
+  "logo": "/img/entidades/ica.svg",
+  "acerca": "Expidió en 2008 la Resolución 002650, que creó la Zona Exclusiva de Pesca Artesanal como piloto de un año.",
+  "datos": []
+ }
 ]

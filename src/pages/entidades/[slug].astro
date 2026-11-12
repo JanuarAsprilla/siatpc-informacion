@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import EntityCard from '../../components/EntityCard.astro';
+import LogoEntidad from '../../components/LogoEntidad.astro';
 import DocRow from '../../components/DocRow.astro';
 import NewsCard from '../../components/NewsCard.astro';
 import { documentosDe, entidades, noticias, type Entidad } from '../../lib/datos';
@@ -35,7 +36,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
         {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href="/noticias/">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
       </div>
       <aside class="ficha" aria-label={`Datos de ${e.sigla}`}>
-        {e.logo && <div class:list={['ficha__logo', { 'ficha__logo--oscuro': e.fondoLogo === 'oscuro' }]}><img src={e.logo} alt={`Logo de ${e.sigla}`} /></div>}
+        <div class="ficha__logo"><LogoEntidad e={e} /></div>
         {e.datos.length > 0 && (
           <dl>
             {e.datos.map((d) => (

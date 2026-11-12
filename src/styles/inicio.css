@@ -50,7 +50,6 @@
 .que-es h2 { margin: 0 0 1.2rem; font-family: var(--serif); font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem); font-weight: 600; letter-spacing: -0.02em; color: var(--ink); text-align: left; }
 .que-es__cita { margin: 0 0 1rem; font-family: var(--serif); font-size: clamp(1.4rem, 1.1rem + 1.3vw, 2.1rem); line-height: 1.25; color: var(--ink); text-wrap: balance; }
 .que-es__fuente { margin: 0; color: var(--suave); font-size: 0.95rem; }
-.que-es__fuente a { color: var(--verde-oscuro); }
 .que-es__datos { margin: 0; display: grid; gap: 1.1rem; }
 .que-es__datos div { padding-bottom: 1.1rem; border-bottom: 1px solid var(--linea); }
 .que-es__datos dt { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: var(--suave); margin-bottom: 0.25rem; }
@@ -89,8 +88,6 @@
 .muro li { border-right: 1px solid var(--linea); border-bottom: 1px solid var(--linea); }
 .muro a { display: grid; place-items: center; gap: 0.7rem; height: 100%; min-height: 150px; padding: 1.4rem 1rem; color: var(--ink); text-decoration: none; font-weight: 700; font-size: 0.92rem; text-align: center; transition: background-color 0.3s; }
 .muro a:hover { background: var(--banda); }
-.muro img { max-height: 60px; max-width: 100%; object-fit: contain; filter: grayscale(1) contrast(1.05); opacity: 0.78; transition: filter 0.4s, opacity 0.4s; }
-.muro a:hover img { filter: none; opacity: 1; }
 @media (max-width: 991px) { .muro { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 520px) { .muro { grid-template-columns: repeat(2, 1fr); } }
 
@@ -105,7 +102,6 @@
 .fila__titulo { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
 .fila__enlace:hover .fila__titulo { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1.5px; }
 .fila__quien { font-size: 0.9rem; color: var(--suave); }
-.fila__archivo { display: inline-flex; align-items: center; justify-content: flex-end; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--verde-oscuro); white-space: nowrap; }
 @media (max-width: 1199px) {
   .fila__enlace { grid-template-columns: 1fr auto; }
   .fila__meta { grid-column: 1; }
@@ -114,8 +110,12 @@
   .fila__archivo { grid-column: 2; grid-row: 1 / 2; }
 }
 
-/* Logos blancos: se muestran sobre el marrón del módulo para que se vean */
-.ent__logo--oscuro, .ficha__logo--oscuro { background: var(--ink); }
-.muro a.muro__oscuro { background: var(--ink); color: #fff; }
-.muro a.muro__oscuro img { filter: none; opacity: 1; }
-.muro a.muro__oscuro:hover { background: #4a1a14; }
+
+/* Logos de entidades: un solo criterio, siempre sobre fondo claro y a todo color. Los logos blancos se oscurecen para que se lean. */
+.logo-ent { max-height: 84px; max-width: 80%; object-fit: contain; }
+.logo-ent--blanco { filter: brightness(0); opacity: 0.85; }
+.muro a { background: linear-gradient(180deg, #fff, var(--banda)); }
+.muro__logo { display: grid; place-items: center; width: 100%; height: 72px; }
+.muro__logo .logo-ent { max-height: 64px; max-width: 88%; }
+.muro__logo .ent__mono { min-width: 64px; height: 64px; padding: 0 0.7rem; border-radius: 16px; font-size: 0.8rem; }
+.muro__sigla { font-weight: 700; font-size: 0.9rem; line-height: 1.2; }

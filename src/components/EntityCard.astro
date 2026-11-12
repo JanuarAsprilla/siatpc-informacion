@@ -1,19 +1,16 @@
 ---
 import type { Entidad } from '../lib/datos';
 import { normalizar, resumir } from '../lib/format';
+import LogoEntidad from './LogoEntidad.astro';
 
 interface Props { e: Entidad; docs: number }
 const { e, docs } = Astro.props;
-const COLORES = ['#0a7a3c', '#084898', '#ed6e0c', '#7e3123', '#0b8fd6', '#5a6529'];
-const color = COLORES[[...e.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % COLORES.length];
 const resumen = e.acerca ? resumir(e.acerca, 190) : 'Descripción por confirmar con la entidad.';
 const buscable = normalizar(`${e.nombre} ${e.sigla} ${e.tipo} ${e.acerca}`);
 ---
 <li data-item data-q={buscable} data-tipo={e.tipo} data-relacion={e.relacion}>
   <article class="tarjeta">
-    <div class:list={['ent__logo', { 'ent__logo--oscuro': e.fondoLogo === 'oscuro' }]}>
-      {e.logo ? <img src={e.logo} alt="" loading="lazy" /> : <span class="ent__mono" style={`background:${color}`} aria-hidden="true">{e.sigla.toUpperCase()}</span>}
-    </div>
+    <div class="ent__logo"><LogoEntidad e={e} /></div>
     <div class="tarjeta__cuerpo">
       <div class="ent__chips"><span class={e.relacion === 'Miembro' ? 'chip chip--verde' : 'chip chip--ambar'}>{e.relacion === 'Miembro' ? 'Miembro del GIC-PA' : 'Entidad relacionada'}</span><span class="chip">{e.tipo}</span></div>
       <h2><a class="stretched-link" href={`/entidades/${e.slug}/`}>{e.nombre}</a></h2>

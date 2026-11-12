@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import NewsCard from '../components/NewsCard.astro';
 import DocRow from '../components/DocRow.astro';
+import LogoEntidad from '../components/LogoEntidad.astro';
 import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
 import { MODULO } from '../lib/modulo';
 
@@ -13,7 +14,6 @@ const secciones = [
 const [destacada, ...resto] = noticias;
 const lado = resto.slice(0, 2);
 const fotos = noticias.filter((n) => n.portada).slice(0, 3);
-const conLogo = entidades.filter((e) => e.logo);
 const recientes = documentos.slice(0, 5);
 ---
 <Base title={MODULO.nombre} active="inicio">
@@ -93,7 +93,7 @@ const recientes = documentos.slice(0, 5);
         <a class="enlace-flecha" href="/entidades/">Ver todas las entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <ul class="muro">
-        {conLogo.map((e) => <li><a href={`/entidades/${e.slug}/`} class={e.fondoLogo === 'oscuro' ? 'muro__oscuro' : undefined}><img src={e.logo!} alt="" loading="lazy" />{e.sigla}</a></li>)}
+        {entidades.map((e) => <li><a href={`/entidades/${e.slug}/`}><span class="muro__logo"><LogoEntidad e={e} /></span><span class="muro__sigla">{e.sigla}</span></a></li>)}
       </ul>
     </div>
   </section>

@@ -33,7 +33,7 @@ Todo el contenido sale de fuentes públicas verificadas y cada dato lleva su enl
 - **Entidades** (`src/data/entidades.json`): las que figuran en la lista de socios de la publicación de MarViva de 2016 (parcial: la lista superaba los 80 miembros) más entidades relacionadas (PROCASUR, SIEMBRA, Consejo de Estado, ICA). Los logos son los oficiales de cada entidad y solo se incluyen los que se pudieron descargar y verificar; el resto usa monograma.
 - **Documentos** (`documentos.json`) y **noticias** (`noticias.json`): publicaciones, casos de estudio, un fallo y una resolución, y notas de AUNAP, UTCH, ACUA, Panorama y el Consejo de Estado, cada una con enlace a su fuente. Las fechas pueden ser parciales (`2016`, `2016-12`).
 - **Imágenes:** `public/img/entidades` (logos) y `public/img/gicpa` (fotos de las noticias, de cada medio).
-- **Pendiente por confirmar:** logos de MarViva, WWF, Codechocó, SENA, alcaldías y consejos comunitarios; la lista de miembros posterior a 2016; las 28 asociaciones de FEDEPESCA; derechos de uso de los logos con cada entidad.
+- **Pendiente por confirmar:** logos de la Armada, la alcaldía de Juradó (su sitio no respondió) y los consejos comunitarios (no se encontró un logo oficial); la lista de miembros posterior a 2016; las 28 asociaciones de FEDEPESCA; derechos de uso de los logos con cada entidad.
 
 Para agregar contenido, edite esos JSON (el campo `entidad` es el `slug` de una entidad).
 

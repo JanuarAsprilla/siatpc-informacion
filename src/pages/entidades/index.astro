@@ -11,7 +11,7 @@ const tipos =[...new Set(entidades.map((e) => e.tipo))].map((t) => ({ value: t, 
 <Base title="Entidades" description="Entidades que integran el GIC-PA y las relacionadas con él." active="entidades">
   <PageHead titulo="Entidades" lead="Las entidades que integran el GIC-PA y las relacionadas con él. Entre a una para conocerla y ver sus documentos." migas={[{ t: 'Entidades' }]} />
   <section class="seccion" style="padding-top:2rem">
-    <div class="mod" data-lista data-pagina="30" data-cols="3" data-sustantivo="entidades">
+    <div class="mod" data-lista data-pagina="40" data-cols="3" data-sustantivo="entidades">
       <Toolbar buscaLabel="Buscar una entidad" buscaPlaceholder="Nombre o sigla" selectores={[{ key: 'relacion', label: 'Relación con el GIC-PA', todas: 'Todas', opciones: relaciones }, { key: 'tipo', label: 'Tipo de entidad', todas: 'Todos los tipos', opciones: tipos }]} />
       <div data-inicio></div>
       <p class="estado" data-estado role="status" aria-live="polite"><span data-resumen></span><button type="button" class="limpiar" data-limpiar hidden>Limpiar filtros</button></p>
