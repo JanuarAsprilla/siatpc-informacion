@@ -85,7 +85,7 @@
   "sigla": "MinAgricultura",
   "tipo": "Entidad pública nacional",
   "relacion": "Miembro",
-  "logo": "/img/entidades/minagricultura.webp",
+  "logo": "/img/entidades/minagricultura.svg",
   "acerca": "Su Dirección de Pesca figura como socia activa en 2016. Según la Fundación ACUA (2023), el GIC-PA actúa como Nodo Norte de Pesca ante el ministerio.",
   "datos": [
    {
@@ -181,7 +181,8 @@
   "sigla": "Litoral del San Juan",
   "tipo": "Entidad territorial",
   "relacion": "Miembro",
-  "logo": "/img/entidades/litoral.webp",
+  "logo": "/img/entidades/litoral.svg",
+  "creditoLogo": { "texto": "Escudo: Wikimedia Commons, autor BrCaLeTo, licencias GFDL 1.2+ y CC BY-SA 3.0", "url": "https://commons.wikimedia.org/wiki/File:Escudo_de_Litoral_del_San_Juan.svg" },
   "acerca": "Figura como socia activa en la lista de socios del GIC-PA de 2016. Litoral del San Juan es uno de los cinco municipios costeros del Pacífico chocoano a los que convoca el GIC-PA.",
   "datos": [
    {
@@ -207,7 +208,8 @@
   "sigla": "Armada",
   "tipo": "Fuerza pública",
   "relacion": "Miembro",
-  "logo": null,
+  "logo": "/img/entidades/armada.webp",
+  "creditoLogo": { "texto": "Escudo: Wikimedia Commons, autor SajoR, licencia CC BY-SA 2.5", "url": "https://commons.wikimedia.org/wiki/File:Escudo_Armada_Nacional_de_Colombia.svg" },
   "acerca": "Figuran como socias activas en la lista de socios del GIC-PA de 2016. La Armada Nacional hace parte del núcleo de la mesa coordinadora.",
   "datos": []
  },

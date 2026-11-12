@@ -37,6 +37,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
       </div>
       <aside class="ficha" aria-label={`Datos de ${e.sigla}`}>
         <div class="ficha__logo"><LogoEntidad e={e} /></div>
+        {e.creditoLogo && <p class="ficha__credito"><a href={e.creditoLogo.url} target="_blank" rel="noopener noreferrer">{e.creditoLogo.texto}</a></p>}
         {e.datos.length > 0 && (
           <dl>
             {e.datos.map((d) => (

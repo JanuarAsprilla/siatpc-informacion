@@ -33,10 +33,17 @@ Todo el contenido sale de fuentes públicas verificadas y cada dato lleva su enl
 - **Entidades** (`src/data/entidades.json`): las que figuran en la lista de socios de la publicación de MarViva de 2016 (parcial: la lista superaba los 80 miembros) más entidades relacionadas (PROCASUR, SIEMBRA, Consejo de Estado, ICA). Los logos son los oficiales de cada entidad y solo se incluyen los que se pudieron descargar y verificar; el resto usa monograma.
 - **Documentos** (`documentos.json`) y **noticias** (`noticias.json`): publicaciones, casos de estudio, un fallo y una resolución, y notas de AUNAP, UTCH, ACUA, Panorama y el Consejo de Estado, cada una con enlace a su fuente. Las fechas pueden ser parciales (`2016`, `2016-12`).
 - **Imágenes:** `public/img/entidades` (logos) y `public/img/gicpa` (fotos de las noticias, de cada medio).
-- **Pendiente por confirmar:** logos de la Armada, la alcaldía de Juradó (su sitio no respondió) y los consejos comunitarios (no se encontró un logo oficial); la lista de miembros posterior a 2016; las 28 asociaciones de FEDEPESCA; derechos de uso de los logos con cada entidad.
+- **Pendiente por confirmar:** logos de la alcaldía de Juradó (su sitio no respondió) y los consejos comunitarios (no se encontró un logo oficial); la lista de miembros posterior a 2016; las 28 asociaciones de FEDEPESCA; derechos de uso de los logos con cada entidad.
 
 Para agregar contenido, edite esos JSON (el campo `entidad` es el `slug` de una entidad).
 
 ## Publicación
 
 `render.yaml` define un sitio estático en Render (rama `main`, `npm ci && npm run build`, carpeta `dist`).
+
+## Créditos de imágenes
+
+- **Logos de entidades:** son marcas de cada entidad, tomadas de sus sitios oficiales. Falta confirmar con cada una el permiso de uso.
+- **Escudo de la Armada Nacional:** Wikimedia Commons, autor SajoR, licencia CC BY-SA 2.5 (https://commons.wikimedia.org/wiki/File:Escudo_Armada_Nacional_de_Colombia.svg). Se muestra con su atribución en la ficha de la entidad.
+- **Escudo del Litoral del San Juan:** Wikimedia Commons, autor BrCaLeTo, licencias GFDL 1.2+ y CC BY-SA 3.0. Es un dibujo vectorial hecho por un tercero, no un archivo oficial de la alcaldía.
+- **Logos ampliados:** Consejo de Estado, Conservación Internacional, WWF y los escudos de Bahía Solano, Nuquí y Bajo Baudó no tienen versión de mayor resolución en sus sitios; se ampliaron con interpolación Lanczos y enfoque suave (mejora los bordes, no agrega detalle). Lo ideal es pedir el archivo vectorial a cada entidad.
