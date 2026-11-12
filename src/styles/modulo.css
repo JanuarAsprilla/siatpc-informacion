@@ -196,6 +196,15 @@ a:hover { opacity: 1; }
 .ficha dd { margin: 0.1rem 0 0; overflow-wrap: anywhere; }
 .ficha dd a { color: var(--verde-oscuro); }
 
+/* Filtro de temáticas como botones */
+.campo--oculto { display: none; }
+.temas { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.chip-filtro { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; padding: 0 1rem; border: 1.5px solid #cfc4b6; border-radius: 999px; background: #fff; color: var(--ink); font: inherit; font-weight: 600; font-size: 0.92rem; cursor: pointer; margin: 0; width: auto; height: auto; transition: background-color 160ms var(--ease), color 160ms var(--ease), border-color 160ms var(--ease), transform 160ms var(--ease); }
+.chip-filtro em { font-style: normal; font-size: 0.8rem; color: var(--suave); font-variant-numeric: tabular-nums; }
+.chip-filtro:hover { background: var(--banda); }
+.chip-filtro:active { transform: scale(0.97); }
+.chip-filtro[aria-pressed='true'] { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chip-filtro[aria-pressed='true'] em { color: #e6d3c7; }
 /* Detalle de noticia: columna de lectura y columna lateral con datos y compartir */
 .progreso { position: fixed; z-index: 950; left: 0; right: 0; top: 78px; height: 3px; background: transparent; pointer-events: none; }
 .progreso span { display: block; height: 100%; background: var(--ambar); transform-origin: left; transform: scaleX(0); }

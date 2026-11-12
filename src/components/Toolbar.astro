@@ -1,6 +1,6 @@
 ---
 interface Opcion { value: string; label: string; count?: number }
-interface Selector { key: string; label: string; todas: string; opciones: Opcion[] }
+interface Selector { key: string; label: string; todas: string; opciones: Opcion[]; oculto?: boolean }
 interface Props { buscaLabel: string; buscaPlaceholder: string; selectores?: Selector[]; columnas?: boolean }
 const { buscaLabel, buscaPlaceholder, selectores = [], columnas = true } = Astro.props;
 ---
@@ -13,7 +13,7 @@ const { buscaLabel, buscaPlaceholder, selectores = [], columnas = true } = Astro
     </div>
   </div>
   {selectores.map((s) => (
-    <div class="campo campo--select">
+    <div class:list={['campo', 'campo--select', { 'campo--oculto': s.oculto }]}>
       <label for={`f-${s.key}`}>{s.label}</label>
       <select id={`f-${s.key}`} data-control={s.key}>
         <option value="">{s.todas}</option>

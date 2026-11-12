@@ -43,6 +43,7 @@ function iniciar(raiz) {
   const items = [...raiz.querySelectorAll('[data-item]')];
   const controles = [...raiz.querySelectorAll('[data-control]')];
   const botonesCols = [...raiz.querySelectorAll('[data-cols-btn]')];
+  const chipsFiltro = [...raiz.querySelectorAll('[data-chip]')];
   const grid = raiz.querySelector('[data-grid]');
   const estadoEl = raiz.querySelector('[data-estado]');
   const vacioEl = raiz.querySelector('[data-vacio]');
@@ -83,6 +84,10 @@ function iniciar(raiz) {
     const pagina = new Set(lista.slice((estado.p - 1) * tam, estado.p * tam));
     for (const i of items) i.hidden = !pagina.has(i);
 
+    for (const b of chipsFiltro) {
+      const c = controles.find((x) => x.dataset.control === b.dataset.chip);
+      if (c) b.setAttribute('aria-pressed', String(c.value === b.dataset.valor));
+    }
     if (grid) grid.dataset.cols = String(estado.cols);
     for (const b of botonesCols) b.setAttribute('aria-pressed', String(Number(b.dataset.colsBtn) === estado.cols));
 
@@ -105,6 +110,13 @@ function iniciar(raiz) {
   }
 
   for (const c of controles) c.addEventListener(c.dataset.control === 'q' ? 'input' : 'change', () => { estado.p = 1; pintar(); });
+  for (const b of chipsFiltro) b.addEventListener('click', () => {
+    const c = controles.find((x) => x.dataset.control === b.dataset.chip);
+    if (!c) return;
+    c.value = b.dataset.valor;
+    estado.p = 1;
+    pintar();
+  });
   for (const b of botonesCols) b.addEventListener('click', () => { estado.cols = Number(b.dataset.colsBtn); pintar(); });
   for (const b of raiz.querySelectorAll('[data-limpiar]')) b.addEventListener('click', () => { for (const c of controles) c.value = ''; estado.p = 1; pintar(); });
   raiz.querySelector('form')?.addEventListener('submit', (e) => e.preventDefault());
