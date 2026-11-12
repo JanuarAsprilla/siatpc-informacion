@@ -106,7 +106,7 @@ function iniciar(raiz) {
 
   for (const c of controles) c.addEventListener(c.dataset.control === 'q' ? 'input' : 'change', () => { estado.p = 1; pintar(); });
   for (const b of botonesCols) b.addEventListener('click', () => { estado.cols = Number(b.dataset.colsBtn); pintar(); });
-  raiz.querySelector('[data-limpiar]')?.addEventListener('click', () => { for (const c of controles) c.value = ''; estado.p = 1; pintar(); });
+  for (const b of raiz.querySelectorAll('[data-limpiar]')) b.addEventListener('click', () => { for (const c of controles) c.value = ''; estado.p = 1; pintar(); });
   raiz.querySelector('form')?.addEventListener('submit', (e) => e.preventDefault());
   pintar();
 }

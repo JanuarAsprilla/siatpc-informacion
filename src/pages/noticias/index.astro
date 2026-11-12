@@ -33,7 +33,7 @@ const temas = TEMATICAS.map((t) => ({ value: t, label: t, count: cuenta(noticias
       <ul class="rejilla" data-grid data-cols="3">
         {noticias.map((n, i) => <NewsCard n={n} destacada={i === 0} />)}
       </ul>
-      <p class="vacio" data-vacio hidden>No encontramos noticias con ese filtro. Pruebe con otra palabra o elija «Todas las temáticas».</p>
+      <p class="vacio" data-vacio hidden>No encontramos noticias con ese filtro. Pruebe con otra palabra o elija «Todas las temáticas».<br /><button type="button" class="boton boton--borde boton--sm" data-limpiar>Limpiar filtros</button></p>
       <nav class="paginas" data-paginas aria-label="Páginas de noticias"></nav>
     </div>
   </section>

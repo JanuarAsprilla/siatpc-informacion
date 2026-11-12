@@ -25,7 +25,7 @@ const categorias = [...new Set(documentos.map((d) => d.categoria))].sort().map((
       <ul class="rejilla" data-grid data-cols="3">
         {documentos.map((d) => <DocCard d={d} e={entidadPorSlug(d.entidad)!} />)}
       </ul>
-      <p class="vacio" data-vacio hidden>No encontramos documentos con ese filtro. Esta entidad puede no tener documentos publicados todavía; pruebe con otra o limpie los filtros.</p>
+      <p class="vacio" data-vacio hidden>No encontramos documentos con ese filtro. Esta entidad puede no tener documentos publicados todavía; pruebe con otra o limpie los filtros.<br /><button type="button" class="boton boton--borde boton--sm" data-limpiar>Limpiar filtros</button></p>
       <nav class="paginas" data-paginas aria-label="Páginas de documentos"></nav>
     </div>
   </section>

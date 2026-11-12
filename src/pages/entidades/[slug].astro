@@ -25,7 +25,9 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
             <strong>Documentos de {e.sigla}</strong>
             <span>{docs.length > 0 ? `${docs.length} ${docs.length === 1 ? 'documento publicado' : 'documentos publicados'}` : 'Todavía no hay documentos publicados.'}</span>
           </div>
-          <a class="boton boton--verde" href={hrefDocs}>Ver documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          {docs.length > 0
+            ? <a class="boton boton--verde" href={hrefDocs}>Ver documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+            : <a class="boton boton--borde" href="/documentos/">Ver documentos de otras entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>}
         </div>
         {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href="/noticias/">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
       </div>

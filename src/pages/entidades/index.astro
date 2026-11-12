@@ -17,7 +17,7 @@ const tipos = [...new Set(entidades.map((e) => e.tipo))].map((t) => ({ value: t,
       <ul class="rejilla" data-grid data-cols="3">
         {entidades.map((e) => <EntityCard e={e} docs={documentosDe(e.slug).length} />)}
       </ul>
-      <p class="vacio" data-vacio hidden>No encontramos entidades con ese filtro. Pruebe con otra palabra o limpie los filtros.</p>
+      <p class="vacio" data-vacio hidden>No encontramos entidades con ese filtro. Pruebe con otra palabra o limpie los filtros.<br /><button type="button" class="boton boton--borde boton--sm" data-limpiar>Limpiar filtros</button></p>
       <nav class="paginas" data-paginas aria-label="Páginas de entidades"></nav>
     </div>
   </section>
