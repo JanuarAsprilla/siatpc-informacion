@@ -95,7 +95,7 @@
   "sigla": "Humboldt",
   "tipo": "Instituto de investigación",
   "logo": "/img/entidades/humboldt.svg",
-  "acerca": "",
+  "acerca": "Instituto de investigación del Sistema Nacional Ambiental dedicado a la investigación científica sobre la biodiversidad continental de Colombia.",
   "datos": [
    {
     "k": "Ciudad",
@@ -115,7 +115,7 @@
   "sigla": "Invemar",
   "tipo": "Instituto de investigación",
   "logo": "/img/entidades/invemar.webp",
-  "acerca": "",
+  "acerca": "Instituto de investigación del Sistema Nacional Ambiental dedicado a los ecosistemas y recursos marinos y costeros de Colombia.",
   "datos": [
    {
     "k": "Ciudad",

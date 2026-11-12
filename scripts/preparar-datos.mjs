@@ -16,8 +16,8 @@ const CURADAS = [
   { slug: 'iiap', nombre: 'Instituto de Investigaciones Ambientales del Pacífico', sigla: 'IIAP', tipo: 'Instituto de investigación', logo: 'iiap.webp', desde: 'public/img/logo-horizontal.webp', ciudad: 'Quibdó - Colombia', web: 'https://iiap.org.co/' },
   { slug: 'minambiente', nombre: 'Ministerio de Ambiente y Desarrollo Sostenible', sigla: 'MADS', tipo: 'Ministerio', logo: 'minambiente.webp', desde: 'public/img/aliados/minambiente.webp', json: 'MINISTERIO DE AMBIENTE' },
   { slug: 'ideam', nombre: 'Instituto de Hidrología, Meteorología y Estudios Ambientales', sigla: 'IDEAM', tipo: 'Instituto de investigación', logo: 'ideam.webp', desde: 'public/img/aliados/ideam.webp', json: 'INSTITUTO DE HIDROLOGIA' },
-  { slug: 'humboldt', nombre: 'Instituto de Investigación de Recursos Biológicos Alexander von Humboldt', sigla: 'Humboldt', tipo: 'Instituto de investigación', logo: 'humboldt.svg', desde: 'public/img/aliados/humboldt.svg', ciudad: 'Bogotá - Colombia', web: 'https://www.humboldt.org.co/' },
-  { slug: 'invemar', nombre: 'Instituto de Investigaciones Marinas y Costeras', sigla: 'Invemar', tipo: 'Instituto de investigación', logo: 'invemar.webp', desde: 'public/img/aliados/invemar.webp', ciudad: 'Santa Marta - Colombia', web: 'https://www.invemar.org.co/' },
+  { slug: 'humboldt', nombre: 'Instituto de Investigación de Recursos Biológicos Alexander von Humboldt', sigla: 'Humboldt', tipo: 'Instituto de investigación', logo: 'humboldt.svg', desde: 'public/img/aliados/humboldt.svg', ciudad: 'Bogotá - Colombia', web: 'https://www.humboldt.org.co/', acerca: 'Instituto de investigación del Sistema Nacional Ambiental dedicado a la investigación científica sobre la biodiversidad continental de Colombia.' },
+  { slug: 'invemar', nombre: 'Instituto de Investigaciones Marinas y Costeras', sigla: 'Invemar', tipo: 'Instituto de investigación', logo: 'invemar.webp', desde: 'public/img/aliados/invemar.webp', ciudad: 'Santa Marta - Colombia', web: 'https://www.invemar.org.co/', acerca: 'Instituto de investigación del Sistema Nacional Ambiental dedicado a los ecosistemas y recursos marinos y costeros de Colombia.' },
   { slug: 'sinchi', nombre: 'Instituto Amazónico de Investigaciones Científicas', sigla: 'Sinchi', tipo: 'Instituto de investigación', logo: 'sinchi.webp', desde: 'public/img/aliados/sinchi.webp', json: 'INSTITUTO AMAZÓNICO' },
   { slug: 'anla', nombre: 'Autoridad Nacional de Licencias Ambientales', sigla: 'ANLA', tipo: 'Autoridad ambiental', json: 'AUTORIDAD NACIONAL' },
   { slug: 'codechoco', nombre: 'Corporación Autónoma Regional para el Desarrollo Sostenible del Chocó', sigla: 'Codechocó', tipo: 'Corporación autónoma regional', json: 'CORPORACIÓN AUTÓNOMA REGIONAL PARA EL DESARROLLO SOSTENIBLE DEL CHOCÓ' },
@@ -41,7 +41,7 @@ const entidades = CURADAS.map((c) => {
   return {
     slug: c.slug, nombre: c.nombre, sigla: c.sigla, tipo: c.tipo,
     logo: c.logo ? `/img/entidades/${c.logo}` : null,
-    acerca: f ? f.acerca : c.slug === 'iiap' ? acercaIiap : '',
+    acerca: f ? f.acerca : c.slug === 'iiap' ? acercaIiap : (c.acerca ?? ''),
     datos,
   };
 });

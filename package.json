@@ -10,7 +10,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "preparar-datos": "node scripts/preparar-datos.mjs",
-    "test": "node --test scripts/"
+    "test": "node --test src/lib/format.test.mjs"
   },
   "dependencies": {
     "astro": "^7.4.11"

@@ -1,0 +1,52 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import EntityCard from '../../components/EntityCard.astro';
+import { documentosDe, entidades, noticias, type Entidad } from '../../lib/datos';
+
+export function getStaticPaths() {
+  return entidades.map((e) => ({ params: { slug: e.slug }, props: { e } }));
+}
+const { e } = Astro.props as { e: Entidad };
+const docs = documentosDe(e.slug);
+const parecidas = entidades.filter((o) => o.slug !== e.slug && o.tipo === e.tipo).slice(0, 3);
+const nNoticias = noticias.filter((n) => n.entidad === e.slug).length;
+const hrefDocs = `/documentos/?entidad=${e.slug}`;
+---
+<Base title={e.nombre} description={`${e.nombre} (${e.sigla}): información y documentos.`} active="entidades">
+  <PageHead titulo={e.nombre} lead={e.tipo} ancho migas={[{ t: 'Entidades', href: '/entidades/' }, { t: e.sigla }]} />
+  <section class="seccion">
+    <div class="mod detalle">
+      <div class="detalle__texto">
+        <h2>Acerca de {e.sigla}</h2>
+        <p>{e.acerca || 'La descripción de esta entidad está por confirmar.'}</p>
+        <div class="cta-docs">
+          <div>
+            <strong>Documentos de {e.sigla}</strong>
+            <span>{docs.length > 0 ? `${docs.length} ${docs.length === 1 ? 'documento publicado' : 'documentos publicados'}` : 'Todavía no hay documentos publicados.'}</span>
+          </div>
+          <a class="boton boton--verde" href={hrefDocs}>Ver documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href="/noticias/">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
+      </div>
+      <aside class="ficha" aria-label={`Datos de ${e.sigla}`}>
+        {e.logo && <div class="ficha__logo"><img src={e.logo} alt={`Logo de ${e.sigla}`} /></div>}
+        {e.datos.length > 0 && (
+          <dl>
+            {e.datos.map((d) => (
+              <div><dt>{d.k}</dt><dd>{d.href ? <a href={d.href.replace(/^(tel|mailto):\s+/, '$1:')} {...(d.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{d.v}</a> : d.v}</dd></div>
+            ))}
+          </dl>
+        )}
+      </aside>
+    </div>
+  </section>
+  {parecidas.length > 0 && (
+    <section class="seccion seccion--banda">
+      <div class="mod">
+        <div class="seccion__cab"><h2>Otras entidades: {e.tipo.toLowerCase()}</h2></div>
+        <ul class="rejilla" data-cols="3">{parecidas.map((o) => <EntityCard e={o} docs={documentosDe(o.slug).length} />)}</ul>
+      </div>
+    </section>
+  )}
+</Base>

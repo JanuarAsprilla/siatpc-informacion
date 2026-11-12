@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { noticias, type Noticia } from '../../lib/datos';
+import { fechaLarga, lenguajeClaro, resumir } from '../../lib/format';
+
+export function getStaticPaths() {
+  return noticias.map((n) => ({ params: { id: n.id }, props: { n } }));
+}
+const { n } = Astro.props as { n: Noticia };
+const titulo = lenguajeClaro(n.titulo);
+const imagenes = [...new Set([n.portada, ...n.bloques.map((b) => (b.t === 'img' ? b.src : null))].filter((s): s is string => Boolean(s)))];
+const texto = n.bloques.filter((b) => b.t !== 'img');
+const primero = n.bloques.find((b) => b.t === 'p');
+const relacionadas = noticias
+  .filter((o) => o.id !== n.id && o.portada)
+  .map((o) => ({ o, comunes: o.tematicas.filter((t) => n.tematicas.includes(t)).length }))
+  .sort((a, b) => b.comunes - a.comunes || (b.o.fecha ?? '').localeCompare(a.o.fecha ?? ''))
+  .slice(0, 3)
+  .map((x) => x.o);
+const redes = [
+  { red: 'facebook', icono: 'bi-facebook', t: 'Facebook' },
+  { red: 'x', icono: 'bi-twitter-x', t: 'X' },
+  { red: 'whatsapp', icono: 'bi-whatsapp', t: 'WhatsApp' },
+  { red: 'linkedin', icono: 'bi-linkedin', t: 'LinkedIn' },
+];
+---
+<Base title={titulo} description={primero && primero.t === 'p' ? resumir(primero.x, 157) : undefined} active="noticias">
+  <PageHead titulo={titulo} lead={`${fechaLarga(n.fecha)}${n.autor ? ` · ${n.autor}` : ''}`} ancho migas={[{ t: 'Noticias', href: '/noticias/' }, { t: 'Noticia' }]} />
+  <article class="mod articulo">
+    {imagenes.length > 0 && (
+      <div class="carrusel" data-carrusel role="region" aria-roledescription="carrusel" aria-label="Imágenes de la noticia">
+        <div class="carrusel__pista" tabindex="0">
+          {imagenes.map((src, i) => <figure><img src={`/${src}`} alt={`Imagen ${i + 1} de ${imagenes.length}: ${titulo}`} loading={i === 0 ? 'eager' : 'lazy'} /></figure>)}
+        </div>
+        {imagenes.length > 1 && (
+          <>
+            <button type="button" class="carrusel__btn" data-prev aria-label="Imagen anterior"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+            <button type="button" class="carrusel__btn" data-next aria-label="Imagen siguiente"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            <span class="carrusel__cuenta" data-cuenta aria-hidden="true">1 / {imagenes.length}</span>
+          </>
+        )}
+      </div>
+    )}
+    <div class="prosa">
+      {texto.map((b) => {
+        if (b.t === 'p') return <p>{b.x}</p>;
+        if (b.t === 'h') return <h2>{b.x}</h2>;
+        if (b.t === 'ul') return <ul>{b.items.map((li) => <li>{li}</li>)}</ul>;
+        return null;
+      })}
+    </div>
+    <div class="compartir" data-compartir data-titulo={titulo}>
+      <h2>Compartir esta noticia</h2>
+      <ul>
+        {redes.map((r) => (
+          <li><button type="button" data-red={r.red} title={`Compartir en ${r.t}`}><i class={`bi ${r.icono}`} aria-hidden="true"></i><span class="sr-only">Compartir en {r.t} (se abre en una pestaña nueva)</span></button></li>
+        ))}
+        <li><button type="button" data-copiar title="Copiar el enlace"><i class="bi bi-link-45deg" aria-hidden="true"></i><span class="sr-only">Copiar el enlace</span></button></li>
+      </ul>
+      <p role="status" aria-live="polite" data-aviso></p>
+    </div>
+  </article>
+  {relacionadas.length > 0 && (
+    <section class="seccion seccion--banda" aria-labelledby="t-rel">
+      <div class="mod">
+        <div class="seccion__cab">
+          <h2 id="t-rel">Noticias relacionadas</h2>
+          <a class="enlace-flecha" href="/noticias/">Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <ul class="rejilla" data-cols="3">{relacionadas.map((o) => <NewsCard n={o} />)}</ul>
+      </div>
+    </section>
+  )}
+  <script>import '../../scripts/noticia.js';</script>
+</Base>

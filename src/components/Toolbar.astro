@@ -1,0 +1,37 @@
+---
+interface Opcion { value: string; label: string; count?: number }
+interface Selector { key: string; label: string; todas: string; opciones: Opcion[] }
+interface Props { buscaLabel: string; buscaPlaceholder: string; selectores?: Selector[]; columnas?: boolean }
+const { buscaLabel, buscaPlaceholder, selectores = [], columnas = true } = Astro.props;
+---
+<div class="toolbar" role="search">
+  <div class="campo campo--busca">
+    <label for="f-q">{buscaLabel}</label>
+    <div class="busca">
+      <i class="bi bi-search" aria-hidden="true"></i>
+      <input id="f-q" type="search" data-control="q" placeholder={buscaPlaceholder} autocomplete="off" />
+    </div>
+  </div>
+  {selectores.map((s) => (
+    <div class="campo campo--select">
+      <label for={`f-${s.key}`}>{s.label}</label>
+      <select id={`f-${s.key}`} data-control={s.key}>
+        <option value="">{s.todas}</option>
+        {s.opciones.map((o) => <option value={o.value}>{o.label}{o.count !== undefined ? ` (${o.count})` : ''}</option>)}
+      </select>
+    </div>
+  ))}
+  {columnas && (
+    <div class="cols">
+      <span class="sr-only" id="cols-etiqueta">Columnas</span>
+      <label aria-hidden="true">Columnas</label>
+      <div class="cols__grupo" role="group" aria-labelledby="cols-etiqueta">
+        {[1, 2, 3].map((n) => (
+          <button type="button" data-cols-btn={n} aria-pressed="false" aria-label={`${n} ${n === 1 ? 'columna' : 'columnas'}`}>
+            <span class={`pict pict--${n}`} aria-hidden="true">{Array.from({ length: n }, () => <i></i>)}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  )}
+</div>

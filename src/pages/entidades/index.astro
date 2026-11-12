@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Toolbar from '../../components/Toolbar.astro';
+import EntityCard from '../../components/EntityCard.astro';
+import { cuenta, documentosDe, entidades } from '../../lib/datos';
+
+const tipos = [...new Set(entidades.map((e) => e.tipo))].map((t) => ({ value: t, label: t, count: cuenta(entidades, (e) => e.tipo === t) }));
+---
+<Base title="Entidades" description="Entidades que hacen parte del Sistema de Información Ambiental Territorial del Pacífico." active="entidades">
+  <PageHead titulo="Entidades" lead="Las instituciones que producen y comparten información ambiental. Entre a una para conocerla y ver sus documentos." migas={[{ t: 'Entidades' }]} />
+  <section class="seccion" style="padding-top:2rem">
+    <div class="mod" data-lista data-pagina="24" data-cols="3" data-sustantivo="entidades">
+      <Toolbar buscaLabel="Buscar una entidad" buscaPlaceholder="Nombre o sigla" selectores={[{ key: 'tipo', label: 'Tipo de entidad', todas: 'Todos los tipos', opciones: tipos }]} />
+      <div data-inicio></div>
+      <p class="estado" data-estado role="status" aria-live="polite"><span data-resumen></span><button type="button" class="limpiar" data-limpiar hidden>Limpiar filtros</button></p>
+      <ul class="rejilla" data-grid data-cols="3">
+        {entidades.map((e) => <EntityCard e={e} docs={documentosDe(e.slug).length} />)}
+      </ul>
+      <p class="vacio" data-vacio hidden>No encontramos entidades con ese filtro. Pruebe con otra palabra o limpie los filtros.</p>
+      <nav class="paginas" data-paginas aria-label="Páginas de entidades"></nav>
+    </div>
+  </section>
+  <script>import '../../scripts/lista.js';</script>
+</Base>

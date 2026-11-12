@@ -1,0 +1,22 @@
+---
+interface Props { active?: 'inicio' | 'entidades' | 'documentos' | 'noticias' }
+const { active } = Astro.props;
+const secciones = [
+  { id: 'inicio', t: 'Inicio', href: '/', icono: 'bi-house-door' },
+  { id: 'entidades', t: 'Entidades', href: '/entidades/', icono: 'bi-buildings' },
+  { id: 'documentos', t: 'Documentos', href: '/documentos/', icono: 'bi-file-earmark-text' },
+  { id: 'noticias', t: 'Noticias', href: '/noticias/', icono: 'bi-newspaper' },
+] as const;
+---
+<div class="modnav">
+  <div class="mod">
+    <a class="modnav__nombre" href="/"><small>SIAT PC</small><strong>Centro de información</strong></a>
+    <nav aria-label="Secciones del centro de información">
+      <ul>
+        {secciones.map((s) => (
+          <li><a href={s.href} aria-current={active === s.id ? 'page' : undefined}><i class={`bi ${s.icono}`} aria-hidden="true"></i>{s.t}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+import type { Entidad } from '../lib/datos';
+import { normalizar, resumir } from '../lib/format';
+
+interface Props { e: Entidad; docs: number }
+const { e, docs } = Astro.props;
+const COLORES = ['#0a7a3c', '#084898', '#ed6e0c', '#7e3123', '#0b8fd6', '#5a6529'];
+const color = COLORES[[...e.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % COLORES.length];
+const resumen = e.acerca ? resumir(e.acerca, 190) : 'Descripción por confirmar con la entidad.';
+const buscable = normalizar(`${e.nombre} ${e.sigla} ${e.tipo} ${e.acerca}`);
+---
+<li data-item data-q={buscable} data-tipo={e.tipo}>
+  <article class="tarjeta">
+    <div class="ent__logo">
+      {e.logo ? <img src={e.logo} alt="" loading="lazy" /> : <span class="ent__mono" style={`background:${color}`} aria-hidden="true">{e.sigla.toUpperCase()}</span>}
+    </div>
+    <div class="tarjeta__cuerpo">
+      <span class="chip">{e.tipo}</span>
+      <h2><a class="stretched-link" href={`/entidades/${e.slug}/`}>{e.nombre}</a></h2>
+      <p class="recorte">{resumen}</p>
+      <div class="tarjeta__pie">
+        <span><i class="bi bi-file-earmark-text" aria-hidden="true"></i> {docs} {docs === 1 ? 'documento' : 'documentos'}</span>
+        <span class="tarjeta__mas">Ver entidad <i class="bi bi-arrow-right" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </article>
+</li>

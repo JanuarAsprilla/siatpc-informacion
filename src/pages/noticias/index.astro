@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Toolbar from '../../components/Toolbar.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { cuenta, noticias, TEMATICAS } from '../../lib/datos';
+import { fechaLarga, lenguajeClaro, resumir } from '../../lib/format';
+
+const [reciente] = noticias;
+const resumen = resumir(reciente.bloques.find((b) => b.t === 'p')?.x ?? '', 230);
+const temas = TEMATICAS.map((t) => ({ value: t, label: t, count: cuenta(noticias, (n) => n.tematicas.includes(t)) }));
+---
+<Base title="Noticias" description="Lo que está pasando en el territorio y en las entidades." active="noticias">
+  <PageHead titulo="Noticias" lead="Lo que está pasando en el territorio y en las entidades." migas={[{ t: 'Noticias' }]} />
+  <section class="seccion" style="padding-top:2.5rem">
+    <div class="mod" data-lista data-pagina="12" data-cols="3" data-sustantivo="noticias">
+      <article class="destacada">
+        <a class="destacada__img" href={`/noticias/${reciente.id}/`} tabindex="-1" aria-hidden="true">
+          {reciente.portada && <img src={`/${reciente.portada}`} alt="" width="1200" height="800" fetchpriority="high" />}
+          <span class="destacada__sello">Más reciente</span>
+        </a>
+        <div class="destacada__texto">
+          <p class="fecha" style="text-transform:uppercase;letter-spacing:.1em">{fechaLarga(reciente.fecha)}</p>
+          <h2><a href={`/noticias/${reciente.id}/`}>{lenguajeClaro(reciente.titulo)}</a></h2>
+          {resumen && <p>{resumen}</p>}
+          <a class="boton boton--verde" style="width:fit-content" href={`/noticias/${reciente.id}/`}>Leer noticia <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <Toolbar buscaLabel="Buscar una noticia" buscaPlaceholder="Palabra del título" selectores={[{ key: 'tema', label: 'Temática', todas: 'Todas las temáticas', opciones: temas }]} />
+      <div data-inicio></div>
+      <p class="estado" data-estado role="status" aria-live="polite"><span data-resumen></span><button type="button" class="limpiar" data-limpiar hidden>Limpiar filtros</button></p>
+      <ul class="rejilla" data-grid data-cols="3">
+        {noticias.map((n, i) => <NewsCard n={n} destacada={i === 0} />)}
+      </ul>
+      <p class="vacio" data-vacio hidden>No encontramos noticias con ese filtro. Pruebe con otra palabra o elija «Todas las temáticas».</p>
+      <nav class="paginas" data-paginas aria-label="Páginas de noticias"></nav>
+    </div>
+  </section>
+  <script>import '../../scripts/lista.js';</script>
+</Base>

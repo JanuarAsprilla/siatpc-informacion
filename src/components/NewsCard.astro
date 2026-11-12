@@ -1,0 +1,20 @@
+---
+import type { Noticia } from '../lib/datos';
+import { fechaLarga, lenguajeClaro, normalizar } from '../lib/format';
+
+interface Props { n: Noticia; destacada?: boolean }
+const { n, destacada = false } = Astro.props;
+const titulo = lenguajeClaro(n.titulo);
+---
+<li data-item data-q={normalizar(n.titulo)} data-tema={n.tematicas.join('|')} data-destacada={destacada ? '' : undefined}>
+  <article class="tarjeta">
+    <a class="nota__img" href={`/noticias/${n.id}/`} tabindex="-1" aria-hidden="true">
+      {n.portada ? <img src={`/${n.portada}`} alt="" width="1200" height="800" loading="lazy" /> : <div style="aspect-ratio:4/3"></div>}
+    </a>
+    <div class="tarjeta__cuerpo">
+      <p class="fecha">{fechaLarga(n.fecha)}</p>
+      <h3><a href={`/noticias/${n.id}/`}>{titulo}</a></h3>
+      {n.tematicas[0] && <span class="chip chip--verde">{n.tematicas[0]}</span>}
+    </div>
+  </article>
+</li>

@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Toolbar from '../../components/Toolbar.astro';
+import DocCard from '../../components/DocCard.astro';
+import { cuenta, documentos, entidades, entidadPorSlug } from '../../lib/datos';
+
+const porEntidad = entidades.map((e) => ({ value: e.slug, label: e.sigla, count: cuenta(documentos, (d) => d.entidad === e.slug) }));
+const categorias = [...new Set(documentos.map((d) => d.categoria))].sort().map((c) => ({ value: c, label: c, count: cuenta(documentos, (d) => d.categoria === c) }));
+---
+<Base title="Documentos" description="Documentos de todas las entidades del Sistema de Información Ambiental Territorial del Pacífico." active="documentos">
+  <PageHead titulo="Documentos" lead="Normas, planes, informes y más, publicados por las entidades. Filtre por entidad o por tipo de documento." migas={[{ t: 'Documentos' }]} />
+  <section class="seccion" style="padding-top:2rem">
+    <div class="mod" data-lista data-pagina="12" data-cols="3" data-sustantivo="documentos">
+      <Toolbar
+        buscaLabel="Buscar un documento"
+        buscaPlaceholder="Título o palabra del resumen"
+        selectores={[
+          { key: 'entidad', label: 'Entidad', todas: 'Todas las entidades', opciones: porEntidad },
+          { key: 'categoria', label: 'Tipo de documento', todas: 'Todos los tipos', opciones: categorias },
+        ]}
+      />
+      <div data-inicio></div>
+      <p class="estado" data-estado role="status" aria-live="polite"><span data-resumen></span><button type="button" class="limpiar" data-limpiar hidden>Limpiar filtros</button></p>
+      <ul class="rejilla" data-grid data-cols="3">
+        {documentos.map((d) => <DocCard d={d} e={entidadPorSlug(d.entidad)!} />)}
+      </ul>
+      <p class="vacio" data-vacio hidden>No encontramos documentos con ese filtro. Esta entidad puede no tener documentos publicados todavía; pruebe con otra o limpie los filtros.</p>
+      <nav class="paginas" data-paginas aria-label="Páginas de documentos"></nav>
+    </div>
+  </section>
+  <script>import '../../scripts/lista.js';</script>
+</Base>
