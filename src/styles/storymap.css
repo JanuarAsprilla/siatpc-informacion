@@ -55,7 +55,8 @@
 .sm__mini i { position: absolute; border: 2px solid var(--ambar); background: rgb(247 172 29 / 0.18); pointer-events: none; }
 
 /* Filtros por zona: una fila por capítulo; solo se ve la del capítulo que se lee. */
-.sm__chips { min-height: 0; }
+.sm__chips { flex: none; height: 2.9rem; overflow: hidden; }
+@media (min-width: 992px) { .sm__chips { height: 5.9rem; overflow-y: auto; } }
 .sm__grupo { display: none; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; }
 .sm__grupo::-webkit-scrollbar { display: none; }
 .sm__grupo[data-activo] { display: flex; }
@@ -69,7 +70,7 @@
 
 .sm__pie { display: none; margin: 0; font-size: 0.82rem; line-height: 1.4; color: var(--suave); }
 .sm__pie b { color: var(--ink); font-weight: 700; }
-@media (min-width: 992px) { .sm__pie { display: block; } }
+@media (min-width: 992px) { .sm__pie { display: block; flex: none; height: 2.4rem; overflow: hidden; } }
 
 /* Relato */
 .sm__texto { min-width: 0; }
