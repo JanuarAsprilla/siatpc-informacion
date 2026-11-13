@@ -7,11 +7,6 @@ import Storymap from '../components/storymap/Storymap.astro';
 import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
 import { MODULO } from '../lib/modulo';
 
-const secciones = [
-  { t: 'Entidades', d: 'Las entidades que integran el GIC-PA y las relacionadas con él.', href: '/entidades/', n: `${entidades.length} entidades` },
-  { t: 'Documentos', d: 'Publicaciones, casos de estudio, fallos y normas sobre el GIC-PA.', href: '/documentos/', n: `${documentos.length} documentos` },
-  { t: 'Noticias', d: 'Lo que se publica sobre el GIC-PA y la pesca artesanal del Pacífico norte chocoano.', href: '/noticias/', n: `${noticias.length} noticias` },
-];
 const [destacada, ...resto] = noticias;
 const lado = resto.slice(0, 2);
 const fotos = noticias.filter((n) => n.portada).slice(0, 3);
@@ -33,16 +28,6 @@ const recientes = documentos.slice(0, 5);
       <div class="collage" aria-hidden="true">
         {fotos.map((n, i) => <figure class={`c${i + 1}`}><img src={`/${n.portada}`} alt="" width="800" height="800" fetchpriority={i === 0 ? 'high' : undefined} /></figure>)}
       </div>
-    </div>
-  </section>
-
-  <section class="seccion" aria-label="Secciones del centro de información">
-    <div class="mod">
-      <ul class="indice">
-        {secciones.map((s) => (
-          <li><a href={s.href}><span class="indice__titulo">{s.t}</span><span class="indice__desc">{s.d}</span><span class="indice__fin"><span>{s.n}</span><i class="bi bi-arrow-right" aria-hidden="true"></i></span></a></li>
-        ))}
-      </ul>
     </div>
   </section>
 

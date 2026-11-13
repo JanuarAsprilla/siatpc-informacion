@@ -38,6 +38,16 @@ function iniciar(raiz) {
     pintar();
   }
 
+  // La imagen de alta resolución se baja la primera vez que se acerca el mapa y reemplaza a la base sin parpadeo.
+  let hdCargada = false;
+  function cargarHd() {
+    hdCargada = true;
+    const img = camara.querySelector('img');
+    const hd = new Image();
+    hd.onload = () => { img.src = hd.src; };
+    hd.src = img.dataset.hd;
+  }
+
   function pintar() {
     const { vista, ancho } = estado;
     camara.style.transform = vista.z === 1 ? '' : `translate(${vista.tx}px, ${vista.ty}px) scale(${vista.z})`;
@@ -65,6 +75,7 @@ function iniciar(raiz) {
     grupos.forEach((g, i) => g.toggleAttribute('data-activo', i === estado.actual));
     capitulos.forEach((c, i) => c.toggleAttribute('data-activo', i === estado.actual));
     botonesIndice.forEach((b, i) => (i === estado.actual ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current')));
+    if (vista.z > 1 && !hdCargada) cargarHd();
     pie.textContent = `Mapa ${estado.actual + 1} de ${capitulos.length}: ${etiquetas[estado.actual]}.`;
   }
 
@@ -121,6 +132,7 @@ function iniciar(raiz) {
     const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     capitulos[i].scrollIntoView({ behavior: sinMovimiento ? 'auto' : 'smooth', block: consulta.matches ? 'center' : 'start' });
   };
+  q('[data-iniciar]').addEventListener('click', () => ir(0));
   botonesIndice.forEach((b) => b.addEventListener('click', () => ir(Number(b.dataset.ir))));
   chips.forEach((c) => c.addEventListener('click', () => alternarFoco(c.dataset.area)));
 

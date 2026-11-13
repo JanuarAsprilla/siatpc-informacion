@@ -12,17 +12,18 @@ const muestraDe = (id: string) => {
 };
 ---
 <section class="sm" data-storymap data-cajas={JSON.stringify(cajas)} aria-labelledby="t-que-es">
-  <div class="sm__cab">
+  <header class="sm__cab">
     <h2 id="t-que-es">Qué es el GIC-PA</h2>
-    <p>Un recorrido por el territorio de norte a sur. Al leer, el mapa se acerca a cada zona; también puede acercarlo usted con los botones, el teclado o los dedos.</p>
-  </div>
+    <p>Un recorrido por el territorio de norte a sur: sus cinco municipios, las zonas de manejo de la costa y las organizaciones que lo hacen posible.</p>
+    <button type="button" class="sm__inicio" data-iniciar><span><i class="bi bi-arrow-down" aria-hidden="true"></i></span>Iniciar el recorrido</button>
+  </header>
 
   <div class="sm__grid">
     <div class="sm__sticky" data-sticky>
       <div class="sm__placa">
         <div class="sm__stage" data-stage role="group" tabindex="0" aria-label="Mapa interactivo del territorio del GIC-PA. Con el teclado, más y menos acercan, cero vuelve a la vista completa y las flechas mueven el mapa acercado.">
           <div class="sm__camara" data-camara>
-            <img src={mapa.src} width={mapa.ancho} height={mapa.alto} alt="" decoding="async" draggable="false" />
+            <img src={mapa.src} data-hd={mapa.hd} width={mapa.ancho} height={mapa.alto} alt="" decoding="async" draggable="false" />
             <i class="sm__foco" data-foco aria-hidden="true"></i>
           </div>
           <p class="sr-only">{mapa.descripcion}</p>
@@ -58,7 +59,7 @@ const muestraDe = (id: string) => {
       <div class="sm__caps">
         {capitulos.map((c, i) => (
           <article class="sm__cap" id={`sm-${c.id}`} data-i={i} data-foco={'foco' in c ? c.foco : undefined} data-activo={i === 0 ? '' : undefined} aria-labelledby={`sm-t-${c.id}`}>
-            <p class="sm__kicker"><span>{String(i + 1).padStart(2, '0')}</span> {c.kicker}</p>
+            <p class="sm__kicker">{c.kicker}</p>
             <h3 id={`sm-t-${c.id}`}>{c.titulo}</h3>
             {'parrafos' in c && c.parrafos?.map((p) => <p>{p}</p>)}
             {'cita' in c && c.cita && (

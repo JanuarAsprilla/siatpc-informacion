@@ -1,6 +1,7 @@
 {
  "mapa": {
   "src": "/img/gicpa/mapa-territorio.webp",
+  "hd": "/img/gicpa/mapa-territorio-hd.webp",
   "ancho": 2400,
   "alto": 3300,
   "descripcion": "Mapa de la costa del Pacífico norte del Chocó, de Juradó al Litoral del San Juan, con la ZEPA, la ZEMP, la UAC, los manglares, las áreas protegidas, los límites municipales y la leyenda.",
@@ -84,8 +85,7 @@
     "El grupo realiza encuentros periódicos, asambleas y mesas coordinadoras en los municipios costeros para evaluar acuerdos de manejo pesquero y coordinar acciones institucionales.",
     "La XVII Asamblea se celebró en Bahía Solano, en Ciudad Mutis, del 16 al 19 de octubre de 2026."
    ],
-   "foco": "bahia-solano",
-   "chips": ["bahia-solano"],
+   "chips": [],
    "enlaces": [{ "t": "Leer la noticia de la XVII Asamblea", "href": "/noticias/utch-presente-en-la-xvii-asamblea-del-gicpa/" }]
   }
  ]
