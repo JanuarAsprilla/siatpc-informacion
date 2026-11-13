@@ -1,0 +1,92 @@
+{
+ "mapa": {
+  "src": "/img/gicpa/mapa-territorio.webp",
+  "ancho": 2400,
+  "alto": 3300,
+  "descripcion": "Mapa de la costa del Pacífico norte del Chocó, de Juradó al Litoral del San Juan, con la ZEPA, la ZEMP, la UAC, los manglares, las áreas protegidas, los límites municipales y la leyenda.",
+  "credito": "Fuente y fecha del mapa por confirmar."
+ },
+ "areas": {
+  "golfo-tribuga": { "nombre": "Golfo de Tribugá", "caja": [0.349, 0.419, 0.522, 0.575] },
+  "jurado": { "nombre": "Juradó", "caja": [0.224, 0.0, 0.379, 0.247], "muestra": "#e8e400" },
+  "bahia-solano": { "nombre": "Bahía Solano", "caja": [0.355, 0.192, 0.528, 0.434], "muestra": "#d7ae9b" },
+  "nuqui": { "nombre": "Nuquí", "caja": [0.349, 0.419, 0.522, 0.575], "muestra": "#66ceae" },
+  "bajo-baudo": { "nombre": "Bajo Baudó", "caja": [0.346, 0.553, 0.591, 0.857], "muestra": "#c6fcb2" },
+  "litoral-san-juan": { "nombre": "Litoral del San Juan", "caja": [0.346, 0.825, 0.785, 1.0], "muestra": "#fdd0b8" },
+  "zepa": { "nombre": "ZEPA", "caja": [0.212, 0.082, 0.449, 0.41], "muestra": "#69a7ff" },
+  "zemp": { "nombre": "ZEMP", "caja": [0.173, 0.086, 0.428, 0.408], "muestra": "repeating-conic-gradient(#4fd0f0 0 25%, #fff 0 50%) 0 0 / 6px 6px" },
+  "uac": { "nombre": "UAC", "caja": [0.173, 0.082, 0.44, 0.562], "muestra": "#fff", "borde": "#2b6fc4" },
+  "manglares": { "nombre": "Manglares", "caja": [0.346, 0.56, 0.485, 0.976], "muestra": "repeating-linear-gradient(135deg, #1f7a34 0 2px, #7cc36c 2px 4px)" },
+  "pnn": { "nombre": "Parque Nacional Natural", "corto": "Parque Nacional", "caja": [0.412, 0.381, 0.521, 0.461], "muestra": "repeating-linear-gradient(45deg, #8a1fb8 0 1px, transparent 1px 4px), repeating-linear-gradient(-45deg, #8a1fb8 0 1px, transparent 1px 4px)" },
+  "drmi": { "nombre": "Distritos Regionales de Manejo Integrado", "corto": "Distritos regionales", "caja": [0.349, 0.456, 0.476, 0.835], "muestra": "repeating-linear-gradient(45deg, #c4169c 0 1px, transparent 1px 4px), repeating-linear-gradient(-45deg, #c4169c 0 1px, transparent 1px 4px)" },
+  "dnmi": { "nombre": "Distritos Nacionales de Manejo Integrado", "corto": "Distritos nacionales", "caja": [0.0, 0.375, 0.14, 0.833], "muestra": "repeating-linear-gradient(45deg, #d9d300 0 1px, transparent 1px 4px), repeating-linear-gradient(-45deg, #d9d300 0 1px, transparent 1px 4px)" }
+ },
+ "capitulos": [
+  {
+   "id": "que-es",
+   "indice": "Origen",
+   "kicker": "Origen",
+   "titulo": "Una alianza nacida de los pescadores",
+   "parrafos": [
+    "El GIC-PA, Grupo Interinstitucional y Comunitario para la Pesca Artesanal, es una alianza creada en 1998 en el Pacífico chocoano de Colombia para el ordenamiento y fortalecimiento de la pesca artesanal.",
+    "Nació por iniciativa de los pescadores locales del golfo de Tribugá, junto con organizaciones e instituciones de la región."
+   ],
+   "cita": {
+    "texto": "Ordenar la actividad pesquera artesanal de la costa chocoana, como una estrategia para la recuperación del recurso pesquero y el fortalecimiento de la actividad pesquera artesanal de la región.",
+    "fuente": { "t": "Objetivo con el que se creó, según MarViva y el GIC-PA (2016)", "href": "https://marviva.net/wp-content/uploads/2021/11/publicacion_gicpa_final_8-02-17-1.pdf" }
+   },
+   "chips": ["golfo-tribuga"]
+  },
+  {
+   "id": "alcance",
+   "indice": "Alcance",
+   "kicker": "Objetivo y alcance",
+   "titulo": "Cinco municipios, una sola mesa",
+   "items": [
+    { "t": "Gobernanza y ordenamiento", "d": "Es la principal instancia de diálogo y toma de decisiones colectivas para proteger los ecosistemas marinos y fomentar prácticas pesqueras responsables." },
+    { "t": "Cobertura territorial", "d": "Convoca a comunidades y actores de los cinco municipios costeros del Chocó. Toque uno para verlo en el mapa." },
+    { "t": "Defensa comunitaria", "d": "Impulsa medidas para proteger la actividad artesanal como base social, cultural y económica frente a los impactos de la pesca industrial." }
+   ],
+   "chips": ["jurado", "bahia-solano", "nuqui", "bajo-baudo", "litoral-san-juan"]
+  },
+  {
+   "id": "zonas",
+   "indice": "Zonas",
+   "kicker": "Zonas de manejo",
+   "titulo": "Lo que el mapa muestra frente a la costa",
+   "parrafos": [
+    "Sobre el territorio del GIC-PA el mapa señala las figuras de manejo de la costa: la Zona Exclusiva de Pesca Artesanal (ZEPA), la ZEMP, la UAC, los manglares, un parque nacional natural y distritos de manejo integrado.",
+    "Entre los logros documentados del GIC-PA están la ZEPA y el Distrito Regional de Manejo Integrado Golfo de Tribugá-Cabo Corrientes."
+   ],
+   "nota": "Las siglas ZEMP y UAC aparecen así en la leyenda del mapa. Su significado está por confirmar con la fuente del mapa.",
+   "chips": ["zepa", "zemp", "uac", "manglares", "pnn", "drmi", "dnmi"],
+   "enlaces": [{ "t": "Documentos sobre la ZEPA", "href": "/documentos/" }]
+  },
+  {
+   "id": "actores",
+   "indice": "Actores",
+   "kicker": "Actores participantes",
+   "titulo": "Comunidades, Estado y organizaciones de apoyo",
+   "parrafos": ["La alianza articula el trabajo conjunto entre organizaciones comunitarias y entidades públicas o privadas."],
+   "items": [
+    { "t": "Organizaciones de pescadores", "d": "Agrupa asociaciones locales y federaciones, como la Federación de Trabajadores de la Pesca Artesanal, y consejos comunitarios.", "enlaces": [{ "t": "FEDEPESCA", "href": "/entidades/fedepesca/" }, { "t": "Consejos comunitarios", "href": "/entidades/consejos-comunitarios/" }] },
+    { "t": "Instituciones estatales", "d": "Participan entidades como la Autoridad Nacional de Acuicultura y Pesca, el Instituto de Investigaciones Ambientales del Pacífico y la Gobernación del Chocó.", "enlaces": [{ "t": "AUNAP", "href": "/entidades/aunap/" }, { "t": "IIAP", "href": "/entidades/iiap/" }, { "t": "Gobernación del Chocó", "href": "/entidades/gobernacion-choco/" }] },
+    { "t": "Organizaciones de apoyo", "d": "Cuenta con el acompañamiento técnico y ambiental de fundaciones como MarViva y centros de estudios jurídicos y sociales.", "enlaces": [{ "t": "MarViva", "href": "/entidades/marviva/" }] }
+   ],
+   "enlaces": [{ "t": "Ver todas las entidades", "href": "/entidades/" }]
+  },
+  {
+   "id": "reuniones",
+   "indice": "Reuniones",
+   "kicker": "Espacios de reunión",
+   "titulo": "Asambleas en los municipios de la costa",
+   "parrafos": [
+    "El grupo realiza encuentros periódicos, asambleas y mesas coordinadoras en los municipios costeros para evaluar acuerdos de manejo pesquero y coordinar acciones institucionales.",
+    "La XVII Asamblea se celebró en Bahía Solano, en Ciudad Mutis, del 16 al 19 de octubre de 2026."
+   ],
+   "foco": "bahia-solano",
+   "chips": ["bahia-solano"],
+   "enlaces": [{ "t": "Leer la noticia de la XVII Asamblea", "href": "/noticias/utch-presente-en-la-xvii-asamblea-del-gicpa/" }]
+  }
+ ]
+}

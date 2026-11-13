@@ -1,0 +1,98 @@
+---
+import datos from '../../data/territorio.json';
+import '../../styles/storymap.css';
+
+const { mapa, areas, capitulos } = datos;
+const total = capitulos.length;
+const cajas = Object.fromEntries(Object.entries(areas).map(([id, a]) => [id, a.caja]));
+const esExterno = (href: string) => href.startsWith('http');
+const muestraDe = (id: string) => {
+  const a = areas[id as keyof typeof areas] as { muestra?: string; borde?: string };
+  return [a.muestra && `background:${a.muestra}`, a.borde && `border-color:${a.borde}`].filter(Boolean).join(';');
+};
+---
+<section class="sm" data-storymap data-cajas={JSON.stringify(cajas)} aria-labelledby="t-que-es">
+  <div class="sm__cab">
+    <h2 id="t-que-es">Qué es el GIC-PA</h2>
+    <p>Un recorrido por el territorio de norte a sur. Al leer, el mapa se acerca a cada zona; también puede acercarlo usted con los botones, el teclado o los dedos.</p>
+  </div>
+
+  <div class="sm__grid">
+    <div class="sm__sticky" data-sticky>
+      <div class="sm__placa">
+        <div class="sm__stage" data-stage role="group" tabindex="0" aria-label="Mapa interactivo del territorio del GIC-PA. Con el teclado, más y menos acercan, cero vuelve a la vista completa y las flechas mueven el mapa acercado.">
+          <div class="sm__camara" data-camara>
+            <img src={mapa.src} width={mapa.ancho} height={mapa.alto} alt="" decoding="async" draggable="false" />
+            <i class="sm__foco" data-foco aria-hidden="true"></i>
+          </div>
+          <p class="sr-only">{mapa.descripcion}</p>
+          <button type="button" class="sm__mini" data-mini aria-label="Miniatura del mapa: toque para mover la vista" hidden>
+            <img src={mapa.src} alt="" width="120" height="165" loading="lazy" decoding="async" draggable="false" />
+            <i data-mini-vista></i>
+          </button>
+          <div class="sm__ctl" data-ctl role="group" aria-label="Controles del mapa">
+            <button type="button" data-accion="acercar" aria-label="Acercar"><i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <button type="button" data-accion="alejar" aria-label="Alejar"><i class="bi bi-dash-lg" aria-hidden="true"></i></button>
+            <button type="button" data-accion="completa" aria-label="Vista completa" title="Vista completa"><i class="bi bi-aspect-ratio" aria-hidden="true"></i></button>
+            <button type="button" data-accion="pantalla" aria-label="Pantalla completa" title="Pantalla completa" hidden><i class="bi bi-arrows-fullscreen" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm__chips" role="group" aria-label="Ver una zona en el mapa">
+        {capitulos.map((c, i) => (
+          <div class="sm__grupo" data-grupo={i} data-activo={i === 0 ? '' : undefined}>
+            {('chips' in c ? c.chips : []).map((id: string) => (
+              <button type="button" class="sm__chip" data-area={id} aria-pressed="false" title={areas[id as keyof typeof areas].nombre}>
+                {muestraDe(id) && <i aria-hidden="true" style={muestraDe(id)}></i>}
+                {('corto' in areas[id as keyof typeof areas] ? (areas[id as keyof typeof areas] as { corto: string }).corto : areas[id as keyof typeof areas].nombre)}
+              </button>
+            ))}
+          </div>
+        ))}
+      </div>
+      <p class="sm__pie"><b data-pie aria-live="polite">Mapa 1 de {total}: {capitulos[0].indice}.</b> {mapa.credito}</p>
+    </div>
+
+    <div class="sm__texto">
+      <div class="sm__caps">
+        {capitulos.map((c, i) => (
+          <article class="sm__cap" id={`sm-${c.id}`} data-i={i} data-foco={'foco' in c ? c.foco : undefined} data-activo={i === 0 ? '' : undefined} aria-labelledby={`sm-t-${c.id}`}>
+            <p class="sm__kicker"><span>{String(i + 1).padStart(2, '0')}</span> {c.kicker}</p>
+            <h3 id={`sm-t-${c.id}`}>{c.titulo}</h3>
+            {'parrafos' in c && c.parrafos?.map((p) => <p>{p}</p>)}
+            {'cita' in c && c.cita && (
+              <blockquote class="sm__cita">
+                <p>«{c.cita.texto}»</p>
+                <footer><a href={c.cita.fuente.href} target="_blank" rel="noopener noreferrer">{c.cita.fuente.t}</a></footer>
+              </blockquote>
+            )}
+            {'items' in c && c.items && (
+              <ul class="sm__items">
+                {c.items.map((it) => (
+                  <li>
+                    <strong>{it.t}</strong>
+                    <span>{it.d}</span>
+                    {'enlaces' in it && it.enlaces && <span class="sm__links">{it.enlaces.map((l) => <a href={l.href}>{l.t}</a>)}</span>}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {'nota' in c && c.nota && <p class="sm__nota"><i class="bi bi-info-circle" aria-hidden="true"></i> {c.nota}</p>}
+            {'enlaces' in c && c.enlaces && (
+              <p class="sm__fin">{c.enlaces.map((l) => <a class="enlace-flecha" href={l.href} {...(esExterno(l.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{l.t} <i class="bi bi-arrow-right" aria-hidden="true"></i></a>)}</p>
+            )}
+          </article>
+        ))}
+      </div>
+      <nav class="sm__indice" aria-label="Capítulos del recorrido">
+        <ol>
+          {capitulos.map((c, i) => (
+            <li><button type="button" data-ir={i} aria-current={i === 0 ? 'step' : undefined}>{c.indice}</button></li>
+          ))}
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>
+<script>import '../../scripts/storymap.js';</script>

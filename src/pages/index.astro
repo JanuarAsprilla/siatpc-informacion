@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import NewsCard from '../components/NewsCard.astro';
 import DocRow from '../components/DocRow.astro';
 import LogoEntidad from '../components/LogoEntidad.astro';
+import Storymap from '../components/storymap/Storymap.astro';
 import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
 import { MODULO } from '../lib/modulo';
 
@@ -45,23 +46,7 @@ const recientes = documentos.slice(0, 5);
     </div>
   </section>
 
-  <section class="seccion que-es" aria-labelledby="t-que-es">
-    <div class="mod">
-      <div class="que-es__grid">
-        <div>
-          <h2 id="t-que-es">Qué es el GIC-PA</h2>
-          <p class="que-es__cita">«Ordenar la actividad pesquera artesanal de la costa chocoana, como una estrategia para la recuperación del recurso pesquero y el fortalecimiento de la actividad pesquera artesanal de la región.»</p>
-          <p class="que-es__fuente">Objetivo con el que se creó, según la publicación de <a href="https://marviva.net/wp-content/uploads/2021/11/publicacion_gicpa_final_8-02-17-1.pdf" target="_blank" rel="noopener noreferrer">MarViva y el GIC-PA (2016)</a>.</p>
-        </div>
-        <dl class="que-es__datos">
-          <div><dt>Origen</dt><dd>Se creó en 1998 en el Parque Nacional Natural Utría, por iniciativa de pescadores artesanales de Juradó, Bahía Solano y Nuquí.</dd></div>
-          <div><dt>Territorio</dt><dd>Cinco municipios costeros del Pacífico chocoano: Litoral del San Juan, Pizarro, Nuquí, Bahía Solano y Juradó.</dd></div>
-          <div><dt>Quiénes lo integran</dt><dd>Autoridades, sector productivo (pescadores, comercializadores y asociaciones) y entidades de apoyo (universidades, institutos y ONG). En 2016 la lista de miembros superaba los 80.</dd></div>
-          <div><dt>Logros documentados</dt><dd>La Zona Exclusiva de Pesca Artesanal (ZEPA) y el Distrito Regional de Manejo Integrado Golfo de Tribugá-Cabo Corrientes.</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
+  <Storymap />
 
   <section class="seccion seccion--banda">
     <div class="mod">

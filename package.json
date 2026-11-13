@@ -9,7 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --test src/lib/format.test.mjs"
+    "test": "node --test src/lib/format.test.mjs src/lib/vista.test.mjs"
   },
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",
