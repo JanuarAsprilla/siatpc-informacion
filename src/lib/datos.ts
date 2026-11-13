@@ -4,7 +4,7 @@ import noticiasJson from '../data/noticias.json';
 import tematicasJson from '../data/tematicas.json';
 
 export type Dato = { k: string; v: string; href: string | null };
-export type Entidad = { slug: string; nombre: string; sigla: string; tipo: string; relacion: 'Miembro' | 'Relacionada'; logo: string | null; logoBlanco?: boolean; creditoLogo?: { texto: string; url: string }; acerca: string; datos: Dato[] };
+export type Entidad = { slug: string; nombre: string; sigla: string; tipo: string; relacion: 'Miembro' | 'Relacionada'; logo: string | null; afiliadas?: string[]; logoBlanco?: boolean; creditoLogo?: { texto: string; url: string }; acerca: string; datos: Dato[] };
 export type Archivo = { nombre: string; url: string; tipo: string; bytes: number | null };
 export type Documento = { id: string; entidad: string; categoria: string; titulo: string; desc: string; fecha: string | null; archivos: Archivo[] };
 export type Bloque = { t: 'p'; x: string } | { t: 'h'; x: string } | { t: 'img'; src: string } | { t: 'ul'; items: string[] };

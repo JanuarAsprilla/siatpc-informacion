@@ -6,7 +6,7 @@ import LogoEntidad from './LogoEntidad.astro';
 interface Props { e: Entidad; docs: number }
 const { e, docs } = Astro.props;
 const resumen = e.acerca ? resumir(e.acerca, 190) : 'Descripción por confirmar con la entidad.';
-const buscable = normalizar(`${e.nombre} ${e.sigla} ${e.tipo} ${e.acerca}`);
+const buscable = normalizar(`${e.nombre} ${e.sigla} ${e.tipo} ${e.acerca} ${(e.afiliadas ?? []).join(" ")}`);
 ---
 <li data-item data-q={buscable} data-tipo={e.tipo} data-relacion={e.relacion}>
   <article class="tarjeta">

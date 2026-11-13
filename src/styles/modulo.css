@@ -272,3 +272,12 @@ html { overflow-x: hidden; }
 
 .ficha__credito { margin: 0; padding: 0.7rem 1.4rem 0; font-size: 0.8rem; line-height: 1.4; color: var(--suave); }
 .ficha__credito a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Asociaciones afiliadas a una entidad (FEDEPESCA) */
+.afiliadas { margin: 2rem 0 0; }
+.afiliadas h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 600; margin: 0 0 0.4rem; color: var(--ink); text-align: left; }
+.afiliadas p { margin: 0 0 1rem; color: var(--suave); font-size: 0.95rem; }
+.afiliadas ol { margin: 0; padding: 0; list-style: none; counter-reset: af; columns: 2; column-gap: 2.5rem; }
+.afiliadas li { counter-increment: af; break-inside: avoid; display: grid; grid-template-columns: 2.2rem 1fr; gap: 0.4rem; padding: 0.55rem 0; border-bottom: 1px solid var(--linea); font-size: 0.95rem; line-height: 1.4; }
+.afiliadas li::before { content: counter(af, decimal-leading-zero); font-variant-numeric: tabular-nums; font-weight: 700; color: var(--verde-oscuro); }
+@media (max-width: 760px) { .afiliadas ol { columns: 1; } }

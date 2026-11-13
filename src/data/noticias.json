@@ -57,13 +57,13 @@
  {
   "id": "la-zepa-una-iniciativa-comunitaria-para-el-cuidado-de-la-megafauna-marina",
   "entidad": "fedepesca",
-  "titulo": "La ZEPA: una iniciativa comunitaria para el cuidado de la megafauna marina",
+  "titulo": "La Zona Exclusiva de Pesca Artesanal: una iniciativa comunitaria para el cuidado de la megafauna marina y la soberanía alimentaria",
   "autor": "Jorge Iván Chica (FEDEPESCA)",
   "fecha": "2026-02-12",
   "portada": "img/gicpa/panorama-zepa.webp",
   "bloques": [
    { "t": "p", "x": "Buena práctica presentada en Panorama Solutions y liderada por el GIC-PA. El proceso de la Zona Exclusiva de Pesca Artesanal comenzó entre 1997 y 1998." },
-   { "t": "p", "x": "La fecha corresponde a la última actualización de la ficha. El título completo está por confirmar en la fuente." }
+   { "t": "p", "x": "La fecha corresponde a la última actualización de la ficha; la página no indica la fecha de publicación." }
   ],
   "tematicas": ["ZEPA"],
   "fuente": { "nombre": "Panorama Solutions", "url": "https://panorama.solutions/es/solution/la-zona-exclusiva-de-pesca-artesanal-una-iniciativa-comunitaria-para-el-cuidado-de-la" }

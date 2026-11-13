@@ -33,6 +33,13 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
             ? <a class="boton boton--verde" href={hrefDocs}>Ver documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
             : <a class="boton boton--borde" href="/documentos/">Ver documentos de otras entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>}
         </div>
+        {e.afiliadas && e.afiliadas.length > 0 && (
+          <section class="afiliadas" aria-labelledby="t-afiliadas">
+            <h2 id="t-afiliadas">Asociaciones afiliadas</h2>
+            <p>{e.afiliadas.length} asociaciones y grupos afiliados a diciembre de 2016, según la publicación de MarViva y el GIC-PA. No hay una lista más reciente verificada.</p>
+            <ol>{e.afiliadas.map((a) => <li><span>{a}</span></li>)}</ol>
+          </section>
+        )}
         {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href="/noticias/">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
       </div>
       <aside class="ficha" aria-label={`Datos de ${e.sigla}`}>
