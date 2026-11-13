@@ -30,14 +30,14 @@
 /* Mapa fijo */
 .sm__sticky { position: sticky; top: var(--sm-top); z-index: 3; display: flex; flex-direction: column; gap: 0.6rem; height: var(--sm-alto); padding: 0.4rem 0; background: #fff; }
 .sm__sticky:fullscreen { height: 100dvh; padding: 1rem; }
-.sm__placa { flex: 1; min-height: 0; display: flex; justify-content: center; container-type: size; }
+.sm__placa { flex: 1; min-height: 0; display: flex; align-items: flex-start; justify-content: center; container-type: size; }
 @media (min-width: 992px) { .sm__placa { justify-content: flex-start; } }
-.sm__stage { position: relative; overflow: hidden; width: min(100cqw, calc(100cqh * 0.72727)); aspect-ratio: 2400 / 3300; background: var(--sm-oceano); border: 1px solid var(--linea); border-radius: 16px; box-shadow: var(--sombra-alta); outline-offset: 3px; }
+.sm__stage { position: relative; overflow: hidden; width: min(100cqw, calc(100cqh * 0.72727)); height: auto; flex: none; aspect-ratio: 2400 / 3300; background: var(--sm-oceano); border: 1px solid var(--linea); border-radius: 16px; box-shadow: var(--sombra-alta); outline-offset: 3px; }
 .sm__stage[data-zoom] { cursor: grab; }
 .sm__stage[data-arrastre] { cursor: grabbing; }
 .sm__camara { position: absolute; inset: 0; transform-origin: 0 0; transition: transform 0.7s var(--ease); will-change: transform; }
 .sm__stage[data-arrastre] .sm__camara { transition: none; }
-.sm__camara > img { display: block; width: 100%; height: 100%; user-select: none; -webkit-user-drag: none; }
+.sm__camara > img { display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; -webkit-user-drag: none; }
 
 /* Recuadro que resalta la zona elegida; el resto del mapa se oscurece. El borde se contrarresta con el zoom para no engrosar. */
 .sm__foco { position: absolute; border: calc(2.5px / var(--z, 1)) solid var(--ambar); border-radius: calc(10px / var(--z, 1)); box-shadow: 0 0 0 100vmax rgb(49 0 0 / 0.34); opacity: 0; pointer-events: none; transition: opacity 0.45s var(--ease); }
