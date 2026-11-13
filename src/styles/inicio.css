@@ -119,3 +119,7 @@
 .muro__logo .logo-ent { max-height: 64px; max-width: 88%; }
 .muro__logo .ent__mono { min-width: 64px; height: 64px; padding: 0 0.7rem; border-radius: 16px; font-size: 0.8rem; }
 .muro__sigla { font-weight: 700; font-size: 0.9rem; line-height: 1.2; }
+
+/* Logos con fondo blanco propio (p. ej. Juradó, Gobernación): el blanco se funde con el fondo suave de la ficha. */
+.logo-ent { mix-blend-mode: multiply; }
+.logo-ent--blanco { mix-blend-mode: normal; }
