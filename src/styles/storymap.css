@@ -15,12 +15,12 @@
 .sm__cab { display: grid; justify-items: center; gap: 1.6rem; padding-bottom: clamp(2rem, 5vw, 3.5rem); text-align: center; }
 .sm__cab h2 { margin: 0; font-size: clamp(2.8rem, 1.2rem + 6.5vw, 6rem); font-weight: 600; line-height: 0.98; letter-spacing: -0.04em; color: var(--ink); text-wrap: balance; }
 .sm__cab p { margin: 0; max-width: 40rem; color: var(--suave); font-size: clamp(1.1rem, 1rem + 0.5vw, 1.4rem); line-height: 1.55; text-wrap: balance; }
-.sm__inicio { display: inline-flex; align-items: center; gap: 1rem; width: auto; height: auto; margin: 0; padding: 0.25rem 1.2rem 0.25rem 0.25rem; border: 0; border-radius: 999px; background: none; color: var(--ink); font: inherit; font-size: 1.05rem; font-weight: 700; cursor: pointer; }
-.sm__inicio span { display: grid; place-items: center; width: 3.4rem; height: 3.4rem; border-radius: 50%; background: var(--ink); color: #fff; font-size: 1.3rem; transition: background-color 160ms var(--ease), transform 160ms var(--ease); }
-.sm__inicio:hover span { background: var(--verde); }
-.sm__inicio:active span { transform: scale(0.95); }
-.sm__inicio i { animation: sm-invitar 1.8s var(--ease) infinite; }
-@keyframes sm-invitar { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(3px); } }
+.sm__inicio { position: relative; display: block; width: 2.9rem; height: 4.6rem; margin: 0.4rem 0 0; padding: 0; border: 2.5px solid var(--ink); border-radius: 999px; background: none; cursor: pointer; transition: background-color 200ms var(--ease), transform 160ms var(--ease); }
+.sm__inicio i { position: absolute; left: 50%; top: 0.8rem; width: 0.5rem; height: 0.9rem; margin-left: -0.25rem; border-radius: 999px; background: var(--ink); animation: sm-invitar 1.7s var(--ease) infinite; transition: background-color 200ms var(--ease); }
+.sm__inicio:hover { background: var(--ink); }
+.sm__inicio:hover i { background: var(--ambar); }
+.sm__inicio:active { transform: scale(0.95); }
+@keyframes sm-invitar { 0% { transform: translateY(0); opacity: 0; } 25% { opacity: 1; } 75% { opacity: 1; } 100% { transform: translateY(1.9rem); opacity: 0; } }
 
 @media (min-width: 992px) {
   .sm__grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); column-gap: clamp(2rem, 4vw, 4.5rem); }
