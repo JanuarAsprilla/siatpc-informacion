@@ -18,7 +18,8 @@ const recientes = documentos.slice(0, 5);
     <div class="mod">
       <div>
         <h1>{MODULO.nombre}</h1>
-        <p>{MODULO.nombreLargo}: conozca las entidades que lo integran, lea sus documentos y siga sus noticias.</p>
+        <p class="saludo">{MODULO.presentacion.saludo}</p>
+        {MODULO.presentacion.parrafos.map((t) => <p>{t}</p>)}
         {MODULO.sufijo && <p class="aviso-prueba"><i class="bi bi-info-circle" aria-hidden="true"></i> Versión de {MODULO.sufijo}: todavía no está integrada al SIAT PC.</p>}
         <form class="busca-grande" action={ruta('/documentos/')} method="get" role="search">
           <label class="sr-only" for="h-q">Buscar documentos</label>

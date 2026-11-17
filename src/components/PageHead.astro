@@ -11,7 +11,7 @@ const { titulo, lead, migas = [], ancho = false } = Astro.props;
     {migas.length > 0 && (
       <nav class="migas" aria-label="Ruta de navegación">
         <ol>
-          <li><a href={ruta('/')}>{MODULO.nombre}</a></li>
+          <li><a href={ruta('/')}>{MODULO.nombreCorto}</a></li>
           {migas.map((m) => <li>{m.href ? <a href={ruta(m.href)}>{m.t}</a> : <span aria-current="page">{m.t}</span>}</li>)}
         </ol>
       </nav>

@@ -14,8 +14,8 @@ interface Props {
   description?: string;
   active?: 'inicio' | 'entidades' | 'documentos' | 'noticias';
 }
-const { title, description = 'Entidades, documentos y noticias del Grupo Interinstitucional y Comunitario para la Pesca Artesanal (GIC-PA).', active } = Astro.props;
-const completo = title === MODULO.nombre ? `${nombreCompleto()} · SIAT PC` : `${title} · ${MODULO.nombre} · SIAT PC`;
+const { title, description = 'Conocimientos, experiencias, investigaciones y saberes sobre la pesca artesanal del Chocó: documentos, publicaciones y aportes del GIC-PA.', active } = Astro.props;
+const completo = title === MODULO.nombre ? `${nombreCompleto()} · SIAT PC` : `${title} · ${MODULO.nombreCorto} · SIAT PC`;
 ---
 <!doctype html>
 <html lang="es">

@@ -24,7 +24,7 @@ body { background: #fff; color: var(--texto); font-family: 'Segoe UI', system-ui
 main { display: block; }
 [hidden] { display: none !important; }
 a:hover { opacity: 1; }
-.saltar { position: absolute; left: 0.5rem; top: -4rem; z-index: 3000; background: #fff; color: var(--ink); padding: 0.6rem 1rem; border-radius: 8px; font-weight: 600; }
+.saltar { position: absolute; left: 0.5rem; top: -4rem; z-index: 3000; background: #fff; color: var(--ink, #310000); padding: 0.6rem 1rem; border-radius: 8px; font-weight: 600; }
 .saltar:focus { top: 0.5rem; }
 :where(a, button, input, select, summary):focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; }
 .mod { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
