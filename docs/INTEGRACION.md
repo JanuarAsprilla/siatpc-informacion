@@ -33,7 +33,7 @@ Servir el contenido de `dist/` en esa ruta (nginx). Sin la variable, el módulo 
 
 - **Rutas:** ningún enlace ni imagen está escrito a mano con `/`. Todo pasa por `ruta()` de `src/lib/rutas.ts`, que respeta `MODULO_BASE`. En código nuevo usar siempre `ruta('/entidades/')`.
 - **CSS aislado:** todo el CSS del módulo vive bajo `.gicpa` (lo agrega `postcss.config.cjs` al compilar). No cambia la cabecera, el pie ni otras páginas. Se comprobó que los estilos de las páginas del módulo salen idénticos con y sin el aislamiento.
-- **Bootstrap:** el módulo usa Bootstrap 5.3.6 (igual que el SIAT PC) solo para la cuadrícula y utilidades; no hay que cargarlo dos veces si el SIAT PC ya lo carga.
+- **Bootstrap:** el módulo carga Bootstrap 5.3.6 (la misma versión del SIAT PC) desde el CDN en `Base.astro`. Al integrarlo, no cargarlo dos veces: usar el que ya carga el SIAT PC.
 - **Iconos:** el módulo pide `bootstrap-icons@1.11.3`; el SIAT PC usa 1.10.0. Todos los iconos usados existen en 1.10.0 **menos `bi-twitter-x`** (botón de compartir en X de las noticias). Opciones: subir los iconos del SIAT PC a 1.11.3 o cambiar ese icono.
 - **Versión de Astro:** fijada en `5.16.3`, la misma de siatpc.co.
 
