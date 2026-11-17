@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../lib/rutas';
 import Base from '../layouts/Base.astro';
 import NewsCard from '../components/NewsCard.astro';
 import DocRow from '../components/DocRow.astro';
@@ -19,14 +20,14 @@ const recientes = documentos.slice(0, 5);
         <h1>{MODULO.nombre}</h1>
         <p>{MODULO.nombreLargo}: conozca las entidades que lo integran, lea sus documentos y siga sus noticias.</p>
         {MODULO.sufijo && <p class="aviso-prueba"><i class="bi bi-info-circle" aria-hidden="true"></i> Versión de {MODULO.sufijo}: todavía no está integrada al SIAT PC.</p>}
-        <form class="busca-grande" action="/documentos/" method="get" role="search">
+        <form class="busca-grande" action={ruta('/documentos/')} method="get" role="search">
           <label class="sr-only" for="h-q">Buscar documentos</label>
           <input id="h-q" type="search" name="q" placeholder="Buscar un documento: plan, informe, norma…" autocomplete="off" />
           <button class="boton boton--verde" type="submit"><i class="bi bi-search" aria-hidden="true"></i> Buscar</button>
         </form>
       </div>
       <div class="collage" aria-hidden="true">
-        {fotos.map((n, i) => <figure class={`c${i + 1}`}><img src={`/${n.portada}`} alt="" width="800" height="800" fetchpriority={i === 0 ? 'high' : undefined} /></figure>)}
+        {fotos.map((n, i) => <figure class={`c${i + 1}`}><img src={ruta(`/${n.portada}`)} alt="" width="800" height="800" fetchpriority={i === 0 ? 'high' : undefined} /></figure>)}
       </div>
     </div>
   </section>
@@ -37,7 +38,7 @@ const recientes = documentos.slice(0, 5);
     <div class="mod">
       <div class="seccion__cab">
         <h2>Últimas noticias</h2>
-        <a class="enlace-flecha" href="/noticias/">Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <a class="enlace-flecha" href={ruta('/noticias/')}>Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <div class="mosaico">
         <ul><NewsCard n={destacada} variante="grande" /></ul>
@@ -50,7 +51,7 @@ const recientes = documentos.slice(0, 5);
     <div class="mod">
       <div class="seccion__cab">
         <h2>Documentos recientes</h2>
-        <a class="enlace-flecha" href="/documentos/">Ver todos los documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <a class="enlace-flecha" href={ruta('/documentos/')}>Ver todos los documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <ul class="filas">{recientes.map((d) => <DocRow d={d} e={entidadPorSlug(d.entidad)!} />)}</ul>
     </div>
@@ -60,10 +61,10 @@ const recientes = documentos.slice(0, 5);
     <div class="mod">
       <div class="seccion__cab">
         <h2>Entidades</h2>
-        <a class="enlace-flecha" href="/entidades/">Ver todas las entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+        <a class="enlace-flecha" href={ruta('/entidades/')}>Ver todas las entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
       </div>
       <ul class="muro">
-        {entidades.map((e) => <li><a href={`/entidades/${e.slug}/`}><span class="muro__logo"><LogoEntidad e={e} /></span><span class="muro__sigla">{e.sigla}</span></a></li>)}
+        {entidades.map((e) => <li><a href={ruta(`/entidades/${e.slug}/`)}><span class="muro__logo"><LogoEntidad e={e} /></span><span class="muro__sigla">{e.sigla}</span></a></li>)}
       </ul>
     </div>
   </section>

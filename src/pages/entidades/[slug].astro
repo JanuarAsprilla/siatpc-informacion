@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../../lib/rutas';
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import EntityCard from '../../components/EntityCard.astro';
@@ -15,7 +16,7 @@ const docs = documentosDe(e.slug);
 const parecidas = entidades.filter((o) => o.slug !== e.slug && o.tipo === e.tipo).slice(0, 3);
 const noticiasDe = noticias.filter((n) => n.entidad === e.slug).slice(0, 3);
 const nNoticias = noticias.filter((n) => n.entidad === e.slug).length;
-const hrefDocs = `/documentos/?entidad=${e.slug}`;
+const hrefDocs = ruta(`/documentos/?entidad=${e.slug}`);
 ---
 <Base title={e.nombre} description={`${e.nombre} (${e.sigla}): información y documentos.`} active="entidades">
   <PageHead titulo={e.nombre} lead={`${e.relacion === 'Miembro' ? 'Miembro del GIC-PA' : 'Entidad relacionada con el GIC-PA'} · ${e.tipo}`} ancho migas={[{ t: 'Entidades', href: '/entidades/' }, { t: e.sigla }]} />
@@ -31,7 +32,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
           </div>
           {docs.length > 0
             ? <a class="boton boton--verde" href={hrefDocs}>Ver documentos <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
-            : <a class="boton boton--borde" href="/documentos/">Ver documentos de otras entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>}
+            : <a class="boton boton--borde" href={ruta('/documentos/')}>Ver documentos de otras entidades <i class="bi bi-arrow-right" aria-hidden="true"></i></a>}
         </div>
         {e.afiliadas && e.afiliadas.length > 0 && (
           <section class="afiliadas" aria-labelledby="t-afiliadas">
@@ -40,7 +41,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
             <ol>{e.afiliadas.map((a) => <li><span>{a}</span></li>)}</ol>
           </section>
         )}
-        {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href="/noticias/">Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
+        {nNoticias > 0 && <p style="margin-top:1rem"><a class="enlace-flecha" href={ruta('/noticias/')}>Ver noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a></p>}
       </div>
       <aside class="ficha" aria-label={`Datos de ${e.sigla}`}>
         <div class="ficha__logo"><LogoEntidad e={e} /></div>
@@ -69,7 +70,7 @@ const hrefDocs = `/documentos/?entidad=${e.slug}`;
   {noticiasDe.length > 0 && (
     <section class="seccion seccion--banda">
       <div class="mod">
-        <div class="seccion__cab"><h2>Noticias de {e.sigla}</h2><a class="enlace-flecha" href="/noticias/">Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
+        <div class="seccion__cab"><h2>Noticias de {e.sigla}</h2><a class="enlace-flecha" href={ruta('/noticias/')}>Ver todas <i class="bi bi-arrow-right" aria-hidden="true"></i></a></div>
         <ul class="rejilla" data-cols="3">{noticiasDe.map((n) => <NewsCard n={n} />)}</ul>
       </div>
     </section>

@@ -1,18 +1,19 @@
 ---
+import { ruta } from '../lib/rutas';
 import type { Noticia } from '../lib/datos';
 import { fechaLarga, lenguajeClaro, normalizar } from '../lib/format';
 
 interface Props { n: Noticia; destacada?: boolean; variante?: 'normal' | 'grande' | 'fila' }
 const { n, destacada = false, variante = 'normal' } = Astro.props;
 const titulo = lenguajeClaro(n.titulo);
-const href = `/noticias/${n.id}/`;
+const href = ruta(`/noticias/${n.id}/`);
 const clase = variante === 'grande' ? 'nota-grande' : variante === 'fila' ? 'nota-fila' : 'tarjeta';
 ---
 <li data-item data-q={normalizar(n.titulo)} data-tema={n.tematicas.join('|')} data-destacada={destacada ? '' : undefined}>
   <article class={clase}>
     {variante === 'grande' && (
       <>
-        {n.portada && <img src={`/${n.portada}`} alt="" width="1200" height="800" fetchpriority="high" />}
+        {n.portada && <img src={ruta(`/${n.portada}`)} alt="" width="1200" height="800" fetchpriority="high" />}
         <div class="nota-grande__texto">
           <p class="fecha">{fechaLarga(n.fecha)}</p>
           <h3><a href={href}>{titulo}</a></h3>
@@ -22,7 +23,7 @@ const clase = variante === 'grande' ? 'nota-grande' : variante === 'fila' ? 'not
     )}
     {variante === 'fila' && (
       <>
-        {n.portada && <img src={`/${n.portada}`} alt="" width="300" height="240" loading="lazy" />}
+        {n.portada && <img src={ruta(`/${n.portada}`)} alt="" width="300" height="240" loading="lazy" />}
         <div>
           <p class="fecha">{fechaLarga(n.fecha)}</p>
           <h3><a href={href}>{titulo}</a></h3>
@@ -33,7 +34,7 @@ const clase = variante === 'grande' ? 'nota-grande' : variante === 'fila' ? 'not
     {variante === 'normal' && (
       <>
         <a class="nota__img" href={href} tabindex="-1" aria-hidden="true">
-          {n.portada ? <img src={`/${n.portada}`} alt="" width="1200" height="800" loading="lazy" /> : <div class="nota__sin"><i class="bi bi-newspaper" aria-hidden="true"></i><span>{n.fuente?.nombre ?? 'Sin imagen'}</span></div>}
+          {n.portada ? <img src={ruta(`/${n.portada}`)} alt="" width="1200" height="800" loading="lazy" /> : <div class="nota__sin"><i class="bi bi-newspaper" aria-hidden="true"></i><span>{n.fuente?.nombre ?? 'Sin imagen'}</span></div>}
         </a>
         <div class="tarjeta__cuerpo">
           <p class="fecha">{fechaLarga(n.fecha) || 'Fecha por confirmar'}</p>

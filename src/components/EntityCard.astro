@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../lib/rutas';
 import type { Entidad } from '../lib/datos';
 import { normalizar, resumir } from '../lib/format';
 import LogoEntidad from './LogoEntidad.astro';
@@ -13,7 +14,7 @@ const buscable = normalizar(`${e.nombre} ${e.sigla} ${e.tipo} ${e.acerca} ${(e.a
     <div class="ent__logo"><LogoEntidad e={e} /></div>
     <div class="tarjeta__cuerpo">
       <div class="ent__chips"><span class={e.relacion === 'Miembro' ? 'chip chip--verde' : 'chip chip--ambar'}>{e.relacion === 'Miembro' ? 'Miembro del GIC-PA' : 'Entidad relacionada'}</span><span class="chip">{e.tipo}</span></div>
-      <h2><a class="stretched-link" href={`/entidades/${e.slug}/`}>{e.nombre}</a></h2>
+      <h2><a class="stretched-link" href={ruta(`/entidades/${e.slug}/`)}>{e.nombre}</a></h2>
       <p class="recorte">{resumen}</p>
       <div class="tarjeta__pie">
         <span><i class="bi bi-file-earmark-text" aria-hidden="true"></i> {docs} {docs === 1 ? 'documento' : 'documentos'}</span>

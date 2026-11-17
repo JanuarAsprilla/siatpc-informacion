@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../lib/rutas';
 import { MODULO, nombreCompleto } from '../lib/modulo';
 
 interface Props { active?: 'inicio' | 'entidades' | 'documentos' | 'noticias' }
@@ -10,14 +11,14 @@ const secciones = [
 ] as const;
 ---
 <nav class="riel" aria-label={`Secciones del ${MODULO.nombre}`}>
-  <a class="riel__marca" href="/" title={`Ir al inicio del ${nombreCompleto()}`} aria-label={`Ir al inicio del ${nombreCompleto()}`} aria-current={active === 'inicio' ? 'page' : undefined}>
+  <a class="riel__marca" href={ruta('/')} title={`Ir al inicio del ${nombreCompleto()}`} aria-label={`Ir al inicio del ${nombreCompleto()}`} aria-current={active === 'inicio' ? 'page' : undefined}>
     <i class="bi bi-grid-1x2-fill" aria-hidden="true"></i>
     <span>Módulo</span>
   </a>
   <ul>
     {secciones.map((s) => (
       <li>
-        <a href={s.href} aria-current={active === s.id ? 'page' : undefined}>
+        <a href={ruta(s.href)} aria-current={active === s.id ? 'page' : undefined}>
           <i class={`bi ${s.icono}`} aria-hidden="true"></i>
           <span>{s.t}</span>
         </a>

@@ -1,0 +1,3 @@
+/* Solo para el modo independiente (con la cabecera copiada del SIAT PC): recorta el submenú oculto que desborda a lo ancho.
+   Al integrar el módulo en el SIAT PC, esta hoja no se importa. */
+html { overflow-x: hidden; }

@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../lib/rutas';
 import type { Entidad } from '../lib/datos';
 
 /** Logo de una entidad con un único criterio visual: siempre sobre fondo claro. Sin logo oficial verificado, monograma con su sigla. */
@@ -8,5 +9,5 @@ const COLORES = ['#0a7a3c', '#084898', '#ed6e0c', '#7e3123', '#0b8fd6', '#5a6529
 const color = COLORES[[...e.slug].reduce((a, c) => a + c.charCodeAt(0), 0) % COLORES.length];
 ---
 {e.logo
-  ? <img class:list={['logo-ent', { 'logo-ent--blanco': e.logoBlanco }]} src={e.logo} alt="" loading="lazy" />
+  ? <img class:list={['logo-ent', { 'logo-ent--blanco': e.logoBlanco }]} src={ruta(e.logo)} alt="" loading="lazy" />
   : <span class="ent__mono" style={`background:${color}`} aria-hidden="true">{e.sigla.toUpperCase()}</span>}

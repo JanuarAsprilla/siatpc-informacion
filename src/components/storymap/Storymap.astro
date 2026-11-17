@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../../lib/rutas';
 import datos from '../../data/territorio.json';
 import '../../styles/storymap.css';
 
@@ -23,12 +24,12 @@ const muestraDe = (id: string) => {
       <div class="sm__placa">
         <div class="sm__stage" data-stage role="group" tabindex="0" aria-label="Mapa interactivo del territorio del GIC-PA. Con el teclado, más y menos acercan, cero vuelve a la vista completa y las flechas mueven el mapa acercado.">
           <div class="sm__camara" data-camara>
-            <img src={mapa.src} data-hd={mapa.hd} width={mapa.ancho} height={mapa.alto} alt="" decoding="async" draggable="false" />
+            <img src={ruta(mapa.src)} data-hd={ruta(mapa.hd)} width={mapa.ancho} height={mapa.alto} alt="" decoding="async" draggable="false" />
             <i class="sm__foco" data-foco aria-hidden="true"></i>
           </div>
           <p class="sr-only">{mapa.descripcion}</p>
           <button type="button" class="sm__mini" data-mini aria-label="Miniatura del mapa: toque para mover la vista" hidden>
-            <img src={mapa.src} alt="" width="120" height="165" loading="lazy" decoding="async" draggable="false" />
+            <img src={ruta(mapa.src)} alt="" width="120" height="165" loading="lazy" decoding="async" draggable="false" />
             <i data-mini-vista></i>
           </button>
           <div class="sm__ctl" data-ctl role="group" aria-label="Controles del mapa">
@@ -65,7 +66,7 @@ const muestraDe = (id: string) => {
             {'cita' in c && c.cita && (
               <blockquote class="sm__cita">
                 <p>«{c.cita.texto}»</p>
-                <footer><a href={c.cita.fuente.href} target="_blank" rel="noopener noreferrer">{c.cita.fuente.t}</a></footer>
+                <footer><a href={ruta(c.cita.fuente.href)} target="_blank" rel="noopener noreferrer">{c.cita.fuente.t}</a></footer>
               </blockquote>
             )}
             {'items' in c && c.items && (
@@ -74,14 +75,14 @@ const muestraDe = (id: string) => {
                   <li>
                     <strong>{it.t}</strong>
                     <span>{it.d}</span>
-                    {'enlaces' in it && it.enlaces && <span class="sm__links">{it.enlaces.map((l) => <a href={l.href}>{l.t}</a>)}</span>}
+                    {'enlaces' in it && it.enlaces && <span class="sm__links">{it.enlaces.map((l) => <a href={ruta(l.href)}>{l.t}</a>)}</span>}
                   </li>
                 ))}
               </ul>
             )}
             {'nota' in c && c.nota && <p class="sm__nota"><i class="bi bi-info-circle" aria-hidden="true"></i> {c.nota}</p>}
             {'enlaces' in c && c.enlaces && (
-              <p class="sm__fin">{c.enlaces.map((l) => <a class="enlace-flecha" href={l.href} {...(esExterno(l.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{l.t} <i class="bi bi-arrow-right" aria-hidden="true"></i></a>)}</p>
+              <p class="sm__fin">{c.enlaces.map((l) => <a class="enlace-flecha" href={ruta(l.href)} {...(esExterno(l.href) ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>{l.t} <i class="bi bi-arrow-right" aria-hidden="true"></i></a>)}</p>
             )}
           </article>
         ))}

@@ -8,7 +8,7 @@ const { d, e } = Astro.props;
 const [principal] = d.archivos;
 ---
 <li class="fila">
-  <a class="fila__enlace" href={principal?.url ?? `/documentos/?entidad=${e.slug}`} target="_blank" rel="noopener noreferrer">
+  <a class="fila__enlace" href={principal?.url ?? ruta(`/documentos/?entidad=${e.slug}`)} target="_blank" rel="noopener noreferrer">
     <span class="fila__meta" style={`--c:${colorCategoria(d.categoria)}`}><span class="punto" aria-hidden="true"></span>{d.categoria}</span>
     <span class="fila__titulo">{lenguajeClaro(d.titulo)}<span class="sr-only"> (se abre en una pestaña nueva)</span></span>
     <span class="fila__quien">{e.sigla}{d.fecha ? ` · ${fechaCorta(d.fecha)}` : ''}</span>

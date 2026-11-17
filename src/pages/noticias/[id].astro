@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../../lib/rutas';
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import NewsCard from '../../components/NewsCard.astro';
@@ -37,7 +38,7 @@ const redes = [
       <>
       <div class="carrusel" data-carrusel role="region" aria-roledescription="carrusel" aria-label="Imágenes de la noticia">
         <div class="carrusel__pista" tabindex="0">
-          {imagenes.map((src, i) => <figure><img src={`/${src}`} alt={`Imagen ${i + 1} de ${imagenes.length}: ${titulo}`} loading={i === 0 ? 'eager' : 'lazy'} /></figure>)}
+          {imagenes.map((src, i) => <figure><img src={ruta(`/${src}`)} alt={`Imagen ${i + 1} de ${imagenes.length}: ${titulo}`} loading={i === 0 ? 'eager' : 'lazy'} /></figure>)}
         </div>
         {imagenes.length > 1 && (
           <>
@@ -49,7 +50,7 @@ const redes = [
       </div>
       {imagenes.length > 1 && (
         <ol class="miniaturas" aria-label="Imágenes de la noticia">
-          {imagenes.map((src, i) => <li><button type="button" data-ir={i} aria-label={`Ver imagen ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}><img src={`/${src}`} alt="" width="160" height="110" loading="lazy" /></button></li>)}
+          {imagenes.map((src, i) => <li><button type="button" data-ir={i} aria-label={`Ver imagen ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}><img src={ruta(`/${src}`)} alt="" width="160" height="110" loading="lazy" /></button></li>)}
         </ol>
       )}
       </>
@@ -65,7 +66,7 @@ const redes = [
     </div>
     <aside class="articulo__lado" aria-label="Datos de la noticia">
     {n.tematicas.length > 0 && (
-      <div class="lado__bloque"><h2>Temáticas</h2><ul class="lado__chips">{n.tematicas.map((t) => <li><a class="chip chip--verde" href={`/noticias/?tema=${encodeURIComponent(t)}`}>{t}</a></li>)}</ul></div>
+      <div class="lado__bloque"><h2>Temáticas</h2><ul class="lado__chips">{n.tematicas.map((t) => <li><a class="chip chip--verde" href={ruta(`/noticias/?tema=${encodeURIComponent(t)}`)}>{t}</a></li>)}</ul></div>
     )}
     {n.fuente && (
       <div class="lado__bloque">
@@ -90,7 +91,7 @@ const redes = [
       <div class="mod">
         <div class="seccion__cab">
           <h2 id="t-rel">Noticias relacionadas</h2>
-          <a class="enlace-flecha" href="/noticias/">Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          <a class="enlace-flecha" href={ruta('/noticias/')}>Ver todas las noticias <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
         </div>
         <ul class="rejilla" data-cols="3">{relacionadas.map((o) => <NewsCard n={o} />)}</ul>
       </div>

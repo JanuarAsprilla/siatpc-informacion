@@ -14,5 +14,8 @@
   "dependencies": {
     "@fontsource-variable/newsreader": "^5.3.0",
     "astro": "5.16.3"
+  },
+  "devDependencies": {
+    "postcss-prefix-selector": "^2.2.1"
   }
 }

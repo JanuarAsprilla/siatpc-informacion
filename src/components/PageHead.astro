@@ -1,4 +1,5 @@
 ---
+import { ruta } from '../lib/rutas';
 import { MODULO } from '../lib/modulo';
 
 interface Miga { t: string; href?: string }
@@ -10,8 +11,8 @@ const { titulo, lead, migas = [], ancho = false } = Astro.props;
     {migas.length > 0 && (
       <nav class="migas" aria-label="Ruta de navegación">
         <ol>
-          <li><a href="/">{MODULO.nombre}</a></li>
-          {migas.map((m) => <li>{m.href ? <a href={m.href}>{m.t}</a> : <span aria-current="page">{m.t}</span>}</li>)}
+          <li><a href={ruta('/')}>{MODULO.nombre}</a></li>
+          {migas.map((m) => <li>{m.href ? <a href={ruta(m.href)}>{m.t}</a> : <span aria-current="page">{m.t}</span>}</li>)}
         </ol>
       </nav>
     )}

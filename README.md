@@ -1,5 +1,7 @@
 # Módulo de biodiversidad (prueba) · SIAT PC
 
+> **Para integrarlo al SIAT PC:** ver [docs/INTEGRACION.md](docs/INTEGRACION.md).
+
 Módulo del Sistema de Información Ambiental Territorial del Pacífico (SIAT PC) con cuatro secciones:
 
 | Ruta | Qué muestra |

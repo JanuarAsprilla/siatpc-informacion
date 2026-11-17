@@ -7,6 +7,7 @@ import '@fontsource-variable/newsreader';
 import '../styles/siat.css';
 import '../styles/modulo.css';
 import '../styles/inicio.css';
+import '../styles/standalone.css';
 
 interface Props {
   title: string;
@@ -30,8 +31,10 @@ const completo = title === MODULO.nombre ? `${nombreCompleto()} · SIAT PC` : `$
   <body>
     <a class="saltar" href="#contenido">Saltar al contenido</a>
     <SiatHeader />
-    <ModuleNav active={active} />
-    <main id="contenido"><slot /></main>
+    <div class="gicpa">
+      <ModuleNav active={active} />
+      <main id="contenido"><slot /></main>
+    </div>
     <SiatFooter />
   </body>
 </html>
