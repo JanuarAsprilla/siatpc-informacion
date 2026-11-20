@@ -5,18 +5,14 @@ import NewsCard from '../components/NewsCard.astro';
 import DocRow from '../components/DocRow.astro';
 import LogoEntidad from '../components/LogoEntidad.astro';
 import Storymap from '../components/storymap/Storymap.astro';
-import { documentos, entidades, entidadPorSlug, noticiaPorId, noticias } from '../lib/datos';
+import { documentos, entidades, entidadPorSlug, noticias } from '../lib/datos';
 import inicio from '../data/inicio.json';
 import { MODULO } from '../lib/modulo';
 
 const [destacada, ...resto] = noticias;
 const lado = resto.slice(0, 2);
-// Fotos del collage, en el orden de src/data/inicio.json: la 1.ª es la grande, la 2.ª la de arriba y la 3.ª la redonda.
-// Cada entrada es el id de una noticia o la ruta de una imagen («img/gicpa/foto.webp»). Si faltan, se completan con noticias recientes.
-const imagenDe = (ref: string) => (ref.startsWith('img/') ? ref : noticiaPorId(ref)?.portada);
-const elegidas = inicio.collage.map(imagenDe).filter((x): x is string => Boolean(x));
-const relleno = noticias.map((n) => n.portada).filter((p): p is string => Boolean(p) && !elegidas.includes(p as string));
-const fotos = [...elegidas, ...relleno].slice(0, 3);
+// Fotos del collage: independientes de las noticias, en el orden de src/data/inicio.json (1.ª grande, 2.ª arriba, 3.ª redonda).
+const fotos = inicio.collage.slice(0, 3);
 const recientes = documentos.slice(0, 5);
 ---
 <Base title={MODULO.nombre} active="inicio">
