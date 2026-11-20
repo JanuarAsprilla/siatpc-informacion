@@ -41,6 +41,7 @@ Servir el contenido de `dist/` en esa ruta (nginx). Sin la variable, el módulo 
 
 - **Entidades:** `src/data/entidades.json` (nombre, sigla, tipo, `Miembro` o `Relacionada`, logo en `public/img/entidades/`, descripción y datos de contacto). Las asociaciones afiliadas van en `afiliadas`.
 - **Documentos:** `documentos.json`. **Noticias:** `noticias.json` (cada una con su fuente y enlace). **Temáticas:** `tematicas.json`.
+- **Fotos del collage del inicio:** `inicio.json`. Una lista de 3 entradas, en orden: la 1.ª es la foto grande, la 2.ª la de arriba a la derecha y la 3.ª la redonda. Cada entrada es el id de una noticia o la ruta de una imagen (`img/gicpa/mi-foto.webp`, guardada en `public/img/gicpa/`).
 - **Recorrido del mapa:** `territorio.json`. Cada zona es una caja `[x0, y0, x1, y1]` en fracciones de 0 a 1 del mapa; los capítulos son el texto de cada parte.
 - Nombre y subtítulo del módulo (por ejemplo quitar «prueba»): `src/lib/modulo.ts`.
 - Fechas pueden ser parciales: `2016` o `2016-12`.
